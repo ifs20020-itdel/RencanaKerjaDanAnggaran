@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="{{asset('layout/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('layout/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('fontawesome/css/all.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-navbar-fixed">
 <!-- Site wrapper -->
