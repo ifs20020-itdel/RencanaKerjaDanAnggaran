@@ -1,66 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+      <img src="public/dist/images/logo.png" alt="DEL-logo" width="100px" height="auto">
+   </a>
 </p>
 
-## About Laravel
+<h1 align="center">
+      RKA - Rencana Kerja dan Anggaran
+   </a>
+</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">Deskripsi Proyek kita</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Introduction 🚀
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sesuai dengan silabus bahwa pada TA.2021-2022 mata kuliah Pengembangan Aplikasi
+Berbasis Web ini memiliki proyek.
+Proyek ini merupakan Proyek 2 Proyek 2, merupakan proyek dengan skop lebih besar dimana pada proyek ini mahasiswa diminta untuk mengerjakan pembuatan aplikasi web. Pada proyek kedua ini akan dilakukan kolaborasi proyek antar mata kuliah di program studi Informatika.
 
-## Learning Laravel
+## Kelompok 1
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Anggota Kelompok
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<ol>
+    <li>11S19035 - Rahmad Joko Susilo Situmorang</li>
+    <li>11S20002 - Yoel Ganda Aprilco Napitupulu</li>
+    <li>11S20016 - Nanchy Monika Siadari</li>
+    <li>11S20020 - Roosen Gabriel Manurung</li>
+    <li>11S20023 - Natanael Jansudin Siregar</li>
+    <li>11S20030 - Vistar Tiop Raja Gukguk</li>
+</ol>
+Program Studi : S1 Informatika
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Topik Project: Rencana Kerja dan Anggaran
 
-## Laravel Sponsors
+Pada Project ini, topik kelompok kami adalah membangun suatu aplikasi yang digunakan untuk menyerahkan rencana kegiatan tiap unit atau tiap organisasi dalam stukturisasi IT Del.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Installation ⚒️
 
-### Premium Partners
+Panduan Instalasi
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. Buka Terminal pada root directory proyek
+2. ikuti perintah berikut ini
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+atau
 
-## Code of Conduct
+```bash
+composer update
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. Jalankan command berikut untuk generate key
 
-## Security Vulnerabilities
+```bash
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. Dengan menjalankan command, kita akan bisa mendapat folder **node_modules**
 
-## License
+```bash
+yarn
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. untuk menjalankan project, jalankan command berikut ini pada project directory, yang sekaligus melakukan compile JavaScript beserta Styles.
+
+```bash
+yarn dev
+```
+5. Buka file .env pada bagian "DB_DATABASE = RKA-DEL" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DEL.
+Lalu jalankan command berikut di terminal
+```bash
+php artisan migrate
+```
+6. Seperti biasa, untuk menjalankan server
+
+```bash
+php artisan serve
+```
+
+## Fitur
+
+<ul>
+    <li>Register & Login (validation, otentikasi, otorisasi)</li>
+    <li>Web Page (routing, controller, model, view)</li>
+    <li>Implementasi Theme Frontend/Backend</li>
+    <li>Database Connection dan CRUD Data (dalam form, table, text)</li>
+</ul>
+
+## ERD Database
+
+design ERD or API
+
+## Requirement
+
+<ul>
+    <li>Bootstrap v5.1.3</li>
+    <li>dst</li>
+</ul>
+
+## Deploy
+
+Link Deploy:
+
+Tambahkan yang lain
