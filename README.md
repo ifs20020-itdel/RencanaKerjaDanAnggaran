@@ -59,6 +59,7 @@ composer update
 php artisan key:generate
 ```
 
+<<<<<<< HEAD
 4. Dengan menjalankan command, kita akan bisa mendapat folder **node_modules**
 
 ```bash
@@ -79,6 +80,14 @@ php artisan migrate
 ```
 
 6. Seperti biasa, untuk menjalankan server
+=======
+4. Buka file .env pada bagian "DB_DATABASE = RKA-DB" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DEL.
+Lalu jalankan command berikut di terminal
+```bash
+php artisan migrate
+```
+5. Seperti biasa, untuk menjalankan server
+>>>>>>> 1cdbbb269e38a8b2c00778deadaa8a9cff3465cf
 
 ```bash
 php artisan serve
