@@ -1,7 +1,7 @@
 <p align="center"></p>
 
 <p align="center">
-      <img src="public/dist/images/del.png" alt="DEL-logo" width="100px" height="auto">
+      <img src="public/dist/img/del.png" alt="DEL-logo" width="100px" height="auto">
    </a>
 </p>
 
@@ -59,35 +59,14 @@ composer update
 php artisan key:generate
 ```
 
-<<<<<<< HEAD
-4. Dengan menjalankan command, kita akan bisa mendapat folder **node_modules**
-
-```bash
-yarn
-```
-
-5. untuk menjalankan project, jalankan command berikut ini pada project directory, yang sekaligus melakukan compile JavaScript beserta Styles.
-
-```bash
-yarn dev
-```
-
-5. Buka file .env pada bagian "DB_DATABASE = RKA-DEL" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DEL.
+4. Buka file .env pada bagian "DB_DATABASE = RKA-DB" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DB.
    Lalu jalankan command berikut di terminal
 
 ```bash
 php artisan migrate
 ```
 
-6. Seperti biasa, untuk menjalankan server
-=======
-4. Buka file .env pada bagian "DB_DATABASE = RKA-DB" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DEL.
-Lalu jalankan command berikut di terminal
-```bash
-php artisan migrate
-```
 5. Seperti biasa, untuk menjalankan server
->>>>>>> 1cdbbb269e38a8b2c00778deadaa8a9cff3465cf
 
 ```bash
 php artisan serve
