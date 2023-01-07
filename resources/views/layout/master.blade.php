@@ -13,15 +13,9 @@
   <link rel="stylesheet" href="{{asset('layout/dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{asset('fontawesome/css/all.css')}}">
 
-  <style>
-  body {
-    background-image: url("{{asset('layout/dist/img/bg.jpg')}}");
-    background: rgb(211, 211, 211);
-  }
-  </style>
 </head>
 
-<body class="hold-transition sidebar-mini layout-boxed">
+<body class="hold-transition sidebar-mini layout-navbar-fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
 

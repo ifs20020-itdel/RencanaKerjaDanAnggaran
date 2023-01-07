@@ -29,8 +29,10 @@ Route::middleware('auth')->group(function() {
     });
     Route::get('/user/logout', [LoginController::class, 'logout']);
 
+    //Profile
+    Route::get('/profile', [LoginController::class, 'profile']);
     //ALL CRUD Jenis Penggunaan
-    
+
     //ALL CRUD Ajukan RKA
 
 });
