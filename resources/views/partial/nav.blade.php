@@ -40,6 +40,7 @@
       <a class="nav-link" style="color: black" data-toggle="dropdown" href="#">
         <i class="fa-solid fa-user mr-2"></i>
         Roosen Gabriel Manurung
+        <i class="right fas fa-angle-down ml-2"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <span class="dropdown-item dropdown-header">Jabatan</span>
