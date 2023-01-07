@@ -1,7 +1,7 @@
 <p align="center"></p>
 
 <p align="center">
-      <img src="public/dist/images/logo.png" alt="DEL-logo" width="100px" height="auto">
+      <img src="public/dist/images/del.png" alt="DEL-logo" width="100px" height="auto">
    </a>
 </p>
 
@@ -70,11 +70,14 @@ yarn
 ```bash
 yarn dev
 ```
+
 5. Buka file .env pada bagian "DB_DATABASE = RKA-DEL" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DEL.
-Lalu jalankan command berikut di terminal
+   Lalu jalankan command berikut di terminal
+
 ```bash
 php artisan migrate
 ```
+
 6. Seperti biasa, untuk menjalankan server
 
 ```bash
