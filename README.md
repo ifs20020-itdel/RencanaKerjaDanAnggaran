@@ -10,7 +10,7 @@
    </a>
 </h1>
 
-<p align="center">Deskripsi Proyek kita</p>
+<p align="center">Rencana Kerja dan Anggaran merupakan sebuah aplikasi berbasis web yang digunakan oleh Dosen/Staf IT DEL yang memiliki autoritas dengan jabatan sebagai Rektor, WR I, WR II, WR III, Dekan Fakultas, KaProdi, Unit/Upt dan beserta anggotanya, untuk menyerahkan rencana kegiatan tiap unit atau tiap organisasi per unit untuk rencana kerja yang akan berlangsung selama 1 tahun. Pengisian Rencana Kerja Anggaran biasanya akan dilakukan di bulan pertama yaitu Januari menyusul bulan selanjutnya dan berakhir di bulan Desember di setiap tahunnya. Untuk dapat menggunakan aplikasi tersebut, Dosen harus terlebih dahulu melakukan Login dengan akun masing-masing.</p>
 
 ## Introduction 🚀
 
