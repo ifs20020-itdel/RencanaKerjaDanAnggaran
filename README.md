@@ -59,23 +59,12 @@ composer update
 php artisan key:generate
 ```
 
-4. Database
-silahkan buat database dengan nama rka-db pada phpMyAdmin, kemudian jalankan command berikut;
-```bash
-php artisan migrate
-```
-
-5. untuk menjalankan project, jalankan command berikut ini pada project directory, yang sekaligus melakukan compile JavaScript beserta Styles.
-
-```bash
-yarn dev
-```
-5. Buka file .env pada bagian "DB_DATABASE = RKA-DEL" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DEL.
+4. Buka file .env pada bagian "DB_DATABASE = RKA-DB" hidupkan server APACHE dan MySQL lalu kunjungi http://localhost/phpmyadmin/index.php. buatkan DB baru dengan nama RKA-DEL.
 Lalu jalankan command berikut di terminal
 ```bash
 php artisan migrate
 ```
-6. Seperti biasa, untuk menjalankan server
+5. Seperti biasa, untuk menjalankan server
 
 ```bash
 php artisan serve
