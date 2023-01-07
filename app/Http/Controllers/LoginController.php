@@ -76,6 +76,10 @@ class LoginController extends Controller
         return redirect('/');
     }
 
+    public function profile(){
+        return view('pages.profile');
+    }
+
     function logout(Request $request) {
         Auth::logout();
         return redirect('/user/login');

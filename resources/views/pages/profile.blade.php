@@ -1,7 +1,7 @@
 @extends('layout.master')
-@section('title', 'Dasboard')
+@section('title', 'Profile')
 @section('breadcrumb1')
-    <li class="breadcrumb-item">Dashboard</li>
+    <li class="breadcrumb-item">Profile</li>
 @endsection
 
 @section('content')

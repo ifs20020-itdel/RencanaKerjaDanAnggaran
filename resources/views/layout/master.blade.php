@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>@yield('title')</title>
   <link href="{{ asset('layout/dist/img/logo.svg') }}" rel="shortcut icon">
-
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -13,8 +12,16 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('layout/dist/css/adminlte.min.css')}}">
   <link rel="stylesheet" href="{{asset('fontawesome/css/all.css')}}">
+
+  <style>
+  body {
+    background-image: url("{{asset('layout/dist/img/bg.jpg')}}");
+    background: rgb(211, 211, 211);
+  }
+  </style>
 </head>
-<body class="hold-transition sidebar-mini layout-navbar-fixed">
+
+<body class="hold-transition sidebar-mini layout-boxed">
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -34,7 +41,7 @@
       <div class="container-fluid">
         <div class="row ml-1 mb-2">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/"><i class="fa-solid fa-house mr-1"></i> Home</a></li>
             @yield('breadcrumb1')
             @yield('breadcrumb2')
           </ol>
@@ -54,22 +61,7 @@
         <div class="row">
           <div class="col-12">
             <!-- Default box -->
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">@yield('title')</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                @yield('content')
-              </div>
-              <!-- /.card-body -->
-              <!-- /.card-footer-->
-            </div>
+            @yield('content')
             <!-- /.card -->
           </div>
         </div>
