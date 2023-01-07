@@ -59,10 +59,10 @@ composer update
 php artisan key:generate
 ```
 
-4. Dengan menjalankan command, kita akan bisa mendapat folder **node_modules**
-
+4. Database
+silahkan buat database dengan nama rka-db pada phpMyAdmin, kemudian jalankan command berikut;
 ```bash
-yarn
+php artisan migrate
 ```
 
 5. untuk menjalankan project, jalankan command berikut ini pada project directory, yang sekaligus melakukan compile JavaScript beserta Styles.
