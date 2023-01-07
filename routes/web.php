@@ -1,13 +1,8 @@
 <?php
 
-/*
-    NIM  : 11S20020
-    Nama : Roosen Gabriel Manurung 
-*/
-
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\BukuController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,30 +14,23 @@ use App\Http\Controllers\BukuController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware('guest')->group(function(){
+    Route::post('/login/auth', [LoginController::class, 'login']);
 
-Route::get('/', function(){
-    return view('welcomming');
+    Route::get('/user/login', function() {
+        return view('login');
+    })->name('login');
+
 });
 
-Route::get('/', function(){
-    return view('welcomming');
-});
+Route::middleware('auth')->group(function() {
+    Route::get('/', function(){
+        return view('welcomming');
+    });
+    Route::get('/user/logout', [LoginController::class, 'logout']);
 
-Route::controller(MahasiswaController::class)->group(function(){
-    Route::get('/mahasiswa/form-mahasiswa', 'input');
-    Route::post('/mahasiswa/form-hasil', 'proses');
-});
+    //ALL CRUD Jenis Penggunaan
+    
+    //ALL CRUD Ajukan RKA
 
-
-//CRUD BUKU
-Route::resource('tambah-buku', BukuController::class);
-
-Route::controller(BukuController::class)->group(function(){
-    Route::get('/buku/tambah-buku', 'simpanBuku');
-    Route::post('/buku', 'store');
-    Route::get('/buku', 'index');
-    Route::get('/buku/{buku_id}', 'show');
-    Route::get('/buku/{buku_id}/edit', 'edit');
-    Route::put('/buku/{buku_id}', 'update');
-    Route::delete('/buku/{buku_id}', 'destroy');
 });

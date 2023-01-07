@@ -39,11 +39,11 @@
     <li class="nav-item dropdown">
       <a class="nav-link" style="color: black" data-toggle="dropdown" href="#">
         <i class="fa-solid fa-user mr-2"></i>
-        Roosen Gabriel Manurung
+        {{(Auth::user()->nama)}}
         <i class="right fas fa-angle-down ml-2"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-        <span class="dropdown-item dropdown-header">Jabatan</span>
+        <span class="dropdown-item dropdown-header">{{Auth::user()->jabatan_fungsional}}</span>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item text-center">
           <i class="fa-solid fa-person-chalkboard mr-2"></i>Profile
@@ -51,8 +51,7 @@
         <div class="dropdown-divider"></div>
         <a href=""><hr></a>
         <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item text-center">
-          <i class="fa-solid fa-person-to-door"></i>
+        <a href="/user/logout" class="dropdown-item text-center">
           <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
         </a>
       </div>
