@@ -1,7 +1,7 @@
 <p align="center"></p>
 
 <p align="center">
-      <img src="public/dist/img/del.png" alt="DEL-logo" width="100px" height="auto">
+      <img src="public/layout/dist/img/del.png" alt="DEL-logo" width="100px" height="auto">
    </a>
 </p>
 
