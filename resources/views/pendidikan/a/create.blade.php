@@ -43,7 +43,8 @@
             </div>
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-dark float-right">Tambahkan</button>
+                <a href="/biayaOperasionalPendidikan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <button type="submit" class="btn btn-dark float-right mr-4">Tambahkan</button>
             </div>
             
         </form>

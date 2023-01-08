@@ -41,10 +41,8 @@
           </ol>
         </div>
         <hr>
-        <div class="row mb-2">
-          <div class="col-sm-6">
+        <div class="mb-2">
             <h1 class="font-weight-bold">@yield('judul')</h1>
-          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>

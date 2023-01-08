@@ -44,7 +44,7 @@
                         
                         <td>
                             <div class="btn-group btn-group-sm">
-                                <a href="#" class="btn btn-info mr-2"><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                                <a href="/biayaDosen/{{$item->id}}" class="btn btn-info mr-2"><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                                 <a href="#" class="btn btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
                             </div>
                         </td>
@@ -60,7 +60,7 @@
           <br>
         <!--Tambah Data-->
         <div class="card-footer">
-            <a href="/biayaDosen/create"><button type="submit" class="btn btn-dark"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+            <a href="/biayaDosen/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
         </div>
         <!--/.Tambah Data-->
     </div>

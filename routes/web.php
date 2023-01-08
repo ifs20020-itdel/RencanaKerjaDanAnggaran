@@ -39,10 +39,11 @@ Route::middleware('auth')->group(function() {
         Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'operasionalPendidikan']);
         //A. Biaya Dosen
             //Mengarah ke form Create Data
-            Route::get('/biayaDosen/create', [JenisPenggunaanController::class, 'biayaDosenCreate']);
+            Route::get('/biayaDosen/create', [JenisPenggunaanController::class, 'biayaDosenGenreCreate']);
             //Menyimpan Data ke table Jenis Penggunaan (A. Biaya Dosen)
-            Route::post('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenStore']);
+            Route::post('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenGenreStore']);
             //Tampil Semua Data
-            Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenIndex']);
-
+            Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenGenreIndex']);
+            //Detail Data
+            Route::get('/biayaDosen/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreShow']);
 });

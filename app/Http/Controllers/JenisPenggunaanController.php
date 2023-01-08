@@ -13,10 +13,10 @@ class JenisPenggunaanController extends Controller
 
     //Operasional Pendidikan
         //A.Dosen
-        public function biayaDosenCreate(){
+        public function biayaDosenGenreCreate(){
             return view('pendidikan.a.create');
         }
-        public function biayaDosenStore(Request $request){
+        public function biayaDosenGenreStore(Request $request){
             $request->validate([
                 'namaAnggaran' => 'required',
                 'mataAnggaran' => 'required',
@@ -35,10 +35,16 @@ class JenisPenggunaanController extends Controller
             return redirect('/biayaOperasionalPendidikan');
         }
 
-        public function biayaDosenIndex(){
+        public function biayaDosenGenreIndex(){
             $biayaDosenGenre = DB::table('biaya_dosen_genre')->get();
 
             return view('pendidikan.operasionalPendidikan', compact('biayaDosenGenre')); //namaVariabel
+        }
+
+        public function biayaDosenGenreShow($id){
+            $biayaDosenGenre = DB::table('biaya_dosen_genre')->where('id', $id)->first();
+
+            return view('pendidikan.a.show', compact('biayaDosenGenre')); //namaVariabel
         }
         
 
