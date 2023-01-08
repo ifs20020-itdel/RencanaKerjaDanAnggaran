@@ -13,11 +13,11 @@ class JPKemahasiswaanController extends Controller
 //===================================================================================================================================
     //Operasional Pendidikan
         //A.Dosen
-        public function biayaDosenGenreCreate(){
-            return view('pendidikan.a.create');
+        public function operasionalKemahasiswaanGenreCreate(){
+            return view('kemahasiswaan.create');
         }
 
-        public function biayaDosenGenreStore(Request $request){
+        public function operasionalKemahasiswaanGenreStore(Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -26,36 +26,35 @@ class JPKemahasiswaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_operasional_pendidikan')->insert(
+            DB::table('biaya_operasional_kemahasiswaan')->insert(
                 [
-                    'bagianTable' => $request['bagianTable'],
                     'mataAnggaran' => $request['mataAnggaran'],
                     'namaAnggaran' => $request['namaAnggaran']
                 ]
             );
             
-            return redirect('/biayaOperasionalPendidikan');
+            return redirect('/biayaOperasionalKemahasiswaan');
         }
 
-        public function biayaDosenGenreIndex(){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->get();
+        public function operasionalKemahasiswaanGenreIndex(){
+            $biayaOperationalKemahasiswaan = DB::table('biaya_operasional_kemahasiswaan')->get();
 
-            return view('pendidikan.operasionalPendidikan', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('kemahasiswaan.operasionalKemahasiswaan', compact('biayaOperationalKemahasiswaan')); //namaVariabel
         }
 
-        public function biayaDosenGenreShow($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+        public function operasionalKemahasiswaanGenreShow($id){
+            $biayaOperationalKemahasiswaan = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
 
-            return view('pendidikan.a.show', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('kemahasiswaan.show', compact('biayaOperationalKemahasiswaan')); //namaVariabel
         }
 
-        public function biayaDosenGenreEdit($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+        public function operasionalKemahasiswaanGenreEdit($id){
+            $biayaOperationalKemahasiswaan = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
 
-            return view('pendidikan.a.edit', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('kemahasiswaan.edit', compact('biayaOperationalKemahasiswaan')); //namaVariabel
         }
 
-        public function biayaDosenGenreUpdate($id, Request $request){
+        public function operasionalKemahasiswaanGenreUpdate($id, Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -64,21 +63,20 @@ class JPKemahasiswaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_operasional_pendidikan')->where('id', $id)
+            DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)
                 ->update(
                     [
-                        'bagianTable' => $request['bagianTable'],
                         'mataAnggaran' => $request['mataAnggaran'],
                         'namaAnggaran' => $request['namaAnggaran']
                     ]
                 );
             
-            return redirect('/biayaOperasionalPendidikan');
+            return redirect('/biayaOperasionalKemahasiswaan');
         }
         
-        public function biayaDosenGenreDestroy($id){
-            DB::table('biaya_operasional_pendidikan')->where('id', '=', $id)->delete();
-            return redirect('/biayaOperasionalPendidikan');
+        public function operasionalKemahasiswaanGenreDestroy($id){
+            DB::table('biaya_operasional_kemahasiswaan')->where('id', '=', $id)->delete();
+            return redirect('/biayaOperasionalKemahasiswaan');
         }
 
 }
