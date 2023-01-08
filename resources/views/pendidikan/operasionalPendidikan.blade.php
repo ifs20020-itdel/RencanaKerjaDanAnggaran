@@ -31,15 +31,24 @@
                 <th scope="col">No</th>
                 <th scope="col">Mata Anggaran</th>
                 <th scope="col">Nama Anggaran</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
           
                 @forelse ($biayaDosenGenre as $key => $item)
                     <tr>
-                        <td>{{$key = 1}}</td>
+                        <td>{{$key + 1}}</td>
                         <td>{{$item->mataAnggaran}}</td>
                         <td>{{$item->namaAnggaran}}</td>
+                        
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <a href="#" class="btn btn-info mr-2"><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                                <a href="#" class="btn btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
+                            </div>
+                        </td>
+                        
                     </tr>
                 @empty
                     
@@ -48,7 +57,12 @@
             </tbody>
           </table>
           <!--/.Table A-->
-
+          <br>
+        <!--Tambah Data-->
+        <div class="card-footer">
+            <a href="/biayaDosen/create"><button type="submit" class="btn btn-dark"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+        </div>
+        <!--/.Tambah Data-->
     </div>
 
   </div>
@@ -121,8 +135,5 @@
  
   </div>
   <!--/.D. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport, Pajak, Asuransi, dll)-->
-  <div class="card-footer">
-    <button type="submit" class="btn btn-dark float-right">Kembali</button>
-</div>
 
 @endsection
