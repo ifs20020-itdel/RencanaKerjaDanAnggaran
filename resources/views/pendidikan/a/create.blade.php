@@ -10,6 +10,43 @@
 @section('judul', 'A. Biaya Dosen (Gaji Dan Honor)')
 
 @section('content')
+  
+<div class="col-lg-7 col-6">
+    <div class="card card-dark">
+        <div class="card-header">
+            <h3 class="card-title">Form Menambahkan Jenis Penggunaan dan Mata Anggaran</h3>
+        </div>
+                
+        <form action="/biayaOperasionalPendidikan" method="POST">
+            @csrf
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Nama Anggaran</label>
+                    <input type="text" name="namaAnggaran" class="form-control">
 
-hdjkahdkjsahd
+                    @error('namaAnggaran')
+                    <p class="text-danger font-weight-bold">{{$message}}</p>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label>Mata Anggaran</label>
+                    <input type="text" name="mataAnggaran" class="form-control">
+
+                    @error('mataAnggaran')
+                    <p class="text-danger font-weight-bold">{{$message}}</p>
+                    @enderror
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-dark float-right">Tambahkan</button>
+            </div>
+            
+        </form>
+        
+    </div>
+</div>
+
 @endsection

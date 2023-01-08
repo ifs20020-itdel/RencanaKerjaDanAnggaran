@@ -11,8 +11,21 @@ class JenisPenggunaanController extends Controller
     }
     //Operasional Pendidikan
         //A.Dosen
-        public function oPDosenCreate(){
+        public function biayaDosenCreate(){
             return view('pendidikan.a.create');
         }
+        public function biayaDosenStore(Request $request){
+            $request->validate([
+                'namaAnggaran' => 'required',
+                'mataAnggaran' => 'required',
+            ],
+            [
+                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
+                'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
+            ]
+        );
+        }
+
+        
     
 }

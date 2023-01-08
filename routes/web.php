@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function() {
         //Halamam Index
         Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'operasionalPendidikan']);
         //A
-        Route::get('/biayaOperasionalPendidikan/create', [JenisPenggunaanController::class, 'oPDosenCreate']);
-
+        Route::get('/biayaDosen/create', [JenisPenggunaanController::class, 'biayaDosenCreate']);
+        Route::post('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenStore']);
 
 });
