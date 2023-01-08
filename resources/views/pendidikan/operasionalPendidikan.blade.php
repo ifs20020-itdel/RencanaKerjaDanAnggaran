@@ -10,6 +10,7 @@
 
 
 <!--A. Biaya Dosen-->
+<hr>
 <div class="card">
     <div class="card-header">
         <h3 class="card-title font-weight-bold">A. Biaya Dosen (Gaji dan Honor)</h3>
@@ -49,14 +50,18 @@
                                 <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash mr-1"></i>Hapus</button>
+                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
                                 </form>
                             </div>
                         </td>
                         
                     </tr>
                 @empty
-                    
+                <tr>
+                    <td colspan="7" class="text-center p-3 table-active">
+                        Data Jenis Penggunaan Anggaran Belum Ditambahkan
+                    </td>
+                </tr>
                 @endforelse
 
             </tbody>
@@ -74,7 +79,8 @@
   <!--/.A. Biaya Dosen-->
 
   <br>
-
+  <br>
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
   <!--B. Biaya Tenaga Kependidikan-->
   <div class="card">
@@ -97,6 +103,10 @@
   <!--/. B. Biaya Tenaga Kependidikan-->
 
 <br>
+<br>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
 
   <!--C. Biaya Operasional Pembelajaran-->
   <div class="card">
@@ -119,6 +129,9 @@
   <!--/.C. Biaya Operasional Pembelajaran-->
 
   <br>
+  <br>
+
+  <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
   <!--D. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport, Pajak, Asuransi, dll)-->

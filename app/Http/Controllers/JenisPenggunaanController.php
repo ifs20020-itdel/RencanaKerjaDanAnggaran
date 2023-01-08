@@ -72,5 +72,11 @@ class JenisPenggunaanController extends Controller
             
             return redirect('/biayaOperasionalPendidikan');
         }
-    
+        
+        public function biayaDosenGenreDestroy($id){
+            DB::table('biaya_dosen_genre')->where('id', '=', $id)->delete();
+            return redirect('/biayaOperasionalPendidikan');
+        }
+        
+
 }
