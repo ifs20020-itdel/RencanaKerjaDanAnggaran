@@ -45,44 +45,12 @@
 
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/biayaOperasionalPendidikan" class="nav-link">
                 <i class="fa-solid fa-school nav-icon"></i>
                 <p>
                   Pendidikan
-                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-dot-circle nav-icon"></i>
-                    <p>A. Biaya Dosen</p>
-                  </a>
-                </li>
-              
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-dot-circle nav-icon"></i>
-                    <p>B. Gaji Tenaga Kependidikan</p>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-dot-circle nav-icon"></i>
-                    <p>C. Biaya Operasional Pembelajaran</p>
-                  </a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-dot-circle nav-icon"></i>
-                    <p>D. Biaya Operasional Tidak Langsung</p>
-                  </a>
-                </li>
-
-              </ul>
             </li>
 
             <li class="nav-item mt-2">

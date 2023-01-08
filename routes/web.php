@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\JenisPenggunaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,10 @@ Route::middleware('auth')->group(function() {
     //ALL CRUD Jenis Penggunaan
 
     //ALL CRUD Ajukan RKA
+        //Halamam Index
+        Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'operasionalPendidikan']);
+        //A
+        Route::get('/biayaOperasionalPendidikan/create', [JenisPenggunaanController::class, 'oPDosenCreate']);
+
 
 });
