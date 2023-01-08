@@ -46,12 +46,12 @@
                     
                     <td>
                         <div class="btn-group">
-                            <a href="/biayaDosen/{{$item->id}}"><button type="submit" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</button></a>
-                            <a href="/biayaDosen/{{$item->id}}/edit"><button type="submit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</button></a>
+                            <a href="/biayaDosen/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                            <a href="/biayaDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
                             <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
                             </form>
                         </div>
                     </td>
@@ -125,12 +125,12 @@
                     
                     <td>
                         <div class="btn-group">
-                            <a href="/gajiTenagaKependidikan/{{$item->id}}"><button type="submit" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</button></a>
-                            <a href="/gajiTenagaKependidikan/{{$item->id}}/edit"><button type="submit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</button></a>
+                            <a href="/gajiTenagaKependidikan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                            <a href="/gajiTenagaKependidikan/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
                             <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
                             </form>
                         </div>
                     </td>
@@ -204,12 +204,12 @@
                     
                     <td>
                         <div class="btn-group">
-                            <a href="/operasionalPembelajaran/{{$item->id}}"><button type="submit" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</button></a>
-                            <a href="/operasionalPembelajaran/{{$item->id}}/edit"><button type="submit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</button></a>
+                            <a href="/operasionalPembelajaran/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                            <a href="/operasionalPembelajaran/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
                             <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
                             </form>
                         </div>
                     </td>
@@ -285,14 +285,15 @@
                     
                     <td>
                         <div class="btn-group">
-                            <a href="/biayaDosen/{{$item->id}}"><button type="submit" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</button></a>
-                            <a href="/biayaDosen/{{$item->id}}/edit"><button type="submit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</button></a>
+                            <a href="/operasionalTidakLangsung/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                            <a href="/operasionalTidakLangsung/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
                             <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
                             </form>
                         </div>
+
                     </td>
                     
                 </tr>
