@@ -106,10 +106,10 @@ class JenisPenggunaanController extends Controller
             return view('pendidikan.operasionalPendidikan', compact('gajiTenagaKependidikan')); //namaVariabel
         }
 
-        public function biayaDosenGenreShow($id){
-            $biayaDosenGenre = DB::table('biaya_dosen_genre')->where('id', $id)->first();
+        public function gajiTenagaKependidikanShow($id){
+            $gajiTenagaKependidikan = DB::table('gaji_tenaga_kependidikan_genre')->where('id', $id)->first();
 
-            return view('pendidikan.a.show', compact('biayaDosenGenre')); //namaVariabel
+            return view('pendidikan.b.show', compact('gajiTenagaKependidikan')); //namaVariabel
         }
 
         public function biayaDosenGenreEdit($id){
