@@ -81,7 +81,7 @@ class JenisPenggunaanController extends Controller
 //===================================================================================================================================
     //Operasional Pendidikan
         //B. Tenaga Kependidikan
-    public function biayaDosenGenreStore(Request $request){
+    public function gajiTenagaKependidikanCreate(Request $request){
             $request->validate([
                 'namaAnggaran' => 'required',
                 'mataAnggaran' => 'required',
@@ -100,10 +100,10 @@ class JenisPenggunaanController extends Controller
             return redirect('/biayaOperasionalPendidikan');
         }
 
-        public function biayaDosenGenreIndex(){
-            $biayaDosenGenre = DB::table('biaya_dosen_genre')->get();
+        public function gajiTenagaKependidikanStore(){
+            $gajiTenagaKependidikan = DB::table('gaji_tenaga_kependidikan_genre')->get();
 
-            return view('pendidikan.operasionalPendidikan', compact('biayaDosenGenre')); //namaVariabel
+            return view('pendidikan.operasionalPendidikan', compact('gajiTenagaKependidikan')); //namaVariabel
         }
 
         public function biayaDosenGenreShow($id){
