@@ -101,5 +101,18 @@ class JenisPenggunaanController extends Controller
 //===================================================================================================================================
         //Operasional Pendidikan
         //C. Biaya Operasional Pembelajaran
+         public function operasionalPembelajaranCreate(){
+            return view('pendidikan.c.create');
+        }
+        public function operasionalPembelajaranShow($id){
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+
+            return view('pendidikan.c.show', compact('biayaOperationalPendidikan')); //namaVariabel
+        }
+        public function operasionalPembelajaranEdit($id){
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+
+            return view('pendidikan.c.edit', compact('biayaOperationalPendidikan')); //namaVariabel
+        }
 
 }

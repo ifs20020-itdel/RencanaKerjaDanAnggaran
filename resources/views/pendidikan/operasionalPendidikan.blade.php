@@ -204,8 +204,8 @@
                     
                     <td>
                         <div class="btn-group">
-                            <a href="/biayaDosen/{{$item->id}}"><button type="submit" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</button></a>
-                            <a href="/biayaDosen/{{$item->id}}/edit"><button type="submit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</button></a>
+                            <a href="/operasionalPembelajaran/{{$item->id}}"><button type="submit" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</button></a>
+                            <a href="/operasionalPembelajaran/{{$item->id}}/edit"><button type="submit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</button></a>
                             <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
                                 @csrf
                                 @method('delete')
@@ -233,7 +233,7 @@
           <br>
         <!--Tambah Data-->
         <div class="card-footer">
-            <a href="//create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+            <a href="/operasionalPembelajaran/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
         </div>
         <!--/.Tambah Data-->
 

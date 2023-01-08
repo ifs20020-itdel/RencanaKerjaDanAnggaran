@@ -60,6 +60,15 @@ Route::middleware('auth')->group(function() {
             Route::get('/gajiTenagaKependidikan/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'gajiTenagaKependidikanShow']);
             //Edit Data
             Route::get('/gajiTenagaKependidikan/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'gajiTenagaKependidikanEdit']);
+
+            
+          //B. Gaji Tenaga Kependidikan
+            //Mengarah ke form Create Data
+            Route::get('/operasionalPembelajaran/create', [JenisPenggunaanController::class, 'operasionalPembelajaranCreate']);
+            //Detail Data
+            Route::get('/operasionalPembelajaran/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'operasionalPembelajaranShow']);
+            //Edit Data
+            Route::get('/operasionalPembelajaran/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'operasionalPembelajaranEdit']);
         
         
 });
