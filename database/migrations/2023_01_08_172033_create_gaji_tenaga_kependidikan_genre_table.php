@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('gaji_tenaga_kependidikan_genre', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('mataAnggaran');
-            $table->string('namaAnggaran');
+            $table->string('mataAnggaranB');
+            $table->string('namaAnggaranB');
             $table->timestamps();
         });
     }

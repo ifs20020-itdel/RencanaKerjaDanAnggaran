@@ -64,7 +64,7 @@
                 @endforelse
 
             </tbody>
-          </table>
+        </table>
           <!--/.Table A-->
           <br>
         <!--Tambah Data-->
@@ -80,26 +80,6 @@
   <br>
   <br>
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-
-  <!--B. Biaya Tenaga Kependidikan-->
-  <div class="card col-lg-10 col-6 mx-auto">
-    <div class="card-header">
-        <h3 class="card-title font-weight-bold">B. Biaya Tenaga Kependidikan (Gaji dan Honor)</h3>
-
-        <div class="card-tools">    
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-            </button> 
-        </div>
-    
-    </div>
-
-    <div class="card-body">
-      asjdlkajdlkasjd
-    </div>
- 
-  </div>
-  <!--/. B. Biaya Tenaga Kependidikan-->
 
 <br>
 <br>

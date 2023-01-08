@@ -16,19 +16,20 @@ class JenisPenggunaanController extends Controller
         public function biayaDosenGenreCreate(){
             return view('pendidikan.a.create');
         }
+
         public function biayaDosenGenreStore(Request $request){
             $request->validate([
-                'namaAnggaran' => 'required',
                 'mataAnggaran' => 'required',
+                'namaAnggaran' => 'required',
             ],
             [
-                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
+                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
             DB::table('biaya_dosen_genre')->insert(
                 [
-                    'namaAnggaran' => $request['namaAnggaran'],
-                    'mataAnggaran' => $request['mataAnggaran']
+                    'mataAnggaran' => $request['mataAnggaran'],
+                    'namaAnggaran' => $request['namaAnggaran']
                 ]
             );
             
@@ -55,18 +56,18 @@ class JenisPenggunaanController extends Controller
 
         public function biayaDosenGenreUpdate($id, Request $request){
             $request->validate([
-                'namaAnggaran' => 'required',
                 'mataAnggaran' => 'required',
+                'namaAnggaran' => 'required',
             ],
             [
-                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
+                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
             DB::table('biaya_dosen_genre')->where('id', $id)
                 ->update(
                     [
-                        'namaAnggaran' => $request['namaAnggaran'],
-                        'mataAnggaran' => $request['mataAnggaran']
+                        'mataAnggaran' => $request['mataAnggaran'],
+                        'namaAnggaran' => $request['namaAnggaran']
                     ]
                 );
             
@@ -79,68 +80,13 @@ class JenisPenggunaanController extends Controller
         }
 
 //===================================================================================================================================
-    //Operasional Pendidikan
-        //B. Tenaga Kependidikan
-    public function gajiTenagaKependidikanCreate(Request $request){
-            $request->validate([
-                'namaAnggaran' => 'required',
-                'mataAnggaran' => 'required',
-            ],
-            [
-                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
-                'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
-            ]);
-            DB::table('biaya_dosen_genre')->insert(
-                [
-                    'namaAnggaran' => $request['namaAnggaran'],
-                    'mataAnggaran' => $request['mataAnggaran']
-                ]
-            );
-            
-            return redirect('/biayaOperasionalPendidikan');
-        }
+        //Operasional Pendidikan
+        //B. Gaji Tenaga Kependidikan
 
-        public function gajiTenagaKependidikanStore(){
-            $gajiTenagaKependidikan = DB::table('gaji_tenaga_kependidikan_genre')->get();
-
-            return view('pendidikan.operasionalPendidikan', compact('gajiTenagaKependidikan')); //namaVariabel
-        }
-
-        public function gajiTenagaKependidikanShow($id){
-            $gajiTenagaKependidikan = DB::table('gaji_tenaga_kependidikan_genre')->where('id', $id)->first();
-
-            return view('pendidikan.b.show', compact('gajiTenagaKependidikan')); //namaVariabel
-        }
-
-        public function gajiTenagaKependidikanEdit($id){
-            $gajiTenagaKependidikan = DB::table('gaji_tenaga_kependidikan_genre')->where('id', $id)->first();
-
-            return view('pendidikan.b.edit', compact('gajiTenagaKependidikan')); //namaVariabel
-        }
-
-        public function gajiTenagaKependidikanUpdate($id, Request $request){
-            $request->validate([
-                'namaAnggaran' => 'required',
-                'mataAnggaran' => 'required',
-            ],
-            [
-                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
-                'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
-            ]);
-            DB::table('gaji_tenaga_kependidikan_genre')->where('id', $id)
-                ->update(
-                    [
-                        'namaAnggaran' => $request['namaAnggaran'],
-                        'mataAnggaran' => $request['mataAnggaran']
-                    ]
-                );
-            
-            return redirect('/biayaOperasionalPendidikan');
-        }
         
-        public function biayaDosenGenreDestroy($id){
-            DB::table('biaya_dosen_genre')->where('id', '=', $id)->delete();
-            return redirect('/biayaOperasionalPendidikan');
-        }    
+        
+//===================================================================================================================================
+        //Operasional Pendidikan
+        //C. Biaya Operasional Pembelajaran
 
 }

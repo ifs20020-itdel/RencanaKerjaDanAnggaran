@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JenisPenggunaanController;
+use App\Http\Controllers\JPGajiTenagaKependidikanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +29,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/', function(){
         return view('welcomming');
     });
-    Route::get('/user/logout', [LoginController::class, 'logout']);
-
     //Profile
     Route::get('/profile', [LoginController::class, 'profile']);
+    Route::get('/user/logout', [LoginController::class, 'logout']);
     //ALL CRUD Jenis Penggunaan
 
     //ALL CRUD Ajukan RKA
@@ -53,21 +53,6 @@ Route::middleware('auth')->group(function() {
             //Delete Data
             Route::delete('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreDestroy']);
 
-         //A. Biaya Dosen
-            //Mengarah ke form Create Data
-            Route::get('/gajiTenagaKependidikan/create', [JenisPenggunaanController::class, 'gajiTenagaKependidikanCreate']);
-            //Menyimpan Data ke table Jenis Penggunaan (A. Biaya Dosen)
-            Route::post('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'gajiTenagaKependidikanStore']);
-            //Tampil Semua Data
-            Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'gajiTenagaKependidikanIndex']);
-            //Detail Data
-            Route::get('/gajiTenagaKependidikan/{gaji_tenaga_kependidikan_genre_id}', [JenisPenggunaanController::class, 'gajiTenagaKependidikanShow']);
-            //Edit Data
-            Route::get('/gajiTenagaKependidikan/{gaji_tenaga_kependidikan_genre_id}/edit', [JenisPenggunaanController::class, 'gajiTenagaKependidikanEdit']);
-            //Update Data Ke Database
-            Route::put('/biayaOperasionalPendidikan/{gaji_tenaga_kependidikan_genre_id}', [JenisPenggunaanController::class, 'gajiTenagaKependidikanUpdate']);
-            //Delete Data
-            Route::delete('/biayaOperasionalPendidikan/{gaji_tenaga_kependidikan_genre_id}', [JenisPenggunaanController::class, 'gajiTenagaKependidikanDestroy']);
-
-            
+        //Halaman Index
+        
 });
