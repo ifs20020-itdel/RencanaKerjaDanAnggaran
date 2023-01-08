@@ -23,7 +23,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control">
+                    <input type="text" name="namaAnggaran" class="form-control" placeholder="Cth. Gaji Dosen">
 
                     @error('namaAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -32,7 +32,7 @@
 
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control">
+                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. A. II.2.1">
 
                     @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
