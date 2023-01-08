@@ -37,8 +37,12 @@ Route::middleware('auth')->group(function() {
     //ALL CRUD Ajukan RKA
         //Halamam Index
         Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'operasionalPendidikan']);
-        //A
-        Route::get('/biayaDosen/create', [JenisPenggunaanController::class, 'biayaDosenCreate']);
-        Route::post('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenStore']);
+        //A. Biaya Dosen
+            //Mengarah ke form Create Data
+            Route::get('/biayaDosen/create', [JenisPenggunaanController::class, 'biayaDosenCreate']);
+            //Menyimpan Data ke table Jenis Penggunaan (A. Biaya Dosen)
+            Route::post('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenStore']);
+            //Tampil Semua Data
+            Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenIndex']);
 
 });
