@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class JPKemahasiswaanController extends Controller
 {
-    public function operasionalPendidikan(){
-        return view('pendidikan.operasionalPendidikan');
+    public function operasionalKemahasiswaan(){
+        return view('kemahasiswaan.operasionalKemahasiswaan');
     }
 //===================================================================================================================================
     //Operasional Pendidikan

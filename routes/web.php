@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JenisPenggunaanController;
-use App\Http\Controllers\JPGajiTenagaKependidikanController;
+use App\Http\Controllers\JPKemahasiswaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +32,9 @@ Route::middleware('auth')->group(function() {
     //Profile
     Route::get('/profile', [LoginController::class, 'profile']);
     Route::get('/user/logout', [LoginController::class, 'logout']);
-    //ALL CRUD Jenis Penggunaan
+    
 
-    //ALL CRUD Ajukan RKA
+    //ALL CRUD JenisPenggunaan(Pendidikan)
         //Halamam Index
         Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'operasionalPendidikan']);
         //A. Biaya Dosen
@@ -77,6 +77,24 @@ Route::middleware('auth')->group(function() {
             Route::get('/operasionalTidakLangsung/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'operasionalTidakLangsungShow']);
             //Edit Data
             Route::get('/operasionalTidakLangsung/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'operasionalTidakLangsungEdit']);
-        
-        
+  //============================================================================================================================================================================
+
+   //ALL CRUD JenisPenggunaan(Kemahasiswaan)
+        //Halamam Index
+        Route::get('/biayaOperasionalKemahasiswaan', [JenisPenggunaanController::class, 'operasionalKemahasiswaan']);
+          //Mengarah ke form Create Data
+          Route::get('/operasionalKemahasiswaan/create', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreCreate']);
+          //Menyimpan Data ke table Jenis Penggunaan (A. Biaya Dosen)
+          Route::post('/biayaOperasionalKemahasiswaan', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreStore']);
+          //Tampil Semua Data
+          Route::get('/biayaOperasionalKemahasiswaan', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreIndex']);
+          //Detail Data
+          Route::get('/operasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreShow']);
+          //Edit Data
+          Route::get('/operasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}/edit', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreEdit']);
+          //Update Data Ke Database
+          Route::put('/biayaOperasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreUpdate']);
+          //Delete Data
+          Route::delete('/biayaOperasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreDestroy']);
+      
 });
