@@ -118,7 +118,7 @@ class JenisPenggunaanController extends Controller
             return view('pendidikan.b.edit', compact('gajiTenagaKependidikan')); //namaVariabel
         }
 
-        public function biayaDosenGenreUpdate($id, Request $request){
+        public function gajiTenagaKependidikanUpdate($id, Request $request){
             $request->validate([
                 'namaAnggaran' => 'required',
                 'mataAnggaran' => 'required',
@@ -127,7 +127,7 @@ class JenisPenggunaanController extends Controller
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_dosen_genre')->where('id', $id)
+            DB::table('gaji_tenaga_kependidikan_genre')->where('id', $id)
                 ->update(
                     [
                         'namaAnggaran' => $request['namaAnggaran'],
