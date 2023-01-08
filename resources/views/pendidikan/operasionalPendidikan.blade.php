@@ -8,10 +8,9 @@
 
 @section('content')
 
-
 <!--A. Biaya Dosen-->
 <hr>
-<div class="card">
+<div class="card col-lg-10 col-6 mx-auto">
     <div class="card-header">
         <h3 class="card-title font-weight-bold">A. Biaya Dosen (Gaji dan Honor)</h3>
 
@@ -83,7 +82,7 @@
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
   <!--B. Biaya Tenaga Kependidikan-->
-  <div class="card">
+  <div class="card col-lg-10 col-6 mx-auto">
     <div class="card-header">
         <h3 class="card-title font-weight-bold">B. Biaya Tenaga Kependidikan (Gaji dan Honor)</h3>
 
@@ -109,7 +108,7 @@
 
 
   <!--C. Biaya Operasional Pembelajaran-->
-  <div class="card">
+  <div class="card col-lg-10 col-6 mx-auto">
     <div class="card-header">
         <h3 class="card-title font-weight-bold">C. Biaya Operasional Pembelajaran</h3>
 
@@ -135,7 +134,7 @@
 
 
   <!--D. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport, Pajak, Asuransi, dll)-->
-  <div class="card">
+  <div class="card col-lg-10 col-6 mx-auto">
     <div class="card-header">
         <h3 class="card-title font-weight-bold">D. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport, Pajak, Asuransi, dll)</h3>
 
