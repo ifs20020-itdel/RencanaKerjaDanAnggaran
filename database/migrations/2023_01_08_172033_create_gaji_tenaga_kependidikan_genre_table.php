@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('biaya_dosen_genre', function (Blueprint $table) {
+        Schema::create('gaji_tenaga_kependidikan_genre', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('mataAnggaran');
             $table->string('namaAnggaran');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('biaya_dosen_genre');
+        Schema::dropIfExists('gaji_tenaga_kependidikan_genre');
     }
 };
