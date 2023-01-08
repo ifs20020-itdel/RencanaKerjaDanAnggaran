@@ -53,7 +53,21 @@ Route::middleware('auth')->group(function() {
             //Delete Data
             Route::delete('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreDestroy']);
 
-
+         //A. Biaya Dosen
+            //Mengarah ke form Create Data
+            Route::get('/biayaDosen/create', [JenisPenggunaanController::class, 'biayaDosenGenreCreate']);
+            //Menyimpan Data ke table Jenis Penggunaan (A. Biaya Dosen)
+            Route::post('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenGenreStore']);
+            //Tampil Semua Data
+            Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenGenreIndex']);
+            //Detail Data
+            Route::get('/biayaDosen/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreShow']);
+            //Edit Data
+            Route::get('/biayaDosen/{biaya_dosen_genre_id}/edit', [JenisPenggunaanController::class, 'biayaDosenGenreEdit']);
+            //Update Data Ke Database
+            Route::put('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreUpdate']);
+            //Delete Data
+            Route::delete('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreDestroy']);
 
             
 });
