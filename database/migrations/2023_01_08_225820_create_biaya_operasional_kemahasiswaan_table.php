@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('biaya_operasional_kemahasiswaan', function (Blueprint $table) {
             $table->id();
+            $table->string('mataAnggaran');
+            $table->string('namaAnggaran');
             $table->timestamps();
         });
     }
