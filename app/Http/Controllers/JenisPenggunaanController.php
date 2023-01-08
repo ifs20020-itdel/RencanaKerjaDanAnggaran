@@ -115,4 +115,21 @@ class JenisPenggunaanController extends Controller
             return view('pendidikan.c.edit', compact('biayaOperationalPendidikan')); //namaVariabel
         }
 
+//===================================================================================================================================
+        //Operasional Tidak Langsung
+        //D. Biaya Operasional Tidak Langsung
+         public function operasionalTidakLangsungCreate(){
+            return view('pendidikan.d.create');
+        }
+        public function operasionalTidakLangsungShow($id){
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+
+            return view('pendidikan.d.show', compact('biayaOperationalPendidikan')); //namaVariabel
+        }
+        public function operasionalTidakLangsungEdit($id){
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+
+            return view('pendidikan.d.edit', compact('biayaOperationalPendidikan')); //namaVariabel
+        }
+
 }

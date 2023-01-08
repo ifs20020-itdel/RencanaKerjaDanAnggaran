@@ -314,7 +314,7 @@
           <br>
         <!--Tambah Data-->
         <div class="card-footer">
-            <a href="//create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+            <a href="/operasionalTidakLangsung/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
         </div>
         <!--/.Tambah Data-->
 

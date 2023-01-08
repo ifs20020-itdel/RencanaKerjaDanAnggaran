@@ -43,6 +43,7 @@
         <hr>
         <div class="mb-2">
             <h1 class="font-weight-bold">@yield('judul')</h1>
+            <h1 class="font-weight-bold text-center">@yield('judulTengah')</h1>
         </div>
       </div><!-- /.container-fluid -->
     </section>

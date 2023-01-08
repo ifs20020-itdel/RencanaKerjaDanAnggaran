@@ -62,13 +62,21 @@ Route::middleware('auth')->group(function() {
             Route::get('/gajiTenagaKependidikan/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'gajiTenagaKependidikanEdit']);
 
             
-          //B. Gaji Tenaga Kependidikan
+          //C. Biaya Operasional Pembelajaran
             //Mengarah ke form Create Data
             Route::get('/operasionalPembelajaran/create', [JenisPenggunaanController::class, 'operasionalPembelajaranCreate']);
             //Detail Data
             Route::get('/operasionalPembelajaran/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'operasionalPembelajaranShow']);
             //Edit Data
             Route::get('/operasionalPembelajaran/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'operasionalPembelajaranEdit']);
+        
+          //D. Biaya Operasional Tidak Langsung
+            //Mengarah ke form Create Data
+            Route::get('/operasionalTidakLangsung/create', [JenisPenggunaanController::class, 'operasionalTidakLangsungCreate']);
+            //Detail Data
+            Route::get('/operasionalTidakLangsung/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'operasionalTidakLangsungShow']);
+            //Edit Data
+            Route::get('/operasionalTidakLangsung/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'operasionalTidakLangsungEdit']);
         
         
 });
