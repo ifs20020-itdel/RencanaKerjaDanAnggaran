@@ -43,10 +43,14 @@
                         <td>{{$item->namaAnggaran}}</td>
                         
                         <td>
-                            <div class="btn-group btn-group-sm">
-                                <a href="/biayaDosen/{{$item->id}}" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</a>
-                                <a href="/biayaDosen/{{$item->id}}/edit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
-                                <a href="/biayaDosen/{{$item->id}}/edit" class="btn btn-danger"><i class="fa-regular fa-pen-to-square mr-1"></i>Hapus</a>
+                            <div class="btn-group">
+                                <a href="/biayaDosen/{{$item->id}}"><button type="submit" class="btn btn-info mr-5"><i class="fa-regular fa-eye mr-1"></i>Detail</button></a>
+                                <a href="/biayaDosen/{{$item->id}}/edit"><button type="submit" class="btn btn-warning mr-5"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</button></a>
+                                <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash mr-1"></i>Hapus</button>
+                                </form>
                             </div>
                         </td>
                         

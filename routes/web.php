@@ -50,4 +50,10 @@ Route::middleware('auth')->group(function() {
             Route::get('/biayaDosen/{biaya_dosen_genre_id}/edit', [JenisPenggunaanController::class, 'biayaDosenGenreEdit']);
             //Update Data Ke Database
             Route::put('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreUpdate']);
+            //Delete Data
+            Route::delete('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreDestroy']);
+
+
+
+            
 });
