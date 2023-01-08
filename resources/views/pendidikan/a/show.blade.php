@@ -12,7 +12,7 @@
 @endsection
 
 @section('judul')
-A. Biaya Dosen (Gaji dan Honor) - {{$biayaDosenGenre->mataAnggaran}} - {{$biayaDosenGenre->namaAnggaran}}
+A. Biaya Dosen (Gaji dan Honor): &nbsp; {{$biayaDosenGenre->mataAnggaran}} - {{$biayaDosenGenre->namaAnggaran}}
 @endsection
 
 @section('content')

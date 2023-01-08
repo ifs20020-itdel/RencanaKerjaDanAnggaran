@@ -46,8 +46,31 @@ class JenisPenggunaanController extends Controller
 
             return view('pendidikan.a.show', compact('biayaDosenGenre')); //namaVariabel
         }
-        
 
-        
+        public function biayaDosenGenreEdit($id){
+            $biayaDosenGenre = DB::table('biaya_dosen_genre')->where('id', $id)->first();
+
+            return view('pendidikan.a.edit', compact('biayaDosenGenre')); //namaVariabel
+        }
+
+        public function biayaDosenGenreUpdate($id, Request $request){
+            $request->validate([
+                'namaAnggaran' => 'required',
+                'mataAnggaran' => 'required',
+            ],
+            [
+                'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
+                'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
+            ]);
+            DB::table('biaya_dosen_genre')->where('id', $id)
+                ->update(
+                    [
+                        'namaAnggaran' => $request['namaAnggaran'],
+                        'mataAnggaran' => $request['mataAnggaran']
+                    ]
+                );
+            
+            return redirect('/biayaOperasionalPendidikan');
+        }
     
 }
