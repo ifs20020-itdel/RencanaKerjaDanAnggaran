@@ -26,8 +26,9 @@ class JenisPenggunaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_dosen_genre')->insert(
+            DB::table('biaya_operasional_pendidikan')->insert(
                 [
+                    'bagianTable' => $request['bagianTable'],
                     'mataAnggaran' => $request['mataAnggaran'],
                     'namaAnggaran' => $request['namaAnggaran']
                 ]
@@ -37,21 +38,21 @@ class JenisPenggunaanController extends Controller
         }
 
         public function biayaDosenGenreIndex(){
-            $biayaDosenGenre = DB::table('biaya_dosen_genre')->get();
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->get();
 
-            return view('pendidikan.operasionalPendidikan', compact('biayaDosenGenre')); //namaVariabel
+            return view('pendidikan.operasionalPendidikan', compact('biayaOperationalPendidikan')); //namaVariabel
         }
 
         public function biayaDosenGenreShow($id){
-            $biayaDosenGenre = DB::table('biaya_dosen_genre')->where('id', $id)->first();
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
 
-            return view('pendidikan.a.show', compact('biayaDosenGenre')); //namaVariabel
+            return view('pendidikan.a.show', compact('biayaOperationalPendidikan')); //namaVariabel
         }
 
         public function biayaDosenGenreEdit($id){
-            $biayaDosenGenre = DB::table('biaya_dosen_genre')->where('id', $id)->first();
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
 
-            return view('pendidikan.a.edit', compact('biayaDosenGenre')); //namaVariabel
+            return view('pendidikan.a.edit', compact('biayaOperationalPendidikan')); //namaVariabel
         }
 
         public function biayaDosenGenreUpdate($id, Request $request){
@@ -63,9 +64,10 @@ class JenisPenggunaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_dosen_genre')->where('id', $id)
+            DB::table('biaya_operasional_pendidikan')->where('id', $id)
                 ->update(
                     [
+                        'bagianTable' => $request['bagianTable'],
                         'mataAnggaran' => $request['mataAnggaran'],
                         'namaAnggaran' => $request['namaAnggaran']
                     ]
@@ -75,16 +77,27 @@ class JenisPenggunaanController extends Controller
         }
         
         public function biayaDosenGenreDestroy($id){
-            DB::table('biaya_dosen_genre')->where('id', '=', $id)->delete();
+            DB::table('biaya_operasional_pendidikan')->where('id', '=', $id)->delete();
             return redirect('/biayaOperasionalPendidikan');
         }
 
 //===================================================================================================================================
         //Operasional Pendidikan
         //B. Gaji Tenaga Kependidikan
+        public function gajiTenagaKependidikanCreate(){
+            return view('pendidikan.b.create');
+        }
+        public function gajiTenagaKependidikanShow($id){
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
 
-        
-        
+            return view('pendidikan.b.show', compact('biayaOperationalPendidikan')); //namaVariabel
+        }
+        public function gajiTenagaKependidikanEdit($id){
+            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+
+            return view('pendidikan.b.edit', compact('biayaOperationalPendidikan')); //namaVariabel
+        }
+         
 //===================================================================================================================================
         //Operasional Pendidikan
         //C. Biaya Operasional Pembelajaran

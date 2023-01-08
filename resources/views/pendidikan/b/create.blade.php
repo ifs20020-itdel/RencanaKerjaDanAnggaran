@@ -18,24 +18,24 @@
             <h3 class="card-title">Form Menambahkan Jenis Penggunaan dan Mata Anggaran</h3>
         </div>
                 
-        <form action="/gajiTenagaKependidikan" method="POST">
+        <form action="/biayaOperasionalPendidikan" method="POST">
             @csrf
             <div class="card-body">
-                
+                <input type="hidden" name="bagianTable" class="form-control" value="B">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaranB" class="form-control" placeholder="Cth. B. II.2.1" value="{{ old('mataAnggaranB') }}">
+                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. B. II.2.1" value="{{ old('mataAnggaran') }}">
 
-                    @error('mataAnggaranB')
+                    @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
                     @enderror
                 </div>
 
                 <div class="form-group">
                     <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaranB" class="form-control" placeholder="Cth. Gaji Staff Pendukung Akademik Termasuk TA" value="{{ old('namaAnggaranB') }}">
+                    <input type="text" name="namaAnggaran" class="form-control" placeholder="Cth. Gaji Staff Pendukung Akademik Termasuk TA" value="{{ old('namaAnggaran') }}">
 
-                    @error('namaAnggaranB')
+                    @error('namaAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
                     @enderror
                 </div>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="card-footer">
-                <a href="/gajiTenagaKependidikan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <a href="/biayaOperasionalPendidikan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
                 <button type="submit" class="btn btn-dark float-right mr-4">Tambahkan</button>
             </div>
             

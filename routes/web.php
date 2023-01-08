@@ -45,14 +45,21 @@ Route::middleware('auth')->group(function() {
             //Tampil Semua Data
             Route::get('/biayaOperasionalPendidikan', [JenisPenggunaanController::class, 'biayaDosenGenreIndex']);
             //Detail Data
-            Route::get('/biayaDosen/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreShow']);
+            Route::get('/biayaDosen/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'biayaDosenGenreShow']);
             //Edit Data
-            Route::get('/biayaDosen/{biaya_dosen_genre_id}/edit', [JenisPenggunaanController::class, 'biayaDosenGenreEdit']);
+            Route::get('/biayaDosen/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'biayaDosenGenreEdit']);
             //Update Data Ke Database
-            Route::put('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreUpdate']);
+            Route::put('/biayaOperasionalPendidikan/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'biayaDosenGenreUpdate']);
             //Delete Data
-            Route::delete('/biayaOperasionalPendidikan/{biaya_dosen_genre_id}', [JenisPenggunaanController::class, 'biayaDosenGenreDestroy']);
+            Route::delete('/biayaOperasionalPendidikan/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'biayaDosenGenreDestroy']);
 
-        //Halaman Index
+          //B. Gaji Tenaga Kependidikan
+            //Mengarah ke form Create Data
+            Route::get('/gajiTenagaKependidikan/create', [JenisPenggunaanController::class, 'gajiTenagaKependidikanCreate']);
+            //Detail Data
+            Route::get('/gajiTenagaKependidikan/{biaya_operasional_pendidikan_id}', [JenisPenggunaanController::class, 'gajiTenagaKependidikanShow']);
+            //Edit Data
+            Route::get('/gajiTenagaKependidikan/{biaya_operasional_pendidikan_id}/edit', [JenisPenggunaanController::class, 'gajiTenagaKependidikanEdit']);
+        
         
 });

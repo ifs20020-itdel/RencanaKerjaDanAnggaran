@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('title')
-    {{$biayaDosenGenre->mataAnggaran}}
+    {{$biayaOperationalPendidikan->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
     <li class="breadcrumb-item"><a href="/biayaOperasionalPendidikan">Operasional Pendidikan</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$biayaDosenGenre->mataAnggaran}} / Edit</li>
+    <li class="breadcrumb-item">{{$biayaOperationalPendidikan->mataAnggaran}} / Edit</li>
 @endsection
 
 @section('judul')
-Halaman Edit Data: &nbsp; {{$biayaDosenGenre->mataAnggaran}} - {{$biayaDosenGenre->namaAnggaran}}
+Halaman Edit Data: &nbsp; {{$biayaOperationalPendidikan->mataAnggaran}} - {{$biayaOperationalPendidikan->namaAnggaran}}
 @endsection
 
 @section('content')
@@ -24,14 +24,14 @@ Halaman Edit Data: &nbsp; {{$biayaDosenGenre->mataAnggaran}} - {{$biayaDosenGenr
             <h3 class="card-title">Form Update Jenis Penggunaan dan Mata Anggaran</h3>
         </div>
                 
-        <form action="/biayaOperasionalPendidikan/{{$biayaDosenGenre->id}}" method="POST">
+        <form action="/biayaOperasionalPendidikan/{{$biayaOperationalPendidikan->id}}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">
-                
+                <input type="hidden" name="bagianTable" class="form-control" value="A">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control" value="{{$biayaDosenGenre->mataAnggaran}}">
+                    <input type="text" name="mataAnggaran" class="form-control" value="{{$biayaOperationalPendidikan->mataAnggaran}}">
 
                     @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -40,7 +40,7 @@ Halaman Edit Data: &nbsp; {{$biayaDosenGenre->mataAnggaran}} - {{$biayaDosenGenr
 
                 <div class="form-group">
                     <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control" value="{{$biayaDosenGenre->namaAnggaran}}">
+                    <input type="text" name="namaAnggaran" class="form-control" value="{{$biayaOperationalPendidikan->namaAnggaran}}">
 
                     @error('namaAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>

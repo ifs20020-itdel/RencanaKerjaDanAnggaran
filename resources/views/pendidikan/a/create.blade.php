@@ -21,7 +21,7 @@
         <form action="/biayaOperasionalPendidikan" method="POST">
             @csrf
             <div class="card-body">
-                
+                <input type="hidden" name="bagianTable" class="form-control" value="A">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
                     <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. A. II.2.1" value="{{old('mataAnggaran')}}">

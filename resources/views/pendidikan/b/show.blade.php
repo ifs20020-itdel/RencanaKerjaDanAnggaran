@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('title')
-    {{$gajiTenagaKependidikan->mataAnggaran}}
+    {{$biayaOperationalPendidikan->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
     <li class="breadcrumb-item"><a href="/biayaOperasionalPendidikan">Operasional Pendidikan</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$gajiTenagaKependidikan->mataAnggaran}}</li>
+    <li class="breadcrumb-item">{{$biayaOperationalPendidikan->mataAnggaran}}</li>
 @endsection
 
 @section('judul')
-A. Biaya Dosen (Gaji dan Honor): &nbsp; {{$gajiTenagaKependidikan->mataAnggaran}} - {{$gajiTenagaKependidikan->namaAnggaran}}
+B. Gaji Tenaga Kependidikan: &nbsp; {{$biayaOperationalPendidikan->mataAnggaran}} - {{$biayaOperationalPendidikan->namaAnggaran}}
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@ A. Biaya Dosen (Gaji dan Honor): &nbsp; {{$gajiTenagaKependidikan->mataAnggaran}
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$gajiTenagaKependidikan->namaAnggaran}}</strong></h3>
+        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$biayaOperationalPendidikan->namaAnggaran}}</strong></h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
