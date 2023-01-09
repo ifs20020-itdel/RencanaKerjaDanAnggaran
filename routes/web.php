@@ -4,12 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JenisPenggunaanController;
-use App\Http\Controllers\JPKemahasiswaanController;
-use App\Http\Controllers\JPPenelitianController;
-use App\Http\Controllers\JPPkMController;
-use App\Http\Controllers\InvestasiSDMController;
-use App\Http\Controllers\InvestasiSaranaController;
-use App\Http\Controllers\InvestasiPrasaranaController;
+use App\Http\Controllers\PengajuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,6 +83,12 @@ Route::middleware('auth')->group(function() {
      //6. Biaya Prasarana
      Route::get('/jpPrasarana/create', [JenisPenggunaanController::class, 'PrasaranaCreate']);
      Route::get('/jpPrasarana/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'PrasaranaEdit']);
-         
+  
 
+//Pengajuan
+//=====================================================================================================================================================
+     //Ajukan Rencana Kerja Dan Anggaran
+     //1. Biaya Dosen
+        //A. Create
+        Route::get('/PDosen/create', [PengajuanController::class, 'PDosenCreate']);
 });

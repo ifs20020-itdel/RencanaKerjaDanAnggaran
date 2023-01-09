@@ -9,6 +9,7 @@
 <!-- ./col -->
 <div class="col-lg-7 col-6 mx-auto">
   <!-- small box -->
+  
   <div class="small-box bg-info">
     <div class="inner text-center">
         <h5>Selamat Datang!</h5>
@@ -19,5 +20,6 @@
     </div>
   </div>
 </div>
+
         
 @endsection

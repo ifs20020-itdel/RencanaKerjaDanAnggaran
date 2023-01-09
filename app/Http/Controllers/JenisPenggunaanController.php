@@ -26,7 +26,7 @@ class JenisPenggunaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('jenis_penggunaan')->insert(
+            DB::table('penggunaan')->insert(
                 [
                     'bagianTable' => $request['bagianTable'],
                     'mataAnggaran' => $request['mataAnggaran'],
@@ -37,17 +37,17 @@ class JenisPenggunaanController extends Controller
         }
 
         public function biayaDosenIndex(){
-            $JenisPenggunaan = DB::table('jenis_penggunaan')->get();
+            $JenisPenggunaan = DB::table('penggunaan')->get();
             return view('workplan.jenisPenggunaan.index', compact('JenisPenggunaan')); //namaVariabel
         }
 
         public function biayaDosenShow($id){
-            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+            $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
             return view('workplan.jenisPenggunaan.show', compact('JenisPenggunaan')); //namaVariabel
         }
         public function biayaDosenEdit($id){
-            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+            $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
             return view('workplan.jenisPenggunaan.pendidikan.a.edit', compact('JenisPenggunaan')); //namaVariabel
         }
@@ -60,7 +60,7 @@ class JenisPenggunaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('jenis_penggunaan')->where('id', $id)
+            DB::table('penggunaan')->where('id', $id)
                 ->update(
                     [
                         'bagianTable' => $request['bagianTable'],
@@ -73,7 +73,7 @@ class JenisPenggunaanController extends Controller
         }
 
         public function biayaDosenDestroy($id){
-            DB::table('jenis_penggunaan')->where('id', '=', $id)->delete();
+            DB::table('penggunaan')->where('id', '=', $id)->delete();
             return redirect('/addJenisPenggunaan');
         }
 
@@ -84,7 +84,7 @@ class JenisPenggunaanController extends Controller
             return view('workplan.jenisPenggunaan.pendidikan.b.create');
         }
         public function biayaTKEdit($id){
-            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+            $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
             return view('workplan.jenisPenggunaan.pendidikan.b.edit', compact('JenisPenggunaan')); //namaVariabel
         }
@@ -96,7 +96,7 @@ class JenisPenggunaanController extends Controller
             return view('workplan.jenisPenggunaan.pendidikan.c.create');
         }
         public function biayaOPEdit($id){
-            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+            $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
             return view('workplan.jenisPenggunaan.pendidikan.c.edit', compact('JenisPenggunaan')); //namaVariabel
         }
@@ -108,7 +108,7 @@ class JenisPenggunaanController extends Controller
             return view('workplan.jenisPenggunaan.pendidikan.d.create');
         }
         public function biayaOPTLEdit($id){
-            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+            $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
             return view('workplan.jenisPenggunaan.pendidikan.d.edit', compact('JenisPenggunaan')); //namaVariabel
         }
@@ -119,7 +119,7 @@ class JenisPenggunaanController extends Controller
         return view('workplan.jenisPenggunaan.kemahasiswaan.create');
     }
     public function KemahasiswaanEdit($id){
-        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+        $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
         return view('workplan.jenisPenggunaan.kemahasiswaan.edit', compact('JenisPenggunaan')); //namaVariabel
     }
@@ -130,7 +130,7 @@ class JenisPenggunaanController extends Controller
         return view('workplan.jenisPenggunaan.penelitian.create');
     }
     public function PenelitianEdit($id){
-        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+        $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
         return view('workplan.jenisPenggunaan.penelitian.edit', compact('JenisPenggunaan')); //namaVariabel
     }
@@ -141,7 +141,7 @@ class JenisPenggunaanController extends Controller
         return view('workplan.jenisPenggunaan.PkM.create');
     }
     public function PkMEdit($id){
-        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+        $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
         return view('workplan.jenisPenggunaan.PkM.edit', compact('JenisPenggunaan')); //namaVariabel
     }
@@ -152,7 +152,7 @@ class JenisPenggunaanController extends Controller
         return view('workplan.jenisPenggunaan.sdm.create');
     }
     public function SDMEdit($id){
-        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+        $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
         return view('workplan.jenisPenggunaan.sdm.edit', compact('JenisPenggunaan')); //namaVariabel
     }
@@ -163,7 +163,7 @@ class JenisPenggunaanController extends Controller
         return view('workplan.jenisPenggunaan.sarana.create');
     }
     public function SaranaEdit($id){
-        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+        $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
         return view('workplan.jenisPenggunaan.sarana.edit', compact('JenisPenggunaan')); //namaVariabel
     }
@@ -175,7 +175,7 @@ class JenisPenggunaanController extends Controller
         return view('workplan.jenisPenggunaan.prasarana.create');
     }
     public function PrasaranaEdit($id){
-        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+        $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 
         return view('workplan.jenisPenggunaan.prasarana.edit', compact('JenisPenggunaan')); //namaVariabel
     }

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_penggunaan', function (Blueprint $table) {
+        Schema::create('penggunaan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('bagianTable');
             $table->string('mataAnggaran');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_penggunaan');
+        Schema::dropIfExists('penggunaan');
     }
 };
