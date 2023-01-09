@@ -7,6 +7,7 @@ use App\Http\Controllers\JenisPenggunaanController;
 use App\Http\Controllers\JPKemahasiswaanController;
 use App\Http\Controllers\JPPenelitianController;
 use App\Http\Controllers\JPPkMController;
+use App\Http\Controllers\InvestasiSDMController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,4 +115,14 @@ Route::middleware('auth')->group(function() {
         Route::put('/pkm/{pkm_id}', [JPPkMController::class, 'pkmUpdate']);
         Route::delete('/pkm/{pkm_id}', [JPPkMController::class, 'pkmDestroy']);
        
+      //ALL CRUD JenisPenggunaan(InvestasiSDM)
+        //Halamam Index
+        Route::get('/investasiSDM', [InvestasiSDMController::class, 'investasiSDM']);
+        Route::get('/investasiSDM/create', [InvestasiSDMController::class, 'investasiSDMCreate']);
+        Route::post('/investasiSDM', [InvestasiSDMController::class, 'investasiSDMStore']);
+        Route::get('/investasiSDM', [InvestasiSDMController::class, 'investasiSDMIndex']);
+        Route::get('/investasiSDM/{investasiSDM_id}', [InvestasiSDMController::class, 'investasiSDMShow']);
+        Route::get('/investasiSDM/{investasiSDM_id}/edit', [InvestasiSDMController::class, 'investasiSDMEdit']);
+        Route::put('/investasiSDM/{investasiSDM_id}', [InvestasiSDMController::class, 'investasiSDMUpdate']);
+        Route::delete('/investasiSDM/{investasiSDM_id}', [InvestasiSDMController::class, 'investasiSDMDestroy']);
 });

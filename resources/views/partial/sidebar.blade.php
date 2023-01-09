@@ -76,7 +76,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/investasiSDM" class="nav-link">
                 <i class="fa-solid fa-brain nav-icon"></i>
                 <p>Investasi SDM</p>
               </a>
