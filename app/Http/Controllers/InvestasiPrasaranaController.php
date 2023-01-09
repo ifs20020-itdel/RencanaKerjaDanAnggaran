@@ -7,15 +7,15 @@ use Illuminate\Support\Facades\DB;
 
 class InvestasiPrasaranaController extends Controller
 {
-    public function Investasisarana(){
-        return view('jenisPenggunaan.sarana.sarana');
+    public function InvestasiPrasarana(){
+        return view('jenisPenggunaan.prasarana.prasarana');
     }
 //===================================================================================================================================
-        public function saranaCreate(){
-            return view('jenisPenggunaan.sarana.create');
+        public function PrasaranaCreate(){
+            return view('jenisPenggunaan.prasarana.create');
         }
 
-        public function saranaStore(Request $request){
+        public function PrasaranaStore(Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -24,35 +24,35 @@ class InvestasiPrasaranaController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('investasi_sarana')->insert(
+            DB::table('investasi_prasarana')->insert(
                 [
                     'mataAnggaran' => $request['mataAnggaran'],
                     'namaAnggaran' => $request['namaAnggaran']
                 ]
             );
             
-            return redirect('/sarana');
+            return redirect('/prasarana');
         }
 
-        public function saranaIndex(){
-            $saranaBOP = DB::table('investasi_sarana')->get();
+        public function PrasaranaIndex(){
+            $prasaranaBOP = DB::table('investasi_prasarana')->get();
 
-            return view('jenisPenggunaan.sarana.sarana', compact('saranaBOP')); //namaVariabel
+            return view('jenisPenggunaan.prasarana.prasarana', compact('prasaranaBOP')); //namaVariabel
         }
 
-        public function saranaShow($id){
-            $saranaBOP = DB::table('investasi_sarana')->where('id', $id)->first();
+        public function PrasaranaShow($id){
+            $prasaranaBOP = DB::table('investasi_prasarana')->where('id', $id)->first();
 
-            return view('jenisPenggunaan.sarana.show', compact('saranaBOP')); //namaVariabel
+            return view('jenisPenggunaan.prasarana.show', compact('prasaranaBOP')); //namaVariabel
         }
 
-        public function saranaEdit($id){
-            $saranaBOP = DB::table('investasi_sarana')->where('id', $id)->first();
+        public function PrasaranaEdit($id){
+            $prasaranaBOP = DB::table('investasi_prasarana')->where('id', $id)->first();
 
-            return view('jenisPenggunaan.sarana.edit', compact('saranaBOP')); //namaVariabel
+            return view('jenisPenggunaan.prasarana.edit', compact('prasaranaBOP')); //namaVariabel
         }
 
-        public function saranaUpdate($id, Request $request){
+        public function PrasaranaUpdate($id, Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -61,7 +61,7 @@ class InvestasiPrasaranaController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('investasi_sarana')->where('id', $id)
+            DB::table('investasi_prasarana')->where('id', $id)
                 ->update(
                     [
                         'mataAnggaran' => $request['mataAnggaran'],
@@ -69,11 +69,11 @@ class InvestasiPrasaranaController extends Controller
                     ]
                 );
             
-            return redirect('/sarana');
+            return redirect('/prasarana');
         }
         
-        public function saranaDestroy($id){
-            DB::table('investasi_sarana')->where('id', '=', $id)->delete();
-            return redirect('/investasisarana');
+        public function PrasaranaDestroy($id){
+            DB::table('investasi_prasarana')->where('id', '=', $id)->delete();
+            return redirect('/prasarana');
         }
 }

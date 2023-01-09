@@ -138,4 +138,15 @@ Route::middleware('auth')->group(function() {
         Route::get('/sarana/{sarana_id}/edit', [InvestasiSaranaController::class, 'saranaEdit']);
         Route::put('/sarana/{sarana_id}', [InvestasiSaranaController::class, 'saranaUpdate']);
         Route::delete('/sarana/{sarana_id}', [InvestasiSaranaController::class, 'saranaDestroy']);
+
+         //ALL CRUD JenisPenggunaan(Prasarana)
+        //Halamam Index
+        Route::get('/prasarana', [InvestasiPrasaranaController::class, 'InvestasiPrasarana']);
+        Route::get('/prasarana/create', [InvestasiPrasaranaController::class, 'PrasaranaCreate']);
+        Route::post('/prasarana', [InvestasiPrasaranaController::class, 'PrasaranaStore']);
+        Route::get('/prasarana', [InvestasiPrasaranaController::class, 'PrasaranaIndex']);
+        Route::get('/prasarana/{prasarana_id}', [InvestasiPrasaranaController::class, 'PrasaranaShow']);
+        Route::get('/prasarana/{prasarana_id}/edit', [InvestasiPrasaranaController::class, 'PrasaranaEdit']);
+        Route::put('/prasarana/{prasarana_id}', [InvestasiPrasaranaController::class, 'PrasaranaUpdate']);
+        Route::delete('/prasarana/{prasarana_id}', [InvestasiPrasaranaController::class, 'PrasaranaDestroy']);
 });

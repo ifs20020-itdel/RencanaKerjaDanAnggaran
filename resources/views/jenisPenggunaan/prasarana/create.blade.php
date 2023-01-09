@@ -7,7 +7,7 @@
     <li class="breadcrumb-item">Create</li>
 @endsection
 
-@section('judul', '6. Biaya Investasi Prasarana')
+@section('judul', '7. Biaya Investasi Prasarana')
 
 @section('content')
 <h6>Berikut Panduan Template RKA  <a href="https://docs.google.com/spreadsheets/d/140zs3W8NE7GwuaQlNXegL6atDtKjO4y7/edit#gid=712992635" target="_blank"><span class="badge badge-success ml-1">Template RKA</span></a></h6>
@@ -23,7 +23,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. II.5.1" value="{{old('mataAnggaran')}}">
+                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. II.8.1" value="{{old('mataAnggaran')}}">
 
                     @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -32,7 +32,7 @@
 
                 <div class="form-group">
                     <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control" placeholder="Cth. Rekrutmen Pegawai" value="{{old('namaAnggaran')}}">
+                    <input type="text" name="namaAnggaran" class="form-control" placeholder="Cth. Pemeliharaan Fasilitas Umum (Bangunan)" value="{{old('namaAnggaran')}}">
 
                     @error('namaAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>

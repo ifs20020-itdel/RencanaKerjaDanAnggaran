@@ -23,7 +23,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. II.3.1" value="{{old('mataAnggaran')}}">
+                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. II.4.1" value="{{old('mataAnggaran')}}">
 
                     @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
