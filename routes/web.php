@@ -68,7 +68,15 @@ Route::middleware('auth')->group(function() {
     //2. Biaya Operasional Kemahasiswaan
     Route::get('/jpKemahasiswaan/create', [JenisPenggunaanController::class, 'KemahasiswaanCreate']);
     Route::get('/jpKemahasiswaan/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'KemahasiswaanEdit']);
+    
+    //3. Biaya Penelitian
+    Route::get('/jpPenelitian/create', [JenisPenggunaanController::class, 'PenelitianCreate']);
+    Route::get('/jpPenelitian/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'PenelitianEdit']);
       
+    //4. Biaya PkM
+    Route::get('/jpPkM/create', [JenisPenggunaanController::class, 'PkMCreate']);
+    Route::get('/jpPkM/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'PkMEdit']);
+       
 
 
 });

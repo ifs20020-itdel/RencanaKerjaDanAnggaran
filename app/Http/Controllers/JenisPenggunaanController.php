@@ -123,6 +123,28 @@ class JenisPenggunaanController extends Controller
 
         return view('workplan.jenisPenggunaan.kemahasiswaan.edit', compact('JenisPenggunaan')); //namaVariabel
     }
+
+//===================================================================================================================================
+// 3. Biaya Penelitian
+    public function PenelitianCreate(){
+        return view('workplan.jenisPenggunaan.penelitian.create');
+    }
+    public function PenelitianEdit($id){
+        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+
+        return view('workplan.jenisPenggunaan.penelitian.edit', compact('JenisPenggunaan')); //namaVariabel
+    }
+
+//===================================================================================================================================
+// 4. Biaya PkM
+    public function PkMCreate(){
+        return view('workplan.jenisPenggunaan.PkM.create');
+    }
+    public function PkMEdit($id){
+        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+
+        return view('workplan.jenisPenggunaan.PkM.edit', compact('JenisPenggunaan')); //namaVariabel
+    }
     
 
 }

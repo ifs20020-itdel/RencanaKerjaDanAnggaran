@@ -475,7 +475,7 @@
 <!--4. Biaya PkM-->
 <div class="card ml-5 col-lg-11 col-6">
     <div class="card-header">
-        <h3 class="card-title font-weight-bold">5. Biaya PkM</h3>
+        <h3 class="card-title font-weight-bold">4. Biaya PkM</h3>
 
         <div class="card-tools">    
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -688,6 +688,82 @@
         <!--Tambah Data-->
         <div class="card-footer">
             <a href="/jpSarana/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+        </div>
+        <!--/.Tambah Data-->
+
+    </div>
+
+</div>
+  
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<br>
+<br>
+
+<!--7. Biaya Investasi Prasarana-->
+<div class="card ml-5 col-lg-11 col-6">
+    <div class="card-header">
+        <h3 class="card-title font-weight-bold">7. Biaya Investasi Prasarana</h3>
+
+        <div class="card-tools">    
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button> 
+        </div>
+    
+    </div>
+
+    <div class="card-body">
+        <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Mata Anggaran</th>
+                <th scope="col">Nama Anggaran</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                <span class="text-white">{{ $byk = 0 }}</span>
+                @foreach ($JenisPenggunaan as $item)
+                @if ($item->bagianTable == "7")
+                <tr>
+                    <td>{{ $byk+=1 }}</td>
+                    <td>{{$item->mataAnggaran}}</td>
+                    <td>{{$item->namaAnggaran}}</td>
+                    
+                    <td>
+                        <div class="btn-group">
+                            <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                            <a href="/jpPrasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
+                            <form action="/addJenisPenggunaan/{{$item->id}}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                    
+                </tr>
+                @endif
+                    @endforeach
+                @if ($byk == 0)
+                <tr>
+                    <td colspan="7" class="text-center p-3 table-active">
+                        Data Jenis Penggunaan Anggaran Belum Ditambahkan
+                    </td>
+                </tr>
+                @else
+                
+                @endif 
+
+            </tbody>
+        </table>
+
+          <br>
+        <!--Tambah Data-->
+        <div class="card-footer">
+            <a href="/jpPrasarana/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
         </div>
         <!--/.Tambah Data-->
 
