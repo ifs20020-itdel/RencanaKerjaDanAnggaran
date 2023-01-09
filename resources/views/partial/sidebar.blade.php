@@ -83,14 +83,14 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/sarana" class="nav-link">
                 <i class="fa-sharp fa-solid fa-vial-virus nav-icon"></i>
                 <p>Investasi Sarana</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/prasarana" class="nav-link">
                 <i class="fa-solid fa-screwdriver-wrench nav-icon"></i>
                 <p>Investasi Prasarana</p>
               </a>

@@ -1,13 +1,13 @@
 @extends('layout.master')
-@section('title', 'SDM')
+@section('title', 'Prasarana')
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/investasiSDM">Biaya Investasi SDM</a></li>
+    <li class="breadcrumb-item"><a href="/prasarana">Biaya Investasi Prasarana</a></li>
 @endsection
 @section('breadcrumb2')
     <li class="breadcrumb-item">Create</li>
 @endsection
 
-@section('judul', '5. Biaya Investasi SDM')
+@section('judul', '6. Biaya Investasi Prasarana')
 
 @section('content')
 <h6>Berikut Panduan Template RKA  <a href="https://docs.google.com/spreadsheets/d/140zs3W8NE7GwuaQlNXegL6atDtKjO4y7/edit#gid=712992635" target="_blank"><span class="badge badge-success ml-1">Template RKA</span></a></h6>
@@ -18,7 +18,7 @@
             <h3 class="card-title">Form Menambahkan Jenis Penggunaan dan Mata Anggaran</h3>
         </div>
                 
-        <form action="/investasiSDM" method="POST">
+        <form action="/prasarana" method="POST">
             @csrf
             <div class="card-body">
                 <div class="form-group">
@@ -42,7 +42,7 @@
             </div>
 
             <div class="card-footer">
-                <a href="/investasiSDM" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <a href="/prasarana" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
                 <button type="submit" class="btn btn-dark float-right mr-4">Tambahkan</button>
             </div>
             

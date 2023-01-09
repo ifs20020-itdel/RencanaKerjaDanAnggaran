@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('title')
-    {{$SDMBOP->mataAnggaran}}
+    {{$saranaBOP->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/investasiSDM">Biaya Investasi SDM</a></li>
+    <li class="breadcrumb-item"><a href="/sarana">Biaya Investasi Sarana</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$SDMBOP->mataAnggaran}} / Edit</li>
+    <li class="breadcrumb-item">{{$saranaBOP->mataAnggaran}} / Edit</li>
 @endsection
 
 @section('judul')
-Halaman Edit Data: &nbsp; {{$SDMBOP->mataAnggaran}} - {{$SDMBOP->namaAnggaran}}
+Halaman Edit Data: &nbsp; {{$saranaBOP->mataAnggaran}} - {{$saranaBOP->namaAnggaran}}
 @endsection
 
 @section('content')
@@ -24,14 +24,14 @@ Halaman Edit Data: &nbsp; {{$SDMBOP->mataAnggaran}} - {{$SDMBOP->namaAnggaran}}
             <h3 class="card-title">Form Update Jenis Penggunaan dan Mata Anggaran</h3>
         </div>
                 
-        <form action="/investasiSDM/{{$SDMBOP->id}}" method="POST">
+        <form action="/sarana/{{$saranaBOP->id}}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">
                
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control" value="{{$SDMBOP->mataAnggaran}}">
+                    <input type="text" name="mataAnggaran" class="form-control" value="{{$saranaBOP->mataAnggaran}}">
 
                     @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -40,7 +40,7 @@ Halaman Edit Data: &nbsp; {{$SDMBOP->mataAnggaran}} - {{$SDMBOP->namaAnggaran}}
 
                 <div class="form-group">
                     <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control" value="{{$SDMBOP->namaAnggaran}}">
+                    <input type="text" name="namaAnggaran" class="form-control" value="{{$saranaBOP->namaAnggaran}}">
 
                     @error('namaAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -50,7 +50,7 @@ Halaman Edit Data: &nbsp; {{$SDMBOP->mataAnggaran}} - {{$SDMBOP->namaAnggaran}}
             </div>
 
             <div class="card-footer">
-                <a href="/investasiSDM" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <a href="/sarana" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
                 <button type="submit" class="btn btn-success float-right mr-4">Update</button>
             </div>
             

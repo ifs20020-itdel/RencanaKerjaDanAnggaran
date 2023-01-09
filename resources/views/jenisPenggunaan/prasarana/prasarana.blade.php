@@ -1,10 +1,10 @@
 @extends('layout.master')
-@section('title', 'SDM')
+@section('title', 'Prasarana')
 @section('breadcrumb1')
-    <li class="breadcrumb-item">Biaya Investasi SDM</li>
+    <li class="breadcrumb-item">Biaya Investasi Prasarana</li>
 @endsection
 
-@section('judul', '5. Biaya Investasi SDM')
+@section('judul', '7. Biaya Investasi Prasarana')
 
 @section('content')
 <hr>
@@ -31,16 +31,16 @@
             </thead>
             <tbody>
             
-                @forelse ($SDMBOP as $key => $item)
+                @forelse ($prasaranaBOP as $key => $item)
                 <tr>
                     <td>{{$key + 1 }}</td>
                     <td>{{$item->mataAnggaran}}</td>
                     <td>{{$item->namaAnggaran}}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="/investasiSDM/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
-                            <a href="/investasiSDM/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
-                            <form action="/investasiSDM/{{$item->id}}" method="POST">
+                            <a href="/prasarana/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                            <a href="/prasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
+                            <form action="/prasarana/{{$item->id}}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -63,7 +63,7 @@
           <br>
         <!--Tambah Data-->
         <div class="card-footer">
-            <a href="/investasiSDM/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+            <a href="/prasarana/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
         </div>
         <!--/.Tambah Data-->
     </div>

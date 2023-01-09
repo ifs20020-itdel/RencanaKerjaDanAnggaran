@@ -8,6 +8,8 @@ use App\Http\Controllers\JPKemahasiswaanController;
 use App\Http\Controllers\JPPenelitianController;
 use App\Http\Controllers\JPPkMController;
 use App\Http\Controllers\InvestasiSDMController;
+use App\Http\Controllers\InvestasiSaranaController;
+use App\Http\Controllers\InvestasiPrasaranaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -125,4 +127,15 @@ Route::middleware('auth')->group(function() {
         Route::get('/investasiSDM/{investasiSDM_id}/edit', [InvestasiSDMController::class, 'investasiSDMEdit']);
         Route::put('/investasiSDM/{investasiSDM_id}', [InvestasiSDMController::class, 'investasiSDMUpdate']);
         Route::delete('/investasiSDM/{investasiSDM_id}', [InvestasiSDMController::class, 'investasiSDMDestroy']);
+
+        //ALL CRUD JenisPenggunaan(Sarana)
+        //Halamam Index
+        Route::get('/sarana', [InvestasiSaranaController::class, 'Investasisarana']);
+        Route::get('/sarana/create', [InvestasiSaranaController::class, 'saranaCreate']);
+        Route::post('/sarana', [InvestasiSaranaController::class, 'saranaStore']);
+        Route::get('/sarana', [InvestasiSaranaController::class, 'saranaIndex']);
+        Route::get('/sarana/{sarana_id}', [InvestasiSaranaController::class, 'saranaShow']);
+        Route::get('/sarana/{sarana_id}/edit', [InvestasiSaranaController::class, 'saranaEdit']);
+        Route::put('/sarana/{sarana_id}', [InvestasiSaranaController::class, 'saranaUpdate']);
+        Route::delete('/sarana/{sarana_id}', [InvestasiSaranaController::class, 'saranaDestroy']);
 });

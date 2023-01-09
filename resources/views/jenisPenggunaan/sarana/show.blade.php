@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('title')
-    {{$SDMBOP->mataAnggaran}}
+    {{$saranaBOP->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/investasiSDM">Biaya Investasi SDM</a></li>
+    <li class="breadcrumb-item"><a href="/sarana">Biaya Investasi Sarana</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$SDMBOP->mataAnggaran}}</li>
+    <li class="breadcrumb-item">{{$saranaBOP->mataAnggaran}}</li>
 @endsection
 
 @section('judul')
-5. Biaya Investasi SDM: &nbsp; {{$SDMBOP->mataAnggaran}} - {{$SDMBOP->namaAnggaran}}
+6. Biaya Investasi Sarana: &nbsp; {{$saranaBOP->mataAnggaran}} - {{$saranaBOP->namaAnggaran}}
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$SDMBOP->namaAnggaran}}</strong></h3>
+        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$saranaBOP->namaAnggaran}}</strong></h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -67,7 +67,7 @@
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
-        <a href="/investasiSDM"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
+        <a href="/sarana"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
     </div>
 
     </div>
