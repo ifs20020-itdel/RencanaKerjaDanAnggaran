@@ -1,13 +1,13 @@
 @extends('layout.master')
-@section('title', 'A. Biaya Dosen')
+@section('title', '2. Biaya Operasional Kemahasiswaan')
 @section('breadcrumb1')
     <li class="breadcrumb-item"><a href="/addJenisPenggunaan">Add Jenis Penggunaan</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">A. Biaya Dosen</li>
+    <li class="breadcrumb-item">2. Biaya Operasional kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)</li>
 @endsection
 
-@section('judul', 'A. Biaya Dosen (Gaji Dan Honor)')
+@section('judul', '2. Biaya Operasional kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)')
 
 @section('content')
 <h6>Berikut Panduan Template RKA  <a href="https://docs.google.com/spreadsheets/d/140zs3W8NE7GwuaQlNXegL6atDtKjO4y7/edit#gid=712992635" target="_blank"><span class="badge badge-success ml-1">Template RKA</span></a></h6>
@@ -22,10 +22,10 @@
             @csrf
             <div class="card-body">
                 
-                <input type="hidden" name="bagianTable" class="form-control" value="1A">
+                <input type="hidden" name="bagianTable" class="form-control" value="2">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. A. II.2.1" value="{{old('mataAnggaran')}}">
+                    <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. II.3.1" value="{{old('mataAnggaran')}}">
 
                     @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -34,7 +34,7 @@
 
                 <div class="form-group">
                     <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control" placeholder="Cth. Gaji Dosen" value="{{old('namaAnggaran')}}">
+                    <input type="text" name="namaAnggaran" class="form-control" placeholder="Cth. Hibah Untuk Program Kreatifitas Mahasiswa" value="{{old('namaAnggaran')}}">
 
                     @error('namaAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>

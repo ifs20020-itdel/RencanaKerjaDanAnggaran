@@ -62,10 +62,13 @@ Route::middleware('auth')->group(function() {
       Route::get('/jpPembelajaran/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'biayaOPEdit']);
 
       //D. Biaya Operasional Tidak Langsung
-      Route::get('/jpBOTL/create', [JenisPenggunaanController::class, 'biayaOPTCreate']);
+      Route::get('/jpBOTL/create', [JenisPenggunaanController::class, 'biayaOPTLCreate']);
       Route::get('/jpBOTL/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'biayaOPTLEdit']);
-
-
+      
+    //2. Biaya Operasional Kemahasiswaan
+    Route::get('/jpKemahasiswaan/create', [JenisPenggunaanController::class, 'KemahasiswaanCreate']);
+    Route::get('/jpKemahasiswaan/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'KemahasiswaanEdit']);
+      
 
 
 });

@@ -104,7 +104,7 @@ class JenisPenggunaanController extends Controller
 //===================================================================================================================================
         //Operasional Tidak Langsung
         //D. Biaya Operasional Tidak Langsung
-        public function biayaOPTCreate(){
+        public function biayaOPTLCreate(){
             return view('workplan.jenisPenggunaan.pendidikan.d.create');
         }
         public function biayaOPTLEdit($id){
@@ -112,6 +112,17 @@ class JenisPenggunaanController extends Controller
 
             return view('workplan.jenisPenggunaan.pendidikan.d.edit', compact('JenisPenggunaan')); //namaVariabel
         }
+
+//===================================================================================================================================
+// 2. Operasional Kemahasiswaan
+    public function KemahasiswaanCreate(){
+        return view('workplan.jenisPenggunaan.kemahasiswaan.create');
+    }
+    public function KemahasiswaanEdit($id){
+        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+
+        return view('workplan.jenisPenggunaan.kemahasiswaan.edit', compact('JenisPenggunaan')); //namaVariabel
+    }
     
 
 }

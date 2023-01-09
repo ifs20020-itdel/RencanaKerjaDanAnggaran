@@ -28,7 +28,7 @@ Halaman Edit Data: &nbsp; {{$JenisPenggunaan->mataAnggaran}} - {{$JenisPenggunaa
             @csrf
             @method('PUT')
             <div class="card-body">
-                <input type="hidden" name="bagianTable" class="form-control" value="1A">
+                <input type="hidden" name="bagianTable" class="form-control" value="2">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
                     <input type="text" name="mataAnggaran" class="form-control" value="{{$JenisPenggunaan->mataAnggaran}}">
