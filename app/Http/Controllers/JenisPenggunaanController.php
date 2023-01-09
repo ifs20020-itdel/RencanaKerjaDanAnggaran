@@ -83,49 +83,35 @@ class JenisPenggunaanController extends Controller
         public function biayaTKCreate(){
             return view('workplan.jenisPenggunaan.pendidikan.b.create');
         }
-        public function gajiTenagaKependidikanShow($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+        public function biayaTKEdit($id){
+            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
 
-            return view('workplan.jenisPenggunaan.pendidikan.b.show', compact('biayaOperationalPendidikan')); //namaVariabel
-        }
-        public function gajiTenagaKependidikanEdit($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
-
-            return view('workplan.jenisPenggunaan.pendidikan.b.edit', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('workplan.jenisPenggunaan.pendidikan.b.edit', compact('JenisPenggunaan')); //namaVariabel
         }
          
 //===================================================================================================================================
         //Operasional Pendidikan
         //C. Biaya Operasional Pembelajaran
-         public function operasionalPembelajaranCreate(){
-            return view('pendidikan.c.create');
+        public function biayaOPCreate(){
+            return view('workplan.jenisPenggunaan.pendidikan.c.create');
         }
-        public function operasionalPembelajaranShow($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+        public function biayaOPEdit($id){
+            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
 
-            return view('pendidikan.c.show', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('workplan.jenisPenggunaan.pendidikan.c.edit', compact('JenisPenggunaan')); //namaVariabel
         }
-        public function operasionalPembelajaranEdit($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
-
-            return view('pendidikan.c.edit', compact('biayaOperationalPendidikan')); //namaVariabel
-        }
-
+        
 //===================================================================================================================================
         //Operasional Tidak Langsung
         //D. Biaya Operasional Tidak Langsung
-         public function operasionalTidakLangsungCreate(){
-            return view('pendidikan.d.create');
+        public function biayaOPTCreate(){
+            return view('workplan.jenisPenggunaan.pendidikan.d.create');
         }
-        public function operasionalTidakLangsungShow($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
+        public function biayaOPTLEdit($id){
+            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
 
-            return view('pendidikan.d.show', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('workplan.jenisPenggunaan.pendidikan.d.edit', compact('JenisPenggunaan')); //namaVariabel
         }
-        public function operasionalTidakLangsungEdit($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
-
-            return view('pendidikan.d.edit', compact('biayaOperationalPendidikan')); //namaVariabel
-        }
+    
 
 }

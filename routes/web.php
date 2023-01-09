@@ -48,13 +48,22 @@ Route::middleware('auth')->group(function() {
       Route::get('/jpDosen/create', [JenisPenggunaanController::class, 'biayaDosenCreate']);
       Route::post('/addJenisPenggunaan', [JenisPenggunaanController::class, 'biayaDosenStore']);
       Route::get('/addJenisPenggunaan', [JenisPenggunaanController::class, 'biayaDosenIndex']);
-      Route::get('/jpDosen/{jenis_penggunaan_id}', [JenisPenggunaanController::class, 'biayaDosenShow']);
+      Route::get('/addJenisPenggunaan/{jenis_penggunaan_id}', [JenisPenggunaanController::class, 'biayaDosenShow']);
       Route::get('/jpDosen/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'biayaDosenEdit']);
       Route::put('/addJenisPenggunaan/{jenis_penggunaan_id}', [JenisPenggunaanController::class, 'biayaDosenUpdate']);
       Route::delete('/addJenisPenggunaan/{jenis_penggunaan_id}', [JenisPenggunaanController::class, 'biayaDosenDestroy']);
     
       //B. Gaji Tenaga Kependidikan
       Route::get('/jpTenagaKependidikan/create', [JenisPenggunaanController::class, 'biayaTKCreate']);
+      Route::get('/jpTenagaKependidikan/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'biayaTKEdit']);
+
+      //C. Biaya Operasional Pembelajaran
+      Route::get('/jpPembelajaran/create', [JenisPenggunaanController::class, 'biayaOPCreate']);
+      Route::get('/jpPembelajaran/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'biayaOPEdit']);
+
+      //D. Biaya Operasional Tidak Langsung
+      Route::get('/jpBOTL/create', [JenisPenggunaanController::class, 'biayaOPTCreate']);
+      Route::get('/jpBOTL/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'biayaOPTLEdit']);
 
 
 
