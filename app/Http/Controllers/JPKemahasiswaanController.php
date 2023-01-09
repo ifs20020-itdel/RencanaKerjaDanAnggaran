@@ -49,7 +49,7 @@ class JPKemahasiswaanController extends Controller
         public function kemahasiswaanEdit($id){
             $KemahasiswaanBOP = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
 
-            return view('pendidikan.a.edit', compact('KemahasiswaanBOP')); //namaVariabel
+            return view('kemahasiswaan.edit', compact('KemahasiswaanBOP')); //namaVariabel
         }
 
         public function kemahasiswaanUpdate($id, Request $request){

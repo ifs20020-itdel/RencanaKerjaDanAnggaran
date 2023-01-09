@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('title')
-    {{$biayaOperationalPendidikan->mataAnggaran}}
+    {{$KemahasiswaanBOP->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/biayaOperasionalPendidikan">Operasional Pendidikan</a></li>
+    <li class="breadcrumb-item"><a href="/kemahasiswaan">Operasional Kemahasiswaan</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$biayaOperationalPendidikan->mataAnggaran}}</li>
+    <li class="breadcrumb-item">{{$KemahasiswaanBOP->mataAnggaran}}</li>
 @endsection
 
 @section('judul')
-A. Biaya Dosen (Gaji dan Honor): &nbsp; {{$biayaOperationalPendidikan->mataAnggaran}} - {{$biayaOperationalPendidikan->namaAnggaran}}
+2. Biaya Operasional Kemahasiswaan: &nbsp; {{$KemahasiswaanBOP->mataAnggaran}} - {{$KemahasiswaanBOP->namaAnggaran}}
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@ A. Biaya Dosen (Gaji dan Honor): &nbsp; {{$biayaOperationalPendidikan->mataAngga
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$biayaOperationalPendidikan->namaAnggaran}}</strong></h3>
+        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$KemahasiswaanBOP->namaAnggaran}}</strong></h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -67,7 +67,7 @@ A. Biaya Dosen (Gaji dan Honor): &nbsp; {{$biayaOperationalPendidikan->mataAngga
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
-        <a href="/biayaOperasionalPendidikan"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
+        <a href="/kemahasiswaan"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
     </div>
 
     </div>

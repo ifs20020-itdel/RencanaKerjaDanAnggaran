@@ -4,14 +4,13 @@
     <li class="breadcrumb-item">Operasional Kemahasiswaan</li>
 @endsection
 
-@section('judulTengah', '2. Biaya Operasional Kemahasiswaan')
+@section('judul', '2. Biaya Operasional Kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)')
 
 @section('content')
 <hr>
 <div class="card col-lg-10 col-6 mx-auto">
     <div class="card-header">
         <h3 class="card-title font-weight-bold">Daftar Jenis Penggunaan Anggaran</h3>
-
         <div class="card-tools">    
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                 <i class="fas fa-minus"></i>
@@ -32,16 +31,16 @@
             </thead>
             <tbody>
             
-                @forelse ($biayaOperationalKemahasiswaan as $key => $item)
+                @forelse ($KemahasiswaanBOP as $key => $item)
                 <tr>
                     <td>{{$key + 1 }}</td>
                     <td>{{$item->mataAnggaran}}</td>
                     <td>{{$item->namaAnggaran}}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="/operasionalKemahasiswaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
-                            <a href="/operasionalKemahasiswaan/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
-                            <form action="/biayaOperasionalKemahasiswaan/{{$item->id}}" method="POST">
+                            <a href="/kemahasiswaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                            <a href="/kemahasiswaan/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
+                            <form action="/kemahasiswaan/{{$item->id}}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -64,7 +63,7 @@
           <br>
         <!--Tambah Data-->
         <div class="card-footer">
-            <a href="/biayaOperasionalKemahasiswaan/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+            <a href="/kemahasiswaan/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
         </div>
         <!--/.Tambah Data-->
     </div>

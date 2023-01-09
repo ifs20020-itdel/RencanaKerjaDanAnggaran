@@ -18,7 +18,7 @@
             <h3 class="card-title">Form Menambahkan Jenis Penggunaan dan Mata Anggaran</h3>
         </div>
                 
-        <form action="/Kemahasiswaan" method="POST">
+        <form action="/kemahasiswaan" method="POST">
             @csrf
             <div class="card-body">
                 <div class="form-group">
@@ -42,7 +42,7 @@
             </div>
 
             <div class="card-footer">
-                <a href="/Kemahasiswaan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <a href="/kemahasiswaan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
                 <button type="submit" class="btn btn-dark float-right mr-4">Tambahkan</button>
             </div>
             

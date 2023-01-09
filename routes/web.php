@@ -83,11 +83,11 @@ Route::middleware('auth')->group(function() {
         //Halamam Index
         Route::get('/kemahasiswaan', [JPKemahasiswaanController::class, 'operasionalKemahasiswaan']);
         Route::get('/kemahasiswaan/create', [JPKemahasiswaanController::class, 'kemahasiswaanCreate']);
-        Route::post('/kemahasiswaan', [JenisPenggunaanController::class, 'kemahasiswaanStore']);
-        Route::get('/kemahasiswaan', [JenisPenggunaanController::class, 'kemahasiswaanIndex']);
-        Route::get('/kemahasiswaan/{kemahasiswaan_id}', [JenisPenggunaanController::class, 'kemahasiswaanShow']);
-        Route::get('/kemahasiswaan/{kemahasiswaan_id}/edit', [JenisPenggunaanController::class, 'kemahasiswaanEdit']);
-        Route::put('/kemahasiswaan/{kemahasiswaan_id}', [JenisPenggunaanController::class, 'kemahasiswaanUpdate']);
-        Route::delete('/kemahasiswaan/{kemahasiswaan_id}', [JenisPenggunaanController::class, 'kemahasiswaanDestroy']);
+        Route::post('/kemahasiswaan', [JPKemahasiswaanController::class, 'kemahasiswaanStore']);
+        Route::get('/kemahasiswaan', [JPKemahasiswaanController::class, 'kemahasiswaanIndex']);
+        Route::get('/kemahasiswaan/{kemahasiswaan_id}', [JPKemahasiswaanController::class, 'kemahasiswaanShow']);
+        Route::get('/kemahasiswaan/{kemahasiswaan_id}/edit', [JPKemahasiswaanController::class, 'kemahasiswaanEdit']);
+        Route::put('/kemahasiswaan/{kemahasiswaan_id}', [JPKemahasiswaanController::class, 'kemahasiswaanUpdate']);
+        Route::delete('/kemahasiswaan/{kemahasiswaan_id}', [JPKemahasiswaanController::class, 'kemahasiswaanDestroy']);
        
 });

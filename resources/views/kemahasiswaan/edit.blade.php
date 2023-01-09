@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('title')
-    {{$biayaOperationalPendidikan->mataAnggaran}}
+    {{$KemahasiswaanBOP->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/biayaOperasionalPendidikan">Operasional Pendidikan</a></li>
+    <li class="breadcrumb-item"><a href="/kemahasiswaan">Operasional Kemahasiswaan</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$biayaOperationalPendidikan->mataAnggaran}} / Edit</li>
+    <li class="breadcrumb-item">{{$KemahasiswaanBOP->mataAnggaran}} / Edit</li>
 @endsection
 
 @section('judul')
-Halaman Edit Data: &nbsp; {{$biayaOperationalPendidikan->mataAnggaran}} - {{$biayaOperationalPendidikan->namaAnggaran}}
+Halaman Edit Data: &nbsp; {{$KemahasiswaanBOP->mataAnggaran}} - {{$KemahasiswaanBOP->namaAnggaran}}
 @endsection
 
 @section('content')
@@ -24,14 +24,14 @@ Halaman Edit Data: &nbsp; {{$biayaOperationalPendidikan->mataAnggaran}} - {{$bia
             <h3 class="card-title">Form Update Jenis Penggunaan dan Mata Anggaran</h3>
         </div>
                 
-        <form action="/biayaOperasionalPendidikan/{{$biayaOperationalPendidikan->id}}" method="POST">
+        <form action="/kemahasiswaan/{{$KemahasiswaanBOP->id}}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">
-                <input type="hidden" name="bagianTable" class="form-control" value="A">
+               
                 <div class="form-group">
                     <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control" value="{{$biayaOperationalPendidikan->mataAnggaran}}">
+                    <input type="text" name="mataAnggaran" class="form-control" value="{{$KemahasiswaanBOP->mataAnggaran}}">
 
                     @error('mataAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -40,7 +40,7 @@ Halaman Edit Data: &nbsp; {{$biayaOperationalPendidikan->mataAnggaran}} - {{$bia
 
                 <div class="form-group">
                     <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control" value="{{$biayaOperationalPendidikan->namaAnggaran}}">
+                    <input type="text" name="namaAnggaran" class="form-control" value="{{$KemahasiswaanBOP->namaAnggaran}}">
 
                     @error('namaAnggaran')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
@@ -50,7 +50,7 @@ Halaman Edit Data: &nbsp; {{$biayaOperationalPendidikan->mataAnggaran}} - {{$bia
             </div>
 
             <div class="card-footer">
-                <a href="/biayaOperasionalPendidikan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <a href="/kemahasiswaan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
                 <button type="submit" class="btn btn-success float-right mr-4">Update</button>
             </div>
             
