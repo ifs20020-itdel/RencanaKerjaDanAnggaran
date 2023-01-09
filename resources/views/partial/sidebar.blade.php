@@ -39,64 +39,8 @@
             <i class="nav-icon fa-solid fa-folder-tree"></i>
             <p>
               Jenis Penggunaan
-              <i class="right fas fa-angle-left"></i>
             </p>
           </a>
-
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="/biayaOperasionalPendidikan" class="nav-link">
-                <i class="fa-solid fa-school nav-icon"></i>
-                <p>
-                  Pendidikan
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/kemahasiswaan" class="nav-link">
-                <i class="fa-sharp fa-solid fa-scale-balanced nav-icon"></i>
-                <p>
-                  Kemahasiswaan
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item mt-2">
-              <a href="/penelitian" class="nav-link">
-                <i class="fa-solid fa-book-open nav-icon"></i>
-                <p>Penelitian</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="/pkm" class="nav-link">
-                <i class="fa-brands fa-creative-commons-by nav-icon"></i>
-                <p>Biaya PkM</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="/investasiSDM" class="nav-link">
-                <i class="fa-solid fa-brain nav-icon"></i>
-                <p>Investasi SDM</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="/sarana" class="nav-link">
-                <i class="fa-sharp fa-solid fa-vial-virus nav-icon"></i>
-                <p>Investasi Sarana</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="/prasarana" class="nav-link">
-                <i class="fa-solid fa-screwdriver-wrench nav-icon"></i>
-                <p>Investasi Prasarana</p>
-              </a>
-            </li>
-
-          </ul>
         </li>
 
         <!-- Ajukan RKA -->
