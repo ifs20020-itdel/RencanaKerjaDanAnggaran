@@ -39,8 +39,26 @@
             <i class="nav-icon fa-solid fa-folder-tree"></i>
             <p>
               Jenis Penggunaan
+              <i class="right fas fa-angle-left"></i>
             </p>
           </a>
+
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fa-sharp fa-solid fa-hand-holding-dollar nav-icon"></i>
+                <p>List Jenis Anggaran</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/addJenisPenggunaan" class="nav-link">
+                <i class="fa-solid fa-plus nav-icon"></i>
+                <p>Add Jenis Anggaran</p>
+              </a>
+            </li>
+
+          </ul>
         </li>
 
         <!-- Ajukan RKA -->

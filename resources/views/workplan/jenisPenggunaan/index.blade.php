@@ -1,151 +1,290 @@
 @extends('layout.master')
-@section('title', 'Anggaran')
+@section('title', 'Edit Jenis Anggaran')
 @section('breadcrumb1')
-    <li class="breadcrumb-item">Jenis Anggaran</li>
+    <li class="breadcrumb-item">Edit Jenis Penggunaan Anggaran</li>
 @endsection
 
-@section('judul', 'Jenis Penggunaan Anggaran')
+@section('judulTengah', 'Edit Jenis Penggunaan Anggaran')
 
 @section('content')
 
-    <div class="card">
-      <div class="card-header p-2">
-        <ul class="nav nav-pills">
-          <li class="nav-item mr-4"><a class="nav-link active" href="#pendidikan" data-toggle="tab"><i class="fa-solid fa-school mr-2"></i>Pendidikan</a></li>
-          <li class="nav-item mr-4"><a class="nav-link" href="#kemahasiswaan" data-toggle="tab"><i class="fa-sharp fa-solid fa-scale-balanced mr-2"></i>Kemahasiswaan</a></li>
-          <li class="nav-item mr-4"><a class="nav-link" href="#penelitian" data-toggle="tab"><i class="fa-solid fa-book-open mr-2"></i>Penelitian</a></li>
-          <li class="nav-item mr-4"><a class="nav-link" href="#PkM" data-toggle="tab"><i class="fa-brands fa-creative-commons-by mr-2"></i>PkM</a></li>
-          <li class="nav-item mr-4"><a class="nav-link" href="#SDM" data-toggle="tab"><i class="fa-solid fa-brain mr-2"></i>SDM</a></li>
-          <li class="nav-item mr-4"><a class="nav-link" href="#sarana" data-toggle="tab"><i class="fa-sharp fa-solid fa-vial-virus mr-2"></i>Sarana</a></li>
-          <li class="nav-item"><a class="nav-link" href="#prasarana" data-toggle="tab"><i class="fa-solid fa-screwdriver-wrench nav-icon"></i>Prasarana</a></li>
-        </ul>
-      </div>
+<!--A. Biaya Dosen-->
+<hr>
+<div class="card ml-5 col-lg-11 col-6">
+    <div class="card-header">
+        <h3 class="card-title font-weight-bold">1. Biaya Operasional Pendidikan</h3>
 
-      <div class="card-body">
-        <div class="tab-content">
-
-          <div class="active tab-pane" id="pendidikan">
-            <div class="post">
-
-                <!--konten-->
-                <div class="card-body">
-                  pendidikan
-
-                
-                    
-                    <br>
-                    <!--Tambah Data-->
-                    <div class="card-footer">
-                        <a href="/biayaDosen/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
-                    </div>
-                    <!--/.Tambah Data-->
-
-                </div>
-                <!--/konten-->
-            </div>
-            <!-- /.post -->
-          </div>
-          <!-- /.tab-pane -->
-          <div class="tab-pane" id="kemahasiswaan">
-            <div class="post">
-                
-                <!--konten-->
-                <div class="card-body">
-                    Kemahasiswaan
-  
-                  
-                      
-                      <br>
-                      <!--Tambah Data-->
-                      <div class="card-footer">
-                          <a href="//create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
-                      </div>
-                      <!--/.Tambah Data-->
-  
-                  </div>
-                  <!--/konten-->
-
-              </div>
-          </div>
-          <!-- /.tab-pane -->
-
-          <!-- /.tab-pane -->
-          <div class="tab-pane" id="penelitian">
-            <div class="post">
-                <!--konten-->
-                <div class="card-body">
-                    penelitian
-  
-                  
-                      
-                      <br>
-                      <!--Tambah Data-->
-                      <div class="card-footer">
-                          <a href="//create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
-                      </div>
-                      <!--/.Tambah Data-->
-  
-                  </div>
-                  <!--/konten-->
-        
-              </div>
-          </div>
-          <!-- /.tab-pane -->
-
-          <!-- /.tab-pane -->
-          <div class="tab-pane" id="PkM">
-            <div class="post">
-                <div class="ml-5">
-  
-                    pKm
-                </div>
-        
-              </div>
-          </div>
-          <!-- /.tab-pane -->
-
-          <!-- /.tab-pane -->
-          <div class="tab-pane" id="SDM">
-            <div class="post">
-                <div class="ml-5">
-  
-                    Sdm
-                </div>
-        
-              </div>
-          </div>
-          <!-- /.tab-pane -->
-
-          <!-- /.tab-pane -->
-          <div class="tab-pane" id="sarana">
-            <div class="post">
-                <div class="ml-5">
-  
-                    sarana
-                </div>
-        
-              </div>
-          </div>
-          <!-- /.tab-pane -->
-
-          <!-- /.tab-pane -->
-          <div class="tab-pane" id="prasarana">
-            <div class="post">
-                <div class="ml-5">
-  
-                    prasarana
-                </div>
-        
-              </div>
-          </div>
-          <!-- /.tab-pane -->
-
-
+        <div class="card-tools">    
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button> 
         </div>
-        <!-- /.tab-content -->
-      </div>
-      <!-- /.card-body -->
+    
     </div>
-    <!-- /.card -->
+
+    <div class="card-body">
+      
+         <!--Table A-->
+        <div class="card col-lg-11 col-6 mx-auto">
+            <div class="card-header">
+                <h3 class="card-title font-weight-bold">A. Biaya Dosen (Gaji Dan Honor)</h3>
+                <div class="card-tools">    
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button> 
+                </div>
+            
+            </div>
+        
+            <div class="card-body">
+                <!--Table A-->
+                <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Mata Anggaran</th>
+                        <th scope="col">Nama Anggaran</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <span class="text-white">{{ $byk = 0 }}</span>
+                        @foreach ($JenisPenggunaan as $item)
+                        @if ($item->bagianTable == "1A")
+                        <tr>
+                            <td>{{ $byk+=1 }}</td>
+                            <td>{{$item->mataAnggaran}}</td>
+                            <td>{{$item->namaAnggaran}}</td>
+                            
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/biayaDosen/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                                    <a href="/biayaDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
+                                    <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                            
+                        </tr>
+                        @endif
+                            @endforeach
+                        @if ($byk == 0)
+                        <tr>
+                            <td colspan="7" class="text-center p-3 table-active">
+                                Data Jenis Penggunaan Anggaran Belum Ditambahkan
+                            </td>
+                        </tr>
+                        @else
+                        
+                        @endif 
+        
+                    </tbody>
+                </table>
+                  <!--/.Table A-->
+                  <br>
+
+                <!--Tambah Data-->
+                <div class="card-footer">
+                    <a href="/jpDosen/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+                </div>
+                <!--/.Tambah Data-->
+        
+            </div>
+        
+        </div>
+        <!--/Table A-->
+        
+        <br>
+
+        <!--Table B-->
+        <div class="card col-lg-11 col-6 mx-auto">
+            <div class="card-header">
+                <h3 class="card-title font-weight-bold">B. Gaji Tenaga Kependidikan Dosen (Gaji Dan Honor)</h3>
+                <div class="card-tools">    
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button> 
+                </div>
+            
+            </div>
+        
+            <div class="card-body">
+                <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Mata Anggaran</th>
+                        <th scope="col">Nama Anggaran</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <span class="text-white">{{ $byk = 0 }}</span>
+                        @foreach ($JenisPenggunaan as $item)
+                        @if ($item->bagianTable == "1B")
+                        <tr>
+                            <td>{{ $byk+=1 }}</td>
+                            <td>{{$item->mataAnggaran}}</td>
+                            <td>{{$item->namaAnggaran}}</td>
+                            
+                            <td>
+                                <div class="btn-group">
+                                    <a href="/biayaDosen/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
+                                    <a href="/biayaDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
+                                    <form action="/biayaOperasionalPendidikan/{{$item->id}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-sm btn-danger ml-4"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                    </form>
+                                </div>
+                            </td>
+                            
+                        </tr>
+                        @endif
+                            @endforeach
+                        @if ($byk == 0)
+                        <tr>
+                            <td colspan="7" class="text-center p-3 table-active">
+                                Data Jenis Penggunaan Anggaran Belum Ditambahkan
+                            </td>
+                        </tr>
+                        @else
+                        
+                        @endif 
+        
+                    </tbody>
+                </table>
+                  <br>
+
+                <!--Tambah Data-->
+                <div class="card-footer">
+                    <a href="/jpDosen/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+                </div>
+                <!--/.Tambah Data-->
+        
+            </div>
+        
+        </div>
+        <!--/Table B-->
+
+        <!--Table C-->
+        <!--/Table C-->
+
+        <!--Table D-->
+        <!--/Table D-->
+
+
+    </div>
+  </div>
+  <!--/.A. Biaya Dosen-->
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<br>
+<br>
+
+ <!--B. Gaji Tenaga Kependidikan (Gaji Dan Honor)-->
+ <div class="card col-lg-10 col-6 mx-auto">
+    <div class="card-header">
+        <h3 class="card-title font-weight-bold">B. Gaji Tenaga Kependidikan (Gaji Dan Honor)</h3>
+
+        <div class="card-tools">    
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button> 
+        </div>
+    
+    </div>
+
+    <div class="card-body">
+      
+          <!--Table B-->
+       
+          <!--/.Table B-->
+          <br>
+        <!--Tambah Data-->
+        <div class="card-footer">
+            <a href="/gajiTenagaKependidikan/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+        </div>
+        <!--/.Tambah Data-->
+
+    </div>
+
+  </div>
+  <!--/.B. Gaji Tenaga Kependidikan (Gaji Dan Honor)-->
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<br>
+<br>
+
+  <!--C. Biaya Operasional Pembelajaran-->
+  <div class="card col-lg-10 col-6 mx-auto">
+    <div class="card-header">
+        <h3 class="card-title font-weight-bold">C. Biaya Operasional Pembelajaran</h3>
+
+        <div class="card-tools">    
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button> 
+        </div>
+    
+    </div>
+
+    <div class="card-body">
+      
+          <!--Table C-->
+       
+          <!--/.Table C-->
+          <br>
+        <!--Tambah Data-->
+        <div class="card-footer">
+            <a href="/operasionalPembelajaran/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+        </div>
+        <!--/.Tambah Data-->
+
+    </div>
+
+  </div>
+  <!--/.C. Biaya Operasional Pembelajaran-->
+
+  <br>
+  <br>
+
+  <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+  <!--D. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport, Pajak, Asuransi, dll)-->
+  <div class="card col-lg-10 col-6 mx-auto">
+    <div class="card-header">
+        <h3 class="card-title font-weight-bold">D. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport, Pajak, Asuransi, dll)</h3>
+
+        <div class="card-tools">    
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button> 
+        </div>
+    
+    </div>
+
+    <div class="card-body">
+      
+          <!--Table D-->
+      
+          <!--/.Table D-->
+          <br>
+        <!--Tambah Data-->
+        <div class="card-footer">
+            <a href="/operasionalTidakLangsung/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Tambah Data</button></a>
+        </div>
+        <!--/.Tambah Data-->
+
+    </div>
+ 
+  </div>
+  <!--/.D. Biaya Operasional Tidak Langsung (Listrik, Gas, Air, Pemeliharaan Gedung, Pemeliharaan Sarana, Uang Lembur, Telekomunikasi, Konsumsi, Transport, Pajak, Asuransi, dll)-->
+
 
   @endsection

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class JenisPenggunaanController extends Controller
 {
-    public function jenisPenggunaan(){
+    public function addJenisPenggunaan(){
         return view('workplan.jenisPenggunaan.index');
     }
 //===================================================================================================================================
@@ -17,7 +17,7 @@ class JenisPenggunaanController extends Controller
             return view('workplan.jenisPenggunaan.pendidikan.a.create');
         }
 
-        public function biayaDosenGenreStore(Request $request){
+        public function biayaDosenStore(Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -26,22 +26,43 @@ class JenisPenggunaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_operasional_pendidikan')->insert(
+            DB::table('jenis_penggunaan')->insert(
                 [
                     'bagianTable' => $request['bagianTable'],
                     'mataAnggaran' => $request['mataAnggaran'],
                     'namaAnggaran' => $request['namaAnggaran']
                 ]
             );
-            
-            return redirect('/biayaOperasionalPendidikan');
+            return redirect('/addJenisPenggunaan');
         }
 
-        public function biayaDosenGenreIndex(){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->get();
-
-            return view('pendidikan.operasionalPendidikan', compact('biayaOperationalPendidikan')); //namaVariabel
+        public function biayaDosenIndex(){
+            $JenisPenggunaan = DB::table('jenis_penggunaan')->get();
+            return view('workplan.jenisPenggunaan.index', compact('JenisPenggunaan')); //namaVariabel
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
         public function biayaDosenGenreShow($id){
             $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();

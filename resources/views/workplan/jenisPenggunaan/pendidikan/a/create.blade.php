@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title', 'A. Biaya Dosen')
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/jenisPenggunaan">Jenis Penggunaan</a></li>
+    <li class="breadcrumb-item"><a href="/addJenisPenggunaan">Add Jenis Penggunaan</a></li>
 @endsection
 @section('breadcrumb2')
     <li class="breadcrumb-item">A. Biaya Dosen</li>
@@ -18,11 +18,11 @@
             <h3 class="card-title">Form Menambahkan Jenis Penggunaan dan Mata Anggaran</h3>
         </div>
                 
-        <form action="/biayaOperasionalPendidikan" method="POST">
+        <form action="/addJenisPenggunaan" method="POST">
             @csrf
             <div class="card-body">
                 
-                <input type="hidden" name="bagianTable" class="form-control" value="A">
+                <input type="hidden" name="bagianTable" class="form-control" value="1A">
                 <div class="form-group">
                     <label>Mata Anggaran</label>
                     <input type="text" name="mataAnggaran" class="form-control" placeholder="Cth. A. II.2.1" value="{{old('mataAnggaran')}}">
@@ -44,7 +44,7 @@
             </div>
 
             <div class="card-footer">
-                <a href="/biayaOperasionalPendidikan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <a href="/addJenisPenggunaan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
                 <button type="submit" class="btn btn-dark float-right mr-4">Tambahkan</button>
             </div>
             

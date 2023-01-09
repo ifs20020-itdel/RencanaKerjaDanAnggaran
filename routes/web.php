@@ -41,11 +41,13 @@ Route::middleware('auth')->group(function() {
     Route::get('/user/logout', [LoginController::class, 'logout']);
 
     //JenisPenggunaan
-    Route::get('/jenisPenggunaan', [JenisPenggunaanController::class, 'jenisPenggunaan']);
+    Route::get('/addJenisPenggunaan', [JenisPenggunaanController::class, 'addJenisPenggunaan']);
 
     //1. Biaya Pendidikan
-      //Mengarah ke form Create Data
-      Route::get('/biayaDosen/create', [JenisPenggunaanController::class, 'biayaDosenCreate']);
+      //A. Biaya Dosen
+      Route::get('/jpDosen/create', [JenisPenggunaanController::class, 'biayaDosenCreate']);
+      Route::post('/addJenisPenggunaan', [JenisPenggunaanController::class, 'biayaDosenStore']);
+      Route::get('/addJenisPenggunaan', [JenisPenggunaanController::class, 'biayaDosenIndex']);
     
 
 
