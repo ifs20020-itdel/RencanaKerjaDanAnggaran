@@ -62,7 +62,7 @@
             </li>
 
             <li class="nav-item mt-2">
-              <a href="#" class="nav-link">
+              <a href="/penelitian" class="nav-link">
                 <i class="fa-solid fa-book-open nav-icon"></i>
                 <p>Penelitian</p>
               </a>
