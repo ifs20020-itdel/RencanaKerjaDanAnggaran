@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JenisPenggunaanController;
 use App\Http\Controllers\JPKemahasiswaanController;
+use App\Http\Controllers\JPPenelitianController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,5 +90,16 @@ Route::middleware('auth')->group(function() {
         Route::get('/kemahasiswaan/{kemahasiswaan_id}/edit', [JPKemahasiswaanController::class, 'kemahasiswaanEdit']);
         Route::put('/kemahasiswaan/{kemahasiswaan_id}', [JPKemahasiswaanController::class, 'kemahasiswaanUpdate']);
         Route::delete('/kemahasiswaan/{kemahasiswaan_id}', [JPKemahasiswaanController::class, 'kemahasiswaanDestroy']);
+
+    //ALL CRUD JenisPenggunaan(Kemahasiswaan)
+        //Halamam Index
+        Route::get('/penelitian', [JPPenelitianController::class, 'operasionalPenelitian']);
+        Route::get('/penelitian/create', [JPPenelitianController::class, 'penelitianCreate']);
+        Route::post('/penelitian', [JPPenelitianController::class, 'penelitianStore']);
+        Route::get('/penelitian', [JPPenelitianController::class, 'penelitianIndex']);
+        Route::get('/penelitian/{penelitian_id}', [JPPenelitianController::class, 'penelitianShow']);
+        Route::get('/penelitian/{penelitian_id}/edit', [JPPenelitianController::class, 'penelitianEdit']);
+        Route::put('/penelitian/{penelitian_id}', [JPPenelitianController::class, 'penelitianUpdate']);
+        Route::delete('/penelitian/{penelitian_id}', [JPPenelitianController::class, 'penelitianDestroy']);
        
 });

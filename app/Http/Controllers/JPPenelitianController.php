@@ -6,15 +6,15 @@ use Illuminate\Http\Request;
 
 class JPPenelitianController extends Controller
 {
-    public function operasionalKemahasiswaan(){
-        return view('kemahasiswaan.operasionalKemahasiswaan');
+    public function operasionalPenelitian(){
+        return view('penelitian.penelitian');
     }
 //===================================================================================================================================
-        public function kemahasiswaanCreate(){
-            return view('kemahasiswaan.create');
+        public function penelitianCreate(){
+            return view('penelitian.create');
         }
 
-        public function kemahasiswaanStore(Request $request){
+        public function penelitianStore(Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -23,35 +23,35 @@ class JPPenelitianController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_operasional_kemahasiswaan')->insert(
+            DB::table('biaya_penelitian')->insert(
                 [
                     'mataAnggaran' => $request['mataAnggaran'],
                     'namaAnggaran' => $request['namaAnggaran']
                 ]
             );
             
-            return redirect('/kemahasiswaan');
+            return redirect('/penelitian');
         }
 
-        public function kemahasiswaanIndex(){
-            $KemahasiswaanBOP = DB::table('biaya_operasional_kemahasiswaan')->get();
+        public function penelitianIndex(){
+            $PenelitianBOP = DB::table('biaya_penelitian')->get();
 
-            return view('kemahasiswaan.operasionalKemahasiswaan', compact('KemahasiswaanBOP')); //namaVariabel
+            return view('penelitian.penelitian', compact('PenelitianBOP')); //namaVariabel
         }
 
-        public function kemahasiswaanShow($id){
-            $KemahasiswaanBOP = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
+        public function penelitianShow($id){
+            $PenelitianBOP = DB::table('biaya_penelitian')->where('id', $id)->first();
 
-            return view('kemahasiswaan.show', compact('KemahasiswaanBOP')); //namaVariabel
+            return view('penelitian.show', compact('PenelitianBOP')); //namaVariabel
         }
 
-        public function kemahasiswaanEdit($id){
-            $KemahasiswaanBOP = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
+        public function penelitianEdit($id){
+            $PenelitianBOP = DB::table('biaya_penelitian')->where('id', $id)->first();
 
-            return view('kemahasiswaan.edit', compact('KemahasiswaanBOP')); //namaVariabel
+            return view('penelitian.edit', compact('PenelitianBOP')); //namaVariabel
         }
 
-        public function kemahasiswaanUpdate($id, Request $request){
+        public function penelitianUpdate($id, Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -60,7 +60,7 @@ class JPPenelitianController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)
+            DB::table('biaya_penelitian')->where('id', $id)
                 ->update(
                     [
                         'mataAnggaran' => $request['mataAnggaran'],
@@ -68,12 +68,12 @@ class JPPenelitianController extends Controller
                     ]
                 );
             
-            return redirect('/kemahasiswaan');
+            return redirect('/penelitian');
         }
         
-        public function kemahasiswaanDestroy($id){
-            DB::table('biaya_operasional_kemahasiswaan')->where('id', '=', $id)->delete();
-            return redirect('/kemahasiswaan');
+        public function penelitianDestroy($id){
+            DB::table('biaya_penelitian')->where('id', '=', $id)->delete();
+            return redirect('/penelitian');
         }
     
 }
