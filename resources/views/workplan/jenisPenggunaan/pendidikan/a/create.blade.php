@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title', 'A. Biaya Dosen')
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/biayaOperasionalPendidikan">Operasional Pendidikan</a></li>
+    <li class="breadcrumb-item"><a href="/jenisPenggunaan">Jenis Penggunaan</a></li>
 @endsection
 @section('breadcrumb2')
     <li class="breadcrumb-item">A. Biaya Dosen</li>
@@ -21,6 +21,7 @@
         <form action="/biayaOperasionalPendidikan" method="POST">
             @csrf
             <div class="card-body">
+                
                 <input type="hidden" name="bagianTable" class="form-control" value="A">
                 <div class="form-group">
                     <label>Mata Anggaran</label>

@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\DB;
 
 class JenisPenggunaanController extends Controller
 {
-    public function operasionalPendidikan(){
-        return view('pendidikan.operasionalPendidikan');
+    public function jenisPenggunaan(){
+        return view('workplan.jenisPenggunaan.index');
     }
 //===================================================================================================================================
     //Operasional Pendidikan
         //A.Dosen
-        public function biayaDosenGenreCreate(){
-            return view('pendidikan.a.create');
+        public function biayaDosenCreate(){
+            return view('workplan.jenisPenggunaan.pendidikan.a.create');
         }
 
         public function biayaDosenGenreStore(Request $request){

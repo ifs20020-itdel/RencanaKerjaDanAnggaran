@@ -35,7 +35,7 @@
 
         <!--JenisPenggunaan-->
         <li class="nav-item mt-2">
-          <a href="#" class="nav-link">
+          <a href="/jenisPenggunaan" class="nav-link">
             <i class="nav-icon fa-solid fa-folder-tree"></i>
             <p>
               Jenis Penggunaan
