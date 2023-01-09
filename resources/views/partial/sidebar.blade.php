@@ -69,7 +69,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="/pkm" class="nav-link">
                 <i class="fa-brands fa-creative-commons-by nav-icon"></i>
                 <p>Biaya PkM</p>
               </a>

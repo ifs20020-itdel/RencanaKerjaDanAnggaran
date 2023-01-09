@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JenisPenggunaanController;
 use App\Http\Controllers\JPKemahasiswaanController;
 use App\Http\Controllers\JPPenelitianController;
+use App\Http\Controllers\JPPkMController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +92,7 @@ Route::middleware('auth')->group(function() {
         Route::put('/kemahasiswaan/{kemahasiswaan_id}', [JPKemahasiswaanController::class, 'kemahasiswaanUpdate']);
         Route::delete('/kemahasiswaan/{kemahasiswaan_id}', [JPKemahasiswaanController::class, 'kemahasiswaanDestroy']);
 
-    //ALL CRUD JenisPenggunaan(Kemahasiswaan)
+    //ALL CRUD JenisPenggunaan(Penelitian)
         //Halamam Index
         Route::get('/penelitian', [JPPenelitianController::class, 'operasionalPenelitian']);
         Route::get('/penelitian/create', [JPPenelitianController::class, 'penelitianCreate']);
@@ -101,5 +102,16 @@ Route::middleware('auth')->group(function() {
         Route::get('/penelitian/{penelitian_id}/edit', [JPPenelitianController::class, 'penelitianEdit']);
         Route::put('/penelitian/{penelitian_id}', [JPPenelitianController::class, 'penelitianUpdate']);
         Route::delete('/penelitian/{penelitian_id}', [JPPenelitianController::class, 'penelitianDestroy']);
+
+      //ALL CRUD JenisPenggunaan(PkM)
+        //Halamam Index
+        Route::get('/pkm', [JPPkMController::class, 'operasionalPkM']);
+        Route::get('/pkm/create', [JPPkMController::class, 'pkmCreate']);
+        Route::post('/pkm', [JPPkMController::class, 'pkmStore']);
+        Route::get('/pkm', [JPPkMController::class, 'pkmIndex']);
+        Route::get('/pkm/{pkm_id}', [JPPkMController::class, 'pkmShow']);
+        Route::get('/pkm/{pkm_id}/edit', [JPPkMController::class, 'pkmEdit']);
+        Route::put('/pkm/{pkm_id}', [JPPkMController::class, 'pkmUpdate']);
+        Route::delete('/pkm/{pkm_id}', [JPPkMController::class, 'pkmDestroy']);
        
 });
