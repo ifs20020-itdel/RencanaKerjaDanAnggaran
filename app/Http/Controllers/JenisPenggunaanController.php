@@ -145,6 +145,41 @@ class JenisPenggunaanController extends Controller
 
         return view('workplan.jenisPenggunaan.PkM.edit', compact('JenisPenggunaan')); //namaVariabel
     }
-    
 
+//===================================================================================================================================
+// 5. Biaya Investasi SDM
+    public function SDMCreate(){
+        return view('workplan.jenisPenggunaan.sdm.create');
+    }
+    public function SDMEdit($id){
+        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+
+        return view('workplan.jenisPenggunaan.sdm.edit', compact('JenisPenggunaan')); //namaVariabel
+    }
+
+//===================================================================================================================================
+// 6. Biaya Investasi Sarana
+    public function SaranaCreate(){
+        return view('workplan.jenisPenggunaan.sarana.create');
+    }
+    public function SaranaEdit($id){
+        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+
+        return view('workplan.jenisPenggunaan.sarana.edit', compact('JenisPenggunaan')); //namaVariabel
+    }
+
+
+//===================================================================================================================================
+// 7. Biaya Investasi Prasarana
+    public function PrasaranaCreate(){
+        return view('workplan.jenisPenggunaan.prasarana.create');
+    }
+    public function PrasaranaEdit($id){
+        $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
+
+        return view('workplan.jenisPenggunaan.prasarana.edit', compact('JenisPenggunaan')); //namaVariabel
+    }
+
+
+    
 }

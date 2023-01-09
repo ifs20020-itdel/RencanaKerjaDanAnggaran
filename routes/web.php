@@ -77,6 +77,17 @@ Route::middleware('auth')->group(function() {
     Route::get('/jpPkM/create', [JenisPenggunaanController::class, 'PkMCreate']);
     Route::get('/jpPkM/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'PkMEdit']);
        
-
+    //5. Biaya SDM
+    Route::get('/jpSDM/create', [JenisPenggunaanController::class, 'SDMCreate']);
+    Route::get('/jpSDM/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'SDMEdit']);
+    
+    //6. Biaya Sarana
+    Route::get('/jpSarana/create', [JenisPenggunaanController::class, 'SaranaCreate']);
+    Route::get('/jpSarana/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'SaranaEdit']);
+    
+     //6. Biaya Prasarana
+     Route::get('/jpPrasarana/create', [JenisPenggunaanController::class, 'PrasaranaCreate']);
+     Route::get('/jpPrasarana/{jenis_penggunaan_id}/edit', [JenisPenggunaanController::class, 'PrasaranaEdit']);
+         
 
 });
