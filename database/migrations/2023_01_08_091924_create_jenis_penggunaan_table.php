@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('investasi_sdm', function (Blueprint $table) {
-            $table->id();
+        Schema::create('jenis_penggunaan', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('bagianTable');
             $table->string('mataAnggaran');
             $table->string('namaAnggaran');
             $table->timestamps();
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('investasi_sdm');
+        Schema::dropIfExists('jenis_penggunaan');
     }
 };

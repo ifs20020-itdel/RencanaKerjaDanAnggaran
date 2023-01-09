@@ -33,8 +33,10 @@ Route::middleware('guest')->group(function(){
 Route::middleware('auth')->group(function() {
     Route::get('/', function(){
         return view('welcomming');
+      
     });
     //Profile
+
     Route::get('/profile', [LoginController::class, 'profile']);
     Route::get('/user/logout', [LoginController::class, 'logout']);
     
