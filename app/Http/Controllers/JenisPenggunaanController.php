@@ -41,42 +41,17 @@ class JenisPenggunaanController extends Controller
             return view('workplan.jenisPenggunaan.index', compact('JenisPenggunaan')); //namaVariabel
         }
 
+        public function biayaDosenShow($id){
+            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-        public function biayaDosenGenreShow($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
-
-            return view('pendidikan.a.show', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('workplan.jenisPenggunaan.show', compact('JenisPenggunaan')); //namaVariabel
         }
+        public function biayaDosenEdit($id){
+            $JenisPenggunaan = DB::table('jenis_penggunaan')->where('id', $id)->first();
 
-        public function biayaDosenGenreEdit($id){
-            $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
-
-            return view('pendidikan.a.edit', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('workplan.jenisPenggunaan.pendidikan.a.edit', compact('JenisPenggunaan')); //namaVariabel
         }
-
-        public function biayaDosenGenreUpdate($id, Request $request){
+        public function biayaDosenUpdate($id, Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -85,7 +60,7 @@ class JenisPenggunaanController extends Controller
                 'mataAnggaran.required' => 'Mata Anggaran Harus Di Isi',
                 'namaAnggaran.required' => 'Nama Anggaran Harus Di Isi',
             ]);
-            DB::table('biaya_operasional_pendidikan')->where('id', $id)
+            DB::table('jenis_penggunaan')->where('id', $id)
                 ->update(
                     [
                         'bagianTable' => $request['bagianTable'],
@@ -94,29 +69,29 @@ class JenisPenggunaanController extends Controller
                     ]
                 );
             
-            return redirect('/biayaOperasionalPendidikan');
+            return redirect('/addJenisPenggunaan');
         }
-        
-        public function biayaDosenGenreDestroy($id){
-            DB::table('biaya_operasional_pendidikan')->where('id', '=', $id)->delete();
-            return redirect('/biayaOperasionalPendidikan');
+
+        public function biayaDosenDestroy($id){
+            DB::table('jenis_penggunaan')->where('id', '=', $id)->delete();
+            return redirect('/addJenisPenggunaan');
         }
 
 //===================================================================================================================================
         //Operasional Pendidikan
         //B. Gaji Tenaga Kependidikan
-        public function gajiTenagaKependidikanCreate(){
-            return view('pendidikan.b.create');
+        public function biayaTKCreate(){
+            return view('workplan.jenisPenggunaan.pendidikan.b.create');
         }
         public function gajiTenagaKependidikanShow($id){
             $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
 
-            return view('pendidikan.b.show', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('workplan.jenisPenggunaan.pendidikan.b.show', compact('biayaOperationalPendidikan')); //namaVariabel
         }
         public function gajiTenagaKependidikanEdit($id){
             $biayaOperationalPendidikan = DB::table('biaya_operasional_pendidikan')->where('id', $id)->first();
 
-            return view('pendidikan.b.edit', compact('biayaOperationalPendidikan')); //namaVariabel
+            return view('workplan.jenisPenggunaan.pendidikan.b.edit', compact('biayaOperationalPendidikan')); //namaVariabel
         }
          
 //===================================================================================================================================
