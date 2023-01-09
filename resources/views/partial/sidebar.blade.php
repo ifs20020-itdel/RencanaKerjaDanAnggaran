@@ -52,6 +52,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/biayaOperasionalKemahasiswaan" class="nav-link">
+                <i class="fa-sharp fa-solid fa-scale-balanced nav-icon"></i>
+                <p>
+                  Kemahasiswaan
+                </p>
+              </a>
+            </li>
 
             <li class="nav-item mt-2">
               <a href="#" class="nav-link">

@@ -81,20 +81,13 @@ Route::middleware('auth')->group(function() {
 
    //ALL CRUD JenisPenggunaan(Kemahasiswaan)
         //Halamam Index
-        Route::get('/biayaOperasionalKemahasiswaan', [JenisPenggunaanController::class, 'operasionalKemahasiswaan']);
-          //Mengarah ke form Create Data
-          Route::get('/operasionalKemahasiswaan/create', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreCreate']);
-          //Menyimpan Data ke table Jenis Penggunaan (A. Biaya Dosen)
-          Route::post('/biayaOperasionalKemahasiswaan', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreStore']);
-          //Tampil Semua Data
-          Route::get('/biayaOperasionalKemahasiswaan', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreIndex']);
-          //Detail Data
-          Route::get('/operasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreShow']);
-          //Edit Data
-          Route::get('/operasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}/edit', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreEdit']);
-          //Update Data Ke Database
-          Route::put('/biayaOperasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreUpdate']);
-          //Delete Data
-          Route::delete('/biayaOperasionalKemahasiswaan/{biaya_operasional_kemahasiswaan_id}', [JenisPenggunaanController::class, 'operasionalKemahasiswaanGenreDestroy']);
-      
+        Route::get('/kemahasiswaan', [JPKemahasiswaanController::class, 'operasionalKemahasiswaan']);
+        Route::get('/kemahasiswaan/create', [JPKemahasiswaanController::class, 'kemahasiswaanCreate']);
+        Route::post('/kemahasiswaan', [JenisPenggunaanController::class, 'kemahasiswaanStore']);
+        Route::get('/kemahasiswaan', [JenisPenggunaanController::class, 'kemahasiswaanIndex']);
+        Route::get('/kemahasiswaan/{kemahasiswaan_id}', [JenisPenggunaanController::class, 'kemahasiswaanShow']);
+        Route::get('/kemahasiswaan/{kemahasiswaan_id}/edit', [JenisPenggunaanController::class, 'kemahasiswaanEdit']);
+        Route::put('/kemahasiswaan/{kemahasiswaan_id}', [JenisPenggunaanController::class, 'kemahasiswaanUpdate']);
+        Route::delete('/kemahasiswaan/{kemahasiswaan_id}', [JenisPenggunaanController::class, 'kemahasiswaanDestroy']);
+       
 });

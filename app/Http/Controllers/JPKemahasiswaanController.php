@@ -11,13 +11,11 @@ class JPKemahasiswaanController extends Controller
         return view('kemahasiswaan.operasionalKemahasiswaan');
     }
 //===================================================================================================================================
-    //Operasional Pendidikan
-        //A.Dosen
-        public function operasionalKemahasiswaanGenreCreate(){
+        public function kemahasiswaanCreate(){
             return view('kemahasiswaan.create');
         }
 
-        public function operasionalKemahasiswaanGenreStore(Request $request){
+        public function kemahasiswaanStore(Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -33,28 +31,28 @@ class JPKemahasiswaanController extends Controller
                 ]
             );
             
-            return redirect('/biayaOperasionalKemahasiswaan');
+            return redirect('/kemahasiswaan');
         }
 
-        public function operasionalKemahasiswaanGenreIndex(){
-            $biayaOperationalKemahasiswaan = DB::table('biaya_operasional_kemahasiswaan')->get();
+        public function kemahasiswaanIndex(){
+            $KemahasiswaanBOP = DB::table('biaya_operasional_kemahasiswaan')->get();
 
-            return view('kemahasiswaan.operasionalKemahasiswaan', compact('biayaOperationalKemahasiswaan')); //namaVariabel
+            return view('kemahasiswaan.operasionalKemahasiswaan', compact('KemahasiswaanBOP')); //namaVariabel
         }
 
-        public function operasionalKemahasiswaanGenreShow($id){
-            $biayaOperationalKemahasiswaan = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
+        public function kemahasiswaanShow($id){
+            $KemahasiswaanBOP = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
 
-            return view('kemahasiswaan.show', compact('biayaOperationalKemahasiswaan')); //namaVariabel
+            return view('kemahasiswaan.show', compact('KemahasiswaanBOP')); //namaVariabel
         }
 
-        public function operasionalKemahasiswaanGenreEdit($id){
-            $biayaOperationalKemahasiswaan = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
+        public function kemahasiswaanEdit($id){
+            $KemahasiswaanBOP = DB::table('biaya_operasional_kemahasiswaan')->where('id', $id)->first();
 
-            return view('kemahasiswaan.edit', compact('biayaOperationalKemahasiswaan')); //namaVariabel
+            return view('pendidikan.a.edit', compact('KemahasiswaanBOP')); //namaVariabel
         }
 
-        public function operasionalKemahasiswaanGenreUpdate($id, Request $request){
+        public function kemahasiswaanUpdate($id, Request $request){
             $request->validate([
                 'mataAnggaran' => 'required',
                 'namaAnggaran' => 'required',
@@ -71,12 +69,13 @@ class JPKemahasiswaanController extends Controller
                     ]
                 );
             
-            return redirect('/biayaOperasionalKemahasiswaan');
+            return redirect('/kemahasiswaan');
         }
         
-        public function operasionalKemahasiswaanGenreDestroy($id){
+        public function kemahasiswaanDestroy($id){
             DB::table('biaya_operasional_kemahasiswaan')->where('id', '=', $id)->delete();
-            return redirect('/biayaOperasionalKemahasiswaan');
+            return redirect('/kemahasiswaan');
         }
+    
 
 }
