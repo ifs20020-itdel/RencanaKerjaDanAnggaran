@@ -36,6 +36,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/profile', [LoginController::class, 'profile']);
     Route::get('/user/logout', [LoginController::class, 'logout']);
 
+    //ListJenisPenggunaan
+    Route::get('/listJenisAnggaran', [JenisPenggunaanController::class, 'listJenisPenggunaan']);
+
     //JenisPenggunaan
     Route::get('/addJenisPenggunaan', [JenisPenggunaanController::class, 'addJenisPenggunaan']);
 

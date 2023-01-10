@@ -23,8 +23,28 @@
             </p>
           </a>
         </li>
+        
+        <li class="nav-header mt-2">Anggaran</li>
 
-        <li class="nav-item mt-2">
+        @if (Auth::user()->jabatan_fungsional = ['Lektor Kepala', 'Lektor'])
+            <!--JenisPenggunaan-->
+            <li class="nav-item">
+              <a href="/addJenisPenggunaan" class="nav-link">
+                <i class="fa-solid fa-plus nav-icon"></i>
+                <p>Add Jenis Penggunaan</p>
+              </a>
+            </li>
+        @endif
+
+        <li class="nav-item">
+          <a href="/listJenisAnggaran" class="nav-link">
+            <i class="fa-sharp fa-solid fa-hand-holding-dollar nav-icon"></i>
+            <p>List Jenis Anggaran</p>
+          </a>
+        </li>
+
+        <li class="nav-header mt-3">Work Plan</li>
+        <li class="nav-item">
           <a href="/" class="nav-link">
             <i class="nav-icon fa-sharp fa-solid fa-list"></i>
             <p>
@@ -33,39 +53,8 @@
           </a>
         </li>
 
-        @if (Auth::user()->jabatan_fungsional == 'Lektor Kepala')
-            <!--JenisPenggunaan-->
-        <li class="nav-item mt-2">
-          <a href="/jenisPenggunaan" class="nav-link">
-            <i class="nav-icon fa-solid fa-folder-tree"></i>
-            <p>
-              Jenis Penggunaan
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-sharp fa-solid fa-hand-holding-dollar nav-icon"></i>
-                <p>List Jenis Anggaran</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="/addJenisPenggunaan" class="nav-link">
-                <i class="fa-solid fa-plus nav-icon"></i>
-                <p>Add Jenis Anggaran</p>
-              </a>
-            </li>
-
-          </ul>
-        </li>
-        @endif
-        
-
         <!-- Ajukan RKA -->
-        <li class="nav-item mt-2">
+        <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fa-solid fa-sack-dollar"></i>
             <p>

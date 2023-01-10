@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Penggunaan;
+use App\Models\Pengajuan;
 
 class JenisPenggunaanController extends Controller
 {
     public function addJenisPenggunaan(){
         return view('workplan.jenisPenggunaan.index');
     }
+
+    public function listJenisPenggunaan(){
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.jenisPenggunaan.list', compact('Penggunaan'));
+    }
+
+    
 //===================================================================================================================================
     //Operasional Pendidikan
         //A.Dosen

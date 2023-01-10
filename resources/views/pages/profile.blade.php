@@ -15,24 +15,25 @@
       <div class="row">
         <div class="col-md-4">
             <!-- Profile card-body -->
-            <div class="card card-primary card-outline">
+            <div class="card card-info card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">{{ Auth::user()->nama }}</h3>
-                    <p class="text-muted text-center">{{ Auth::user()->jabatan_fungsional}}</p>
+                    <a href="mailto:{{Auth::user()->email}}" target="_blank"><p class="text-muted text-center"><i class="fa-solid fa-envelope mr-2"></i>{{ Auth::user()->email}}</p></a>
                 </div>
             <!-- /.card-body -->
           </div>
         
         </div>
         <!-- /.col -->
+
         <div class="col-md-8">
           <div class="card">
-            <div class="card-header p-2">
-              <ul class="nav nav-pills">
-                <li class="nav-item mr-3"><a class="nav-link active" href="#activity" data-toggle="tab"><i class="fa-solid fa-user mr-2"></i>Biodata</a></li>
-                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><i class="fa-solid fa-paper-plane mr-2"></i>Semua Pengajuan</a></li>
-              </ul>
-            </div>
+              <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                  <li class="nav-item mr-3"><a class="nav-link active" href="#activity" data-toggle="tab"><i class="fa-solid fa-user mr-2"></i>Biodata</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab"><i class="fa-solid fa-paper-plane mr-2"></i>Semua Pengajuan</a></li>
+                </ul>
+              </div>
 
             <div class="card-body">
               <div class="tab-content">
@@ -187,6 +188,7 @@
           </div>
           <!-- /.card -->
         </div>
+      
         <!-- /.col -->
       </div>
       <!-- /.row -->

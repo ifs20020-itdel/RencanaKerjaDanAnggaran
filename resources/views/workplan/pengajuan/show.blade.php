@@ -87,7 +87,7 @@
                       <tr>
                         <th>Harga Satuan (1000)</th>
                         <td>:</td>
-                        <td>{{$Pengajuan->hargaSatuan}}</td>
+                        <td>Rp. {{number_format($Pengajuan->hargaSatuan)}}</td>
                       </tr>
                       <tr>
                         <th>Total</th>
