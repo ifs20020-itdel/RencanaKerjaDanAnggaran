@@ -96,4 +96,5 @@ Route::middleware('auth')->group(function() {
      //1. Biaya Dosen
         //A. Create
         Route::get('/PDosen/create', [PengajuanController::class, 'PDosenCreate']);
+        Route::get('/PDosen/{pengajuan_id}/edit', [PengajuanController::class, 'PDosenEdit']);
 });

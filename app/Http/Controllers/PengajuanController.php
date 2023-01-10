@@ -70,7 +70,14 @@ class PengajuanController extends Controller
 
     public function PengajuanShow($id){
         $Pengajuan = Pengajuan::findOrFail($id);
-        return view('workplan.pengajuan.show', compact('Pengajuan')); //namaVariabel
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.show', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+    }
+
+    public function biayaDosenEdit($id){
+        $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
+
+        return view('workplan.jenisPenggunaan.pendidikan.a.edit', compact('JenisPenggunaan')); //namaVariabel
     }
     
     
