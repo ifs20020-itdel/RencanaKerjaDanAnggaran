@@ -178,5 +178,19 @@ class PengajuanController extends Controller
         return view('workplan.pengajuan.kemahasiswaan.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
     }
 
+     //===================================================================================================================================
+    //Biaya Penelitian
         
+    public function PPenelitianCreate(){
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.penelitian.create', compact('Penggunaan'));
+    }
+    public function PPenelitianEdit($id){
+        $Pengajuan = Pengajuan::findOrFail($id);
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.penelitian.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+    }
+
+
+    
 }

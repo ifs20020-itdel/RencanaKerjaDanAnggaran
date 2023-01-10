@@ -7,7 +7,7 @@
     <li class="breadcrumb-item">2. Biaya Operasional Kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)</li>
 @endsection
 
-@section('judulTengah', '2. Biaya Operasional Kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)')
+@section('judul', '2. Biaya Operasional Kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)')
 
 @section('content')
 <hr>

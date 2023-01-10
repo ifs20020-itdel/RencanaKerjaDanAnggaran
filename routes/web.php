@@ -116,6 +116,9 @@ Route::middleware('auth')->group(function() {
     Route::get('/PKemahasiswaan/create', [PengajuanController::class, 'PKemahasiswaanCreate']);
     Route::get('/PKemahasiswaan/{pengajuan_id}/edit', [PengajuanController::class, 'PKemahasiswaanEdit']);
 
+    //3. Penelitian
+    Route::get('/PPenelitian/create', [PengajuanController::class, 'PPenelitianCreate']);
+    Route::get('/PPenelitian/{pengajuan_id}/edit', [PengajuanController::class, 'PPenelitianEdit']);
 
     
  });
