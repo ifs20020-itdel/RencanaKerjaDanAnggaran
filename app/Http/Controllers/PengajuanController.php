@@ -19,7 +19,8 @@ class PengajuanController extends Controller
 {
     public function Pengajuan(){
         $Pengajuan = Pengajuan::all();
-        return view('workplan.pengajuan.index', compact('Pengajuan'));
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.index', compact('Pengajuan', 'Penggunaan'));
     }
     
     public function PDosenCreate(){

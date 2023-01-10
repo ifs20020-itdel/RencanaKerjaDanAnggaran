@@ -46,7 +46,13 @@
                                 <div class="card bg-light">
                                     <div class="card-body">
                                         <div class="">
-                                            <h2 class="lead"><b> nantiDIisi </b></h2>    
+                                            
+                                        @foreach ($Penggunaan as $key)
+                                            @if($item->penggunaan_id == $key->id)
+                                            <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
+                                            @endif
+                                        @endforeach
+                                                
                                             <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
                                         </div>
                                            

@@ -10,4 +10,9 @@ class Penggunaan extends Model
     use HasFactory;
     protected $table = "penggunaan";
     protected $fillable = ["bagianTable", "mataAnggaran", "namaAnggaran"];
+
+    public function pengajuan()
+    {
+        return $this->hasMany('App\Models\Pengajuan');
+    }
 }
