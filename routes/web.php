@@ -120,5 +120,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/PPenelitian/create', [PengajuanController::class, 'PPenelitianCreate']);
     Route::get('/PPenelitian/{pengajuan_id}/edit', [PengajuanController::class, 'PPenelitianEdit']);
 
-    
+    //4. PkM
+    Route::get('/PPkM/create', [PengajuanController::class, 'PPkMCreate']);
+    Route::get('/PPkM/{pengajuan_id}/edit', [PengajuanController::class, 'PPkMEdit']);
+
  });

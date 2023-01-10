@@ -1,13 +1,13 @@
 @extends('layout.master')
-@section('title', '2. Biaya Operasional Kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)')
+@section('title', '3. Biaya Penelitian')
 @section('breadcrumb1')
     <li class="breadcrumb-item"><a href="/pengajuan">Ajukan Rencana</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">2. Biaya Operasional Kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)</li>
+    <li class="breadcrumb-item">3. Biaya Penelitian</li>
 @endsection
 
-@section('judul', '2. Biaya Operasional Kemahasiswaan (Penalaran, Minat, Bakat, dan Kesejahteraan)')
+@section('judul', '3. Biaya Penelitian')
 
 @section('content')
 <hr>
@@ -22,7 +22,7 @@
             @csrf
             <div class="card-body">
 
-                <input type="hidden" name="jenis" class="form-control" value="2">
+                <input type="hidden" name="jenis" class="form-control" value="3">
                 <input type="hidden" name="pemohon" class="form-control" value="{{Auth::user()->nama}}">
 
                 <div class="form-group">
@@ -30,7 +30,7 @@
                     <select class="form-control" name="penggunaan_id">
                       <option value="" disabled selected>--- Pilih Jenis Penggunaan Anggaran ---</option>
                       @foreach ($Penggunaan as $item)
-                        @if($item->bagianTable == "2")
+                        @if($item->bagianTable == "3")
                             <option value="{{$item->id}}">{{$item->mataAnggaran}} - {{$item->namaAnggaran}}</option>
                         @endif
                       @endforeach

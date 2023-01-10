@@ -191,6 +191,15 @@ class PengajuanController extends Controller
         return view('workplan.pengajuan.penelitian.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
     }
 
+    public function PPkMCreate(){
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.pkm.create', compact('Penggunaan'));
+    }
+    public function PPkMEdit($id){
+        $Pengajuan = Pengajuan::findOrFail($id);
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.pkm.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+    }
 
     
 }

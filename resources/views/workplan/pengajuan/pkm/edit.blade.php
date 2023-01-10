@@ -1,62 +1,165 @@
 @extends('layout.master')
 
 @section('title')
-    {{$JenisPenggunaan->mataAnggaran}}
+    {{$Pengajuan->penggunaan->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/addJenisPenggunaan">Add Jenis Penggunaan</a></li>
+    <li class="breadcrumb-item"><a href="/pengajuan">Pengajuan</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$JenisPenggunaan->mataAnggaran}} / Edit</li>
+    <li class="breadcrumb-item">{{$Pengajuan->penggunaan->mataAnggaran}} / Edit</li>
 @endsection
 
 @section('judul')
-Halaman Edit Data: &nbsp; {{$JenisPenggunaan->mataAnggaran}} - {{$JenisPenggunaan->namaAnggaran}}
+Halaman Edit Data
 @endsection
 
 @section('content')
-<h6>Berikut Panduan Template RKA  <a href="https://docs.google.com/spreadsheets/d/140zs3W8NE7GwuaQlNXegL6atDtKjO4y7/edit#gid=712992635" target="_blank"><span class="badge badge-success ml-1">Template RKA</span></a></h6>
+<hr>
 <br>
-<div class="ml-5 col-lg-7 col-6">
+<div class="col-lg-7 col-6 mx-auto">
     <div class="card card-dark">
-        <div class="card-header">
-            <h3 class="card-title">Form Update Jenis Penggunaan dan Mata Anggaran</h3>
+        <div class="card card-header text-center">
+            <h3 class="card-title">Edit Rencana Kerja dan Anggaran</h3>
         </div>
                 
-        <form action="/addJenisPenggunaan/{{$JenisPenggunaan->id}}" method="POST">
+        <form action="/pengajuan/{{$Pengajuan->id}}" method="POST" oninput="multiplyNumbers()">
             @csrf
-            @method('PUT')
+            @method('put')
             <div class="card-body">
-                <input type="hidden" name="bagianTable" class="form-control" value="4">
-                <div class="form-group">
-                    <label>Mata Anggaran</label>
-                    <input type="text" name="mataAnggaran" class="form-control" value="{{$JenisPenggunaan->mataAnggaran}}">
 
-                    @error('mataAnggaran')
+                <input type="hidden" name="jenis" class="form-control" value="4">
+                <input type="hidden" name="pemohon" class="form-control" value="{{Auth::user()->nama}}">
+
+                <div class="form-group">
+                    <label>Jenis Penggunaan Anggaran</label>
+                    <select class="form-control" name="penggunaan_id">
+                      <option value="" disabled selected>--- Pilih Jenis Penggunaan Anggaran ---</option>
+                      @foreach ($Penggunaan as $item)
+                        @if($item->bagianTable == "4")
+
+                            @if ($item->id === $Pengajuan->penggunaan_id)
+                            <option value="{{$item->id}}" selected>{{$item->mataAnggaran}} - {{$item->namaAnggaran}}</option>
+                            @else
+                            <option value="{{$item->id}}">{{$item->mataAnggaran}} - {{$item->namaAnggaran}}</option>
+                            @endif
+
+                        @endif
+                      @endforeach
+                    </select>
+                    @error('penggunaan_id')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control" value="{{$JenisPenggunaan->namaAnggaran}}">
+                    <label>Rincian Program/Aktivitas</label>
+                    <textarea class="form-control" name="rincianProgram">{{$Pengajuan->rincianProgram}}</textarea>
 
-                    @error('namaAnggaran')
+                    @error('rincianProgram')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label>Satuan</label>
+                    <input type="text" name="satuan" class="form-control" placeholder="Cth. Paper, Orang, Paket, Kegiatan, Dll." value="{{$Pengajuan->satuan}}">
+
+                    @error('satuan')
+                    <p class="text-danger font-weight-bold">{{$message}}</p>
+                    @enderror
+                </div>
+
+            
+                <div class="form-group">
+                    <div class="row">
+                    
+                        <div class="col-3">
+                            <label>Volume</label>
+                            <input type="number" id="volume" name="volume" value="{{$Pengajuan->volume}}" class="form-control" placeholder="Cth. 10, 15, Dll">
+
+                            @error('volume')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
+                        </div>
+
+                        <div class="col-4">
+                            <label>Harga Satuan (1000 Rupiah)</label>
+                            <input type="number" id="hargaSatuan" name="hargaSatuan" value="{{$Pengajuan->hargaSatuan}}" class="form-control" placeholder="Cth. 10000">
+
+                            @error('hargaSatuan')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
+
+                        </div>
+
+                        <div class="col-5">
+                            <label>Total</label>
+                            <input type="text" id="total" value="{{$Pengajuan->total}}" name="total" class="form-control" readonly>
+
+                        </div>
+                    
+
+                        <script>
+
+                            function multiplyNumbers() {
+                              var volume = document.getElementById("volume").value;
+                              var hargaSatuan = document.getElementById("hargaSatuan").value;
+                              var total = volume * hargaSatuan;
+                              document.getElementById("total").value = total.toLocaleString(
+                                "id-ID",
+                                {
+                                  style: "currency",
+                                  currency: "IDR",
+                                }
+                              );
+                            }
+                          </script>
+            
+                    </div>
+                </div>
+                <br>
+                <div class="form-group text-center">
+                    <div>
+                        <label>Rencana Waktu Pelaksanaan</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Start</label>
+                            <input type="month" name="start" value="{{$Pengajuan->start}}" class="form-control">
+
+                            @error('start')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
+                        </div>
+                        <div class="col-6">
+                            <label>Finish</label>
+                            <input type="month" name="finish" value="{{$Pengajuan->finish}}" class="form-control">
+
+                            @error('finish')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
+                        </div>
+
+                    </div>
+                </div>
+                
             </div>
 
             <div class="card-footer">
-                <a href="/addJenisPenggunaan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
-                <button type="submit" class="btn btn-success float-right mr-4">Update</button>
+                <a href="/pengajuan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <button type="submit" class="btn btn-success float-right mr-4">Ajukan</button>
             </div>
             
         </form>
         
     </div>
 </div>
+
+
+
+
+
 
 @endsection
