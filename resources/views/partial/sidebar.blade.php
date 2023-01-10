@@ -86,50 +86,6 @@
                 <p>Ajukan Program</p>
               </a>
             </li>
-
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-school nav-icon"></i>
-                <p>Pendidikan</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-book-open nav-icon"></i>
-                <p>Penelitian</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-brands fa-creative-commons-by nav-icon"></i>
-                <p>Biaya PkM</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-brain nav-icon"></i>
-                <p>Investasi SDM</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-sharp fa-solid fa-vial-virus nav-icon"></i>
-                <p>Investasi Sarana</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-solid fa-screwdriver-wrench nav-icon"></i>
-                <p>Investasi Prasarana</p>
-              </a>
-            </li>
-
           </ul>
         </li>
       

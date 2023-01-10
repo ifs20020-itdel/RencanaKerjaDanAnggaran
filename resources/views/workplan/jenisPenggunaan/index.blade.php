@@ -70,7 +70,7 @@
                             
                         </tr>
                         @endif
-                            @endforeach
+                        @endforeach
                         @if ($byk == 0)
                         <tr>
                             <td colspan="7" class="text-center p-3 table-active">
