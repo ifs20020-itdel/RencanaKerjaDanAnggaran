@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('title')
-    {{$JenisPenggunaan->mataAnggaran}}
+    {{$Pengajuan->rincianProgram}}
 @endsection
 
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/addJenisPenggunaan">Add Jenis Penggunaan</a></li>
+    <li class="breadcrumb-item"><a href="/pengajuan">Pengajuan</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$JenisPenggunaan->mataAnggaran}}</li>
+    <li class="breadcrumb-item">Detail</li>
 @endsection
 
 @section('judul')
-Jenis Penggunaan Anggaran: &nbsp; {{$JenisPenggunaan->mataAnggaran}} - {{$JenisPenggunaan->namaAnggaran}}
+Program: &nbsp; {{$Pengajuan->rincianProgram}}
 @endsection
 
 @section('content')
@@ -22,7 +22,7 @@ Jenis Penggunaan Anggaran: &nbsp; {{$JenisPenggunaan->mataAnggaran}} - {{$JenisP
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$JenisPenggunaan->namaAnggaran}}</strong></h3>
+        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$Pengajuan->namaAnggaran}}</strong></h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -67,7 +67,7 @@ Jenis Penggunaan Anggaran: &nbsp; {{$JenisPenggunaan->mataAnggaran}} - {{$JenisP
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
-        <a href="/addJenisPenggunaan"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
+        <a href="/pengajuan"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
     </div>
 
     </div>

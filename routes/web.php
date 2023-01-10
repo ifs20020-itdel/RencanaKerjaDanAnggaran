@@ -92,6 +92,7 @@ Route::middleware('auth')->group(function() {
      //JenisPenggunaan
     Route::get('/pengajuan', [PengajuanController::class, 'Pengajuan']);
     Route::post('/pengajuan', [PengajuanController::class, 'PengajuanStore']);
+    Route::get('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanShow']);
      //1. Biaya Dosen
         //A. Create
         Route::get('/PDosen/create', [PengajuanController::class, 'PDosenCreate']);

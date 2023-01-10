@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
 
+
+
+
 class PengajuanController extends Controller
 {
     public function Pengajuan(){
@@ -57,9 +60,18 @@ class PengajuanController extends Controller
         $Pengajuan->user_id = Auth::user()->id;
         $Pengajuan->penggunaan_id = $request->penggunaan_id;
         $Pengajuan->save();
+        
 
         return redirect('/pengajuan');
 
+
     }
+
+    public function PengajuanShow($id){
+        $Pengajuan = Pengajuan::findOrFail($id);
+        return view('workplan.pengajuan.show', compact('Pengajuan')); //namaVariabel
+    }
+    
+    
     
 }
