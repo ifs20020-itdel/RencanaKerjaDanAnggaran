@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JenisPenggunaanController;
 use App\Http\Controllers\PengajuanController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,6 +89,9 @@ Route::middleware('auth')->group(function() {
 //Pengajuan
 //=====================================================================================================================================================
      //Ajukan Rencana Kerja Dan Anggaran
+     //JenisPenggunaan
+    Route::get('/pengajuan', [PengajuanController::class, 'Pengajuan']);
+    Route::post('/pengajuan', [PengajuanController::class, 'PengajuanStore']);
      //1. Biaya Dosen
         //A. Create
         Route::get('/PDosen/create', [PengajuanController::class, 'PDosenCreate']);

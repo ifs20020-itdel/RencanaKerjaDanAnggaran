@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('volume');
             $table->string('satuan');
             $table->integer('hargaSatuan');
-            $table->integer('total');
+            $table->string('total');
             $table->string('start');
             $table->string('finish');
             $table->string('pemohon');

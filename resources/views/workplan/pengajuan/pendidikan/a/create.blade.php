@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('title', 'A. Biaya Dosen')
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="#"></a>Ajukan Rencana</li>
+    <li class="breadcrumb-item"><a href="/pengajuan">Ajukan Rencana</a></li>
 @endsection
 @section('breadcrumb2')
     <li class="breadcrumb-item">A. Biaya Dosen</li>
@@ -13,85 +13,130 @@
 <hr>
 <br>
 <div class="col-lg-7 col-6 mx-auto">
-    <div class="card card-success">
+    <div class="card card-dark">
         <div class="card card-header text-center">
             <h3 class="card-title">Formulir Pengajuan Rencana Kerja dan Anggaran</h3>
         </div>
                 
-        <form action="/addJenisPenggunaan" method="POST">
+        <form action="/pengajuan" method="POST" oninput="multiplyNumbers()">
             @csrf
             <div class="card-body">
 
                 <input type="hidden" name="jenis" class="form-control" value="1A">
+                <input type="hidden" name="pemohon" class="form-control" value="{{Auth::user()->nama}}">
 
                 <div class="form-group">
-                    <label>Nama Anggaran</label>
-                    <select class="form-control" name="penggunaan_id" id="">
-                      <option>---Nama Anggaran---</option>
+                    <label>Jenis Penggunaan Anggaran</label>
+                    <select class="form-control" name="penggunaan_id">
+                      <option value="" disabled selected>--- Pilih Jenis Penggunaan Anggaran ---</option>
                       @foreach ($Penggunaan as $item)
                         @if($item->bagianTable == "1A")
-                            <option value="{{$item->id}}">{{$item->namaAnggaran}}</option>
+                            <option value="{{$item->id}}">{{$item->mataAnggaran}} - {{$item->namaAnggaran}}</option>
                         @endif
                       @endforeach
                     </select>
-                  </div>
-
-                <div class="form-group">
-                    <label>Nama Anggaran</label>
-                    <input type="text" name="namaAnggaran" class="form-control" placeholder="Cth. Gaji Dosen" value="{{old('namaAnggaran')}}">
-
-                    @error('namaAnggaran')
+                    @error('penggunaan_id')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
                     @enderror
                 </div>
 
                 <div class="form-group">
                     <label>Rincian Program/Aktivitas</label>
-                    <textarea class="form-control" name="" value="{{old('')}}"></textarea>
+                    <textarea class="form-control" name="rincianProgram" value="{{old('rincianProgram')}}"></textarea>
 
-                    @error('mataAnggaran')
+                    @error('rincianProgram')
                     <p class="text-danger font-weight-bold">{{$message}}</p>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-3">
-                            <label>Volume</label>
-                            <input type="text" class="form-control" placeholder="Cth. 10, 15, Dll">
-                        </div>
-                        <div class="col-4">
-                            <label>Harga Satuan (1000 Rupiah)</label>
-                            <input type="text" class="form-control" placeholder="Cth. 10000">
-                        </div>
-                        <div class="col-5">
-                            <label>Total</label>
-                            <input type="text" class="form-control" placeholder="total">
-                        </div>
-                    </div>
+                    <label>Satuan</label>
+                    <input type="text" name="satuan" class="form-control" placeholder="Cth. Paper, Orang, Paket, Kegiatan, Dll." value="{{old('satuan')}}">
+
+                    @error('satuan')
+                    <p class="text-danger font-weight-bold">{{$message}}</p>
+                    @enderror
                 </div>
 
+            
                 <div class="form-group">
+                    <div class="row">
+                    
+                        <div class="col-3">
+                            <label>Volume</label>
+                            <input type="number" id="volume" name="volume" value="{{old('volume')}}" class="form-control" placeholder="Cth. 10, 15, Dll">
+
+                            @error('volume')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
+                        </div>
+
+                        <div class="col-4">
+                            <label>Harga Satuan (1000 Rupiah)</label>
+                            <input type="number" id="hargaSatuan" name="hargaSatuan" value="{{old('hargaSatuan')}}" class="form-control" placeholder="Cth. 10000">
+
+                            @error('hargaSatuan')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
+
+                        </div>
+
+                        <div class="col-5">
+                            <label>Total</label>
+                            <input type="text" id="total" name="total" class="form-control" readonly>
+
+                        </div>
+                    
+
+                        <script>
+
+                            function multiplyNumbers() {
+                              var volume = document.getElementById("volume").value;
+                              var hargaSatuan = document.getElementById("hargaSatuan").value;
+                              var total = volume * hargaSatuan;
+                              document.getElementById("total").value = total.toLocaleString(
+                                "id-ID",
+                                {
+                                  style: "currency",
+                                  currency: "IDR",
+                                }
+                              );
+                            }
+                          </script>
+            
+                    </div>
+                </div>
+                <br>
+                <div class="form-group text-center">
+                    <div>
+                        <label>Rencana Waktu Pelaksanaan</label>
+                    </div>
                     <div class="row">
                         <div class="col-6">
                             <label>Start</label>
-                            <input type="month" class="form-control" placeholder="Cth. 10, 15, Dll">
+                            <input type="month" name="start" value="{{old('start')}}" class="form-control">
+
+                            @error('start')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
                         </div>
                         <div class="col-6">
                             <label>Finish</label>
-                            <input type="month" class="form-control" placeholder="Cth. 10000">
+                            <input type="month" name="finish" value="{{old('finish')}}" class="form-control">
+
+                            @error('finish')
+                            <p class="text-danger font-weight-bold">{{$message}}</p>
+                            @enderror
                         </div>
+
                     </div>
                 </div>
                 
-
-               
-
             </div>
 
             <div class="card-footer">
-                <a href="/addJenisPenggunaan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
-                <button type="submit" class="btn btn-dark float-right mr-4">Tambahkan</button>
+                <a href="/pengajuan" class="btn btn-danger float-right mr-2 ml-4">Batalkan</a>
+                <button type="submit" class="btn btn-success float-right mr-4">Ajukan</button>
             </div>
             
         </form>

@@ -64,14 +64,30 @@
         <!-- Ajukan RKA -->
         <li class="nav-item mt-2">
           <a href="#" class="nav-link">
-            <i class="nav-icon fa-solid fa-money-check-dollar"></i>
+            <i class="nav-icon fa-solid fa-sack-dollar"></i>
             <p>
-              Ajukan RKA
+              Pengajuan RKA
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
 
           <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fa-sharp fa-solid fa-clipboard-list nav-icon"></i>
+                <p>List Pengajuan</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/pengajuan" class="nav-link">
+                <i class="fa-solid fa-paper-plane nav-icon"></i>
+                <p>Ajukan Program</p>
+              </a>
+            </li>
+
+
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="fa-solid fa-school nav-icon"></i>
