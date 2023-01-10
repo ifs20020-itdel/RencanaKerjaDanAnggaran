@@ -87,7 +87,10 @@
                   </div>
                 </div>
                 <!-- /.col -->
+                
               </div>
+              <br>
+                <p class="lead">Diajukan Oleh: &nbsp; <b> {{$Pengajuan->pemohon}}</b></p>
               <!-- /.row -->
                         
             </div>
@@ -100,7 +103,5 @@
 
     </div>
     <!-- /.card -->
-
-  </section>
 
 @endsection

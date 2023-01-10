@@ -93,8 +93,23 @@ Route::middleware('auth')->group(function() {
     Route::get('/pengajuan', [PengajuanController::class, 'Pengajuan']);
     Route::post('/pengajuan', [PengajuanController::class, 'PengajuanStore']);
     Route::get('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanShow']);
+    Route::put('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanUpdate']);
+    Route::delete('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanDestroy']);
      //1. Biaya Dosen
-        //A. Create
+        //A. Create and Edit
         Route::get('/PDosen/create', [PengajuanController::class, 'PDosenCreate']);
         Route::get('/PDosen/{pengajuan_id}/edit', [PengajuanController::class, 'PDosenEdit']);
-});
+        
+         //B. Create and Edit
+         Route::get('/PGTK/create', [PengajuanController::class, 'PGTKCreate']);
+         Route::get('/PGTK/{pengajuan_id}/edit', [PengajuanController::class, 'PGTKEdit']);
+         
+         //C. Create and Edit
+         Route::get('/PPembelajaran/create', [PengajuanController::class, 'PPembelajaranCreate']);
+         Route::get('/PPembelajaran/{pengajuan_id}/edit', [PengajuanController::class, 'PPembelajaranEdit']);
+         
+         //D. Create and Edit
+         Route::get('/PBOTL/create', [PengajuanController::class, 'PBOTLCreate']);
+         Route::get('/PBOTL/{pengajuan_id}/edit', [PengajuanController::class, 'PBOTLEdit']);
+         
+ });

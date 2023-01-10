@@ -84,6 +84,7 @@
                         <div class="col-5">
                             <label>Total</label>
                             <input type="text" id="total" name="total" class="form-control" readonly>
+                            <input type="text" id="total" name="total" value="{{old('total')}}" class="form-control" readonly>
 
                         </div>
                     
