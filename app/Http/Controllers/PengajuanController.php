@@ -165,5 +165,18 @@ class PengajuanController extends Controller
             return view('workplan.pengajuan.pendidikan.d.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
         }
 
-    
+    //===================================================================================================================================
+    //Operasional Kemahasiswaan
+        
+    public function PKemahasiswaanCreate(){
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.kemahasiswaan.create', compact('Penggunaan'));
+    }
+    public function PKemahasiswaanEdit($id){
+        $Pengajuan = Pengajuan::findOrFail($id);
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.kemahasiswaan.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+    }
+
+        
 }

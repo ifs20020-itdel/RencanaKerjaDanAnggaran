@@ -111,5 +111,11 @@ Route::middleware('auth')->group(function() {
          //D. Create and Edit
          Route::get('/PBOTL/create', [PengajuanController::class, 'PBOTLCreate']);
          Route::get('/PBOTL/{pengajuan_id}/edit', [PengajuanController::class, 'PBOTLEdit']);
-         
+    
+    //2. Kemahasiswaan
+    Route::get('/PKemahasiswaan/create', [PengajuanController::class, 'PKemahasiswaanCreate']);
+    Route::get('/PKemahasiswaan/{pengajuan_id}/edit', [PengajuanController::class, 'PKemahasiswaanEdit']);
+
+
+    
  });
