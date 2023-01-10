@@ -178,7 +178,7 @@ class PengajuanController extends Controller
         return view('workplan.pengajuan.kemahasiswaan.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
     }
 
-     //===================================================================================================================================
+    //===================================================================================================================================
     //3. Biaya Penelitian
         
     public function PPenelitianCreate(){
@@ -191,6 +191,9 @@ class PengajuanController extends Controller
         return view('workplan.pengajuan.penelitian.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
     }
 
+    //===================================================================================================================================
+    //4. Biaya PkM
+
     public function PPkMCreate(){
         $Penggunaan = Penggunaan::all();
         return view('workplan.pengajuan.pkm.create', compact('Penggunaan'));
@@ -201,5 +204,39 @@ class PengajuanController extends Controller
         return view('workplan.pengajuan.pkm.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
     }
 
+    //===================================================================================================================================
+    //5. Biaya SDM
+    public function PSDMCreate(){
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.sdm.create', compact('Penggunaan'));
+    }
+    public function PSDMEdit($id){
+        $Pengajuan = Pengajuan::findOrFail($id);
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.sdm.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+    }
+
+    //===================================================================================================================================
+    //6. Biaya Sarana
+    public function PSaranaCreate(){
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.sarana.create', compact('Penggunaan'));
+    }
+    public function PSaranaEdit($id){
+        $Pengajuan = Pengajuan::findOrFail($id);
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.sarana.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+    }
+    //===================================================================================================================================
+    //7. Biaya Prasarana
+    public function PPrasaranaCreate(){
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.prasarana.create', compact('Penggunaan'));
+    }
+    public function PPrasaranaEdit($id){
+        $Pengajuan = Pengajuan::findOrFail($id);
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.prasarana.edit', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+    }
     
 }

@@ -12,16 +12,23 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table = "users";
+    protected $fillable = ["nama", "prodi", "email", "nidn", "nip", "jabatan_fungsional", "keaktifan"];
+
+    public function pengajuan()
+    {
+        return $this->belongsTo('App\Models\Pengajuan');
+    }
+    public function penggunaan()
+    {
+        return $this->belongsTo('App\Models\Penggunaan');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
 
     /**
      * The attributes that should be hidden for serialization.

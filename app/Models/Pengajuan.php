@@ -15,5 +15,9 @@ class Pengajuan extends Model
     {
         return $this->belongsTo('App\Models\Penggunaan');
     }
+    public function users()
+    {
+        return $this->hasMany('App\Models\Users');
+    }
 
 }

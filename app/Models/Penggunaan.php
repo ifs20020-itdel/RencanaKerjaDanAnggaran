@@ -15,4 +15,8 @@ class Penggunaan extends Model
     {
         return $this->hasMany('App\Models\Pengajuan');
     }
+    public function users()
+    {
+        return $this->belongsTo('App\Models\Users');
+    }
 }
