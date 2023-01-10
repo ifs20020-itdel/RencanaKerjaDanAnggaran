@@ -124,4 +124,17 @@ Route::middleware('auth')->group(function() {
     Route::get('/PPkM/create', [PengajuanController::class, 'PPkMCreate']);
     Route::get('/PPkM/{pengajuan_id}/edit', [PengajuanController::class, 'PPkMEdit']);
 
+    //5. SDM
+    Route::get('/PSDM/create', [PengajuanController::class, 'PSDMCreate']);
+    Route::get('/PSDM/{pengajuan_id}/edit', [PengajuanController::class, 'PSDMEdit']);
+
+    //6. Sarana 
+    Route::get('/PSarana/create', [PengajuanController::class, 'PSaranaCreate']);
+    Route::get('/PSarana/{pengajuan_id}/edit', [PengajuanController::class, 'PSaranaEdit']);
+
+    //7. Prasarana 
+    Route::get('/PPrasarana/create', [PengajuanController::class, 'PPrasaranaCreate']);
+    Route::get('/PPrasarana/{pengajuan_id}/edit', [PengajuanController::class, 'PPrasaranaEdit']);
+
+
  });

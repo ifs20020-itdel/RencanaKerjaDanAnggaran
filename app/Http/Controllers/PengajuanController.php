@@ -166,7 +166,7 @@ class PengajuanController extends Controller
         }
 
     //===================================================================================================================================
-    //Operasional Kemahasiswaan
+    //2. Operasional Kemahasiswaan
         
     public function PKemahasiswaanCreate(){
         $Penggunaan = Penggunaan::all();
@@ -179,7 +179,7 @@ class PengajuanController extends Controller
     }
 
      //===================================================================================================================================
-    //Biaya Penelitian
+    //3. Biaya Penelitian
         
     public function PPenelitianCreate(){
         $Penggunaan = Penggunaan::all();

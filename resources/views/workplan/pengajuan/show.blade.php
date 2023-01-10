@@ -57,6 +57,11 @@
                       <td>:</td>
                       <td>{{$Pengajuan->finish}}</td>
                     </tr>
+                    <tr>
+                      <th>Diajukan Oleh</th>
+                      <td>:</td>
+                      <td>{{$Pengajuan->pemohon}}</td>
+                    </tr>
                     
                   </table>
                   
@@ -67,6 +72,12 @@
 
                   <div class="table-responsive">
                     <table class="table">
+                      <tr>
+                        <th>Satuan</th>
+                        <td>:</td>
+                        <td>{{$Pengajuan->satuan}}</td>
+                        
+                      </tr>
                       <tr>
                         <th style="width:50%">Volume</th>
                         <td>:</td>
@@ -88,11 +99,7 @@
                 </div>
                 <!-- /.col -->
                 
-              </div>
-              <br>
-                <p class="lead">Diajukan Oleh: &nbsp; <b> {{$Pengajuan->pemohon}}</b></p>
-              <!-- /.row -->
-                        
+              </div> 
             </div>
           </div>
       </div>

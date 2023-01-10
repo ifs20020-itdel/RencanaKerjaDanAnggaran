@@ -38,7 +38,7 @@
         
             <div class="card-body">
                 <!--Table A-->
-                <table class="table">
+                <table class="table ml-5 col-lg-11 col-6">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">No</th>
@@ -52,11 +52,11 @@
                         @foreach ($JenisPenggunaan as $item)
                         @if ($item->bagianTable == "1A")
                         <tr>
-                            <td>{{ $byk+=1 }}</td>
-                            <td>{{$item->mataAnggaran}}</td>
-                            <td>{{$item->namaAnggaran}}</td>
+                            <td style="width:5%">{{ $byk+=1 }}</td>
+                            <td style="width:15%">{{$item->mataAnggaran}}</td>
+                            <td style="width:50%">{{$item->namaAnggaran}}</td>
                             
-                            <td>
+                            <td style="width:30%">
                                 <div class="btn-group">
                                     <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                                     <a href="/jpDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -80,7 +80,6 @@
                         @else
                         
                         @endif 
-        
                     </tbody>
                 </table>
                   <!--/.Table A-->
@@ -112,7 +111,7 @@
             </div>
         
             <div class="card-body">
-                <table class="table">
+                <table class="table ml-5 col-lg-11 col-6">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">No</th>
@@ -126,11 +125,11 @@
                         @foreach ($JenisPenggunaan as $item)
                         @if ($item->bagianTable == "1B")
                         <tr>
-                            <td>{{ $byk+=1 }}</td>
-                            <td>{{$item->mataAnggaran}}</td>
-                            <td>{{$item->namaAnggaran}}</td>
+                            <td style="width:5%">{{ $byk+=1 }}</td>
+                            <td style="width:15%">{{$item->mataAnggaran}}</td>
+                            <td style="width:50%">{{$item->namaAnggaran}}</td>
                             
-                            <td>
+                            <td style="width:30%">
                                 <div class="btn-group">
                                     <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                                     <a href="/jpTenagaKependidikan/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -183,7 +182,7 @@
             </div>
         
             <div class="card-body">
-                <table class="table">
+                <table class="table ml-5 col-lg-11 col-6">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">No</th>
@@ -197,11 +196,11 @@
                         @foreach ($JenisPenggunaan as $item)
                         @if ($item->bagianTable == "1C")
                         <tr>
-                            <td>{{ $byk+=1 }}</td>
-                            <td>{{$item->mataAnggaran}}</td>
-                            <td>{{$item->namaAnggaran}}</td>
+                            <td style="width:5%">{{ $byk+=1 }}</td>
+                            <td style="width:15%">{{$item->mataAnggaran}}</td>
+                            <td style="width:50%">{{$item->namaAnggaran}}</td>
                             
-                            <td>
+                            <td style="width:30%">
                                 <div class="btn-group">
                                     <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                                     <a href="/jpPembelajaran/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -254,7 +253,7 @@
             </div>
         
             <div class="card-body">
-                <table class="table">
+                <table class="table ml-5 col-lg-11 col-6">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">No</th>
@@ -268,11 +267,11 @@
                         @foreach ($JenisPenggunaan as $item)
                         @if ($item->bagianTable == "1D")
                         <tr>
-                            <td>{{ $byk+=1 }}</td>
-                            <td>{{$item->mataAnggaran}}</td>
-                            <td>{{$item->namaAnggaran}}</td>
+                            <td style="width:5%">{{ $byk+=1 }}</td>
+                            <td style="width:15%">{{$item->mataAnggaran}}</td>
+                            <td style="width:50%">{{$item->namaAnggaran}}</td>
                             
-                            <td>
+                            <td style="width:30%">
                                 <div class="btn-group">
                                     <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                                     <a href="/jpBOTL/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -334,7 +333,7 @@
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table ml-5 col-lg-11 col-6">
             <thead class="thead-light">
               <tr>
                 <th scope="col">No</th>
@@ -348,11 +347,11 @@
                 @foreach ($JenisPenggunaan as $item)
                 @if ($item->bagianTable == "2")
                 <tr>
-                    <td>{{ $byk+=1 }}</td>
-                    <td>{{$item->mataAnggaran}}</td>
-                    <td>{{$item->namaAnggaran}}</td>
+                    <td style="width:5%">{{ $byk+=1 }}</td>
+                    <td style="width:15%">{{$item->mataAnggaran}}</td>
+                    <td style="width:50%">{{$item->namaAnggaran}}</td>
                     
-                    <td>
+                    <td style="width:30%">
                         <div class="btn-group">
                             <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                             <a href="/jpKemahasiswaan/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -410,7 +409,7 @@
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table ml-5 col-lg-11 col-6">
             <thead class="thead-light">
               <tr>
                 <th scope="col">No</th>
@@ -424,11 +423,11 @@
                 @foreach ($JenisPenggunaan as $item)
                 @if ($item->bagianTable == "3")
                 <tr>
-                    <td>{{ $byk+=1 }}</td>
-                    <td>{{$item->mataAnggaran}}</td>
-                    <td>{{$item->namaAnggaran}}</td>
+                    <td style="width:5%">{{ $byk+=1 }}</td>
+                    <td style="width:15%">{{$item->mataAnggaran}}</td>
+                    <td style="width:50%">{{$item->namaAnggaran}}</td>
                     
-                    <td>
+                    <td style="width:30%">
                         <div class="btn-group">
                             <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                             <a href="/jpPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -486,7 +485,7 @@
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table ml-5 col-lg-11 col-6">
             <thead class="thead-light">
               <tr>
                 <th scope="col">No</th>
@@ -500,11 +499,11 @@
                 @foreach ($JenisPenggunaan as $item)
                 @if ($item->bagianTable == "4")
                 <tr>
-                    <td>{{ $byk+=1 }}</td>
-                    <td>{{$item->mataAnggaran}}</td>
-                    <td>{{$item->namaAnggaran}}</td>
+                    <td style="width:5%">{{ $byk+=1 }}</td>
+                    <td style="width:15%">{{$item->mataAnggaran}}</td>
+                    <td style="width:50%">{{$item->namaAnggaran}}</td>
                     
-                    <td>
+                    <td style="width:30%">
                         <div class="btn-group">
                             <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                             <a href="/jpPkM/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -562,7 +561,7 @@
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table ml-5 col-lg-11 col-6">
             <thead class="thead-light">
               <tr>
                 <th scope="col">No</th>
@@ -576,11 +575,11 @@
                 @foreach ($JenisPenggunaan as $item)
                 @if ($item->bagianTable == "5")
                 <tr>
-                    <td>{{ $byk+=1 }}</td>
-                    <td>{{$item->mataAnggaran}}</td>
-                    <td>{{$item->namaAnggaran}}</td>
+                    <td style="width:5%">{{ $byk+=1 }}</td>
+                    <td style="width:15%">{{$item->mataAnggaran}}</td>
+                    <td style="width:50%">{{$item->namaAnggaran}}</td>
                     
-                    <td>
+                    <td style="width:30%">
                         <div class="btn-group">
                             <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                             <a href="/jpSDM/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -638,7 +637,7 @@
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table ml-5 col-lg-11 col-6">
             <thead class="thead-light">
               <tr>
                 <th scope="col">No</th>
@@ -652,11 +651,11 @@
                 @foreach ($JenisPenggunaan as $item)
                 @if ($item->bagianTable == "6")
                 <tr>
-                    <td>{{ $byk+=1 }}</td>
-                    <td>{{$item->mataAnggaran}}</td>
-                    <td>{{$item->namaAnggaran}}</td>
+                    <td style="width:5%">{{ $byk+=1 }}</td>
+                    <td style="width:15%">{{$item->mataAnggaran}}</td>
+                    <td style="width:50%">{{$item->namaAnggaran}}</td>
                     
-                    <td>
+                    <td style="width:30%">
                         <div class="btn-group">
                             <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                             <a href="/jpSarana/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
@@ -714,7 +713,7 @@
     </div>
 
     <div class="card-body">
-        <table class="table">
+        <table class="table ml-5 col-lg-11 col-6">
             <thead class="thead-light">
               <tr>
                 <th scope="col">No</th>
@@ -728,11 +727,11 @@
                 @foreach ($JenisPenggunaan as $item)
                 @if ($item->bagianTable == "7")
                 <tr>
-                    <td>{{ $byk+=1 }}</td>
-                    <td>{{$item->mataAnggaran}}</td>
-                    <td>{{$item->namaAnggaran}}</td>
+                    <td style="width:5%">{{ $byk+=1 }}</td>
+                    <td style="width:15%">{{$item->mataAnggaran}}</td>
+                    <td style="width:50%">{{$item->namaAnggaran}}</td>
                     
-                    <td>
+                    <td style="width:30%">
                         <div class="btn-group">
                             <a href="/addJenisPenggunaan/{{$item->id}}" class="btn btn-sm btn-primary "><i class="fa-regular fa-eye mr-1"></i>Detail</a>
                             <a href="/jpPrasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning"><i class="fa-regular fa-pen-to-square mr-1"></i>Edit</a>
