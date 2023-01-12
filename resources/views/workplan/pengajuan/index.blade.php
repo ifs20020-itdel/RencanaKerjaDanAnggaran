@@ -82,7 +82,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -136,8 +136,10 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
+                  <div class="card-footer">
+                    <a href="/PDosen/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+                </div>
         
-          
             </div>   
         </div>
         <!--/Table A-->
@@ -202,7 +204,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PGTK/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -256,6 +258,9 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
+                  <div class="card-footer">
+                    <a href="/PGTK/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+                </div>
         
           
             </div>   
@@ -322,7 +327,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PPembelajaran/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -376,6 +381,9 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
+                  <div class="card-footer">
+                    <a href="/PPembelajaran/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+                </div>
         
           
             </div>   
@@ -442,7 +450,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PPBOTL/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -496,6 +504,10 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
+
+                  <div class="card-footer">
+                    <a href="/PBOTL/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+                </div>
         
           
             </div>   
@@ -566,7 +578,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PKemahasiswaan/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -620,6 +632,10 @@
                     @endif 
           <!--/.Table A-->
           <br>
+
+          <div class="card-footer">
+            <a href="/PKemahasiswaan/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+        </div>
 
   
     </div>   
@@ -742,6 +758,10 @@
           <!--/.Table A-->
           <br>
 
+          <div class="card-footer">
+            <a href="/PPenelitian/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+        </div>
+
   
     </div>    
 </div>
@@ -808,7 +828,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPkM/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -862,6 +882,10 @@
                     @endif 
           <!--/.Table A-->
           <br>
+
+          <div class="card-footer">
+            <a href="/PPkM/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+        </div>
 
   
     </div>   
@@ -929,7 +953,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PSDM/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -983,7 +1007,9 @@
                     @endif 
           <!--/.Table A-->
           <br>
-
+          <div class="card-footer">
+            <a href="/PSDM/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+        </div>
   
     </div>   
 </div>
@@ -1050,7 +1076,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PSarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -1104,6 +1130,10 @@
                     @endif 
           <!--/.Table A-->
           <br>
+
+          <div class="card-footer">
+            <a href="/Psarana/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+        </div>
 
   
     </div>      
@@ -1171,7 +1201,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPrasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/pengajuan/{{$item->id}}" method="POST">
@@ -1225,6 +1255,9 @@
                     @endif 
           <!--/.Table A-->
           <br>
+          <div class="card-footer">
+            <a href="/PPrasarana/create"><button type="submit" class="btn btn-success"><i class="fa-regular fa-plus mr-2"></i>Input Program</button></a>
+        </div>
 
   
     </div>    

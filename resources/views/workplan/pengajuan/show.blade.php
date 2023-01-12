@@ -21,6 +21,16 @@
 <div class="card ml-5 col-lg-10 col-6 mx-auto">
       <div class="card-header">
 
+        <div class="d-flex justify-content-center">
+          @if($Pengajuan->status == 'Approved')
+          <h4><b>Status: </b> <span class="badge rounded-pill bg-success">{{$Pengajuan->status}}</span></h4>
+          @elseif($Pengajuan->status == 'Canceled')
+          <h4><b>Status: </b> <span class="badge rounded-pill bg-danger">{{$Pengajuan->status}}</span></h4>
+          @else
+          <h4><b>Status: </b> <span class="badge rounded-pill bg-secondary">{{$Pengajuan->status}}</span></h4>
+          @endif
+        </div>
+
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>

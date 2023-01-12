@@ -36,16 +36,6 @@
             </li>
         @endif
 
-        @if (Auth::user()->jabatan_fungsional == 'Lektor')
-        <!--JenisPenggunaan-->
-        <li class="nav-item">
-          <a href="/addJenisPenggunaan" class="nav-link">
-            <i class="fa-solid fa-plus nav-icon"></i>
-            <p>Add Jenis Anggaran</p>
-          </a>
-        </li>
-       @endif
-
         <li class="nav-item">
           <a href="/listJenisAnggaran" class="nav-link">
             <i class="fa-sharp fa-solid fa-hand-holding-dollar nav-icon"></i>

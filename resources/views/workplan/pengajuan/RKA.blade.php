@@ -82,7 +82,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/RKA/{{$item->id}}" method="POST">
@@ -202,7 +202,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PGTK/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/RKA/{{$item->id}}" method="POST">
@@ -322,7 +322,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PPembelajaran/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/RKA/{{$item->id}}" method="POST">
@@ -442,7 +442,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PBOTL/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/RKA/{{$item->id}}" method="POST">
@@ -566,7 +566,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PKemahasiswaan/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/RKA/{{$item->id}}" method="POST">
@@ -808,7 +808,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPkM/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/RKA/{{$item->id}}" method="POST">
@@ -929,7 +929,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PSDM/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/RKA/{{$item->id}}" method="POST">
@@ -1050,7 +1050,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PSarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/RKA/{{$item->id}}" method="POST">
@@ -1171,7 +1171,7 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPrasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
                                         <form action="/RKA/{{$item->id}}" method="POST">
@@ -1230,7 +1230,5 @@
     </div>   
 </div>
 <!--7.-->
-
-
 
 @endsection
