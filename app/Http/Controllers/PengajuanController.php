@@ -22,6 +22,12 @@ class PengajuanController extends Controller
         return view('workplan.pengajuan.index', compact('Pengajuan', 'Penggunaan'));
     }
 
+    public function RKA(){
+        $Pengajuan = Pengajuan::all();
+        $Penggunaan = Penggunaan::all();
+        return view('workplan.pengajuan.RKA', compact('Pengajuan', 'Penggunaan'));
+    }
+
     //===================================================================================================================================
     //Operasional Pendidikan
         //A.Dosen
@@ -74,6 +80,12 @@ class PengajuanController extends Controller
             $Pengajuan = Pengajuan::findOrFail($id);
             $Penggunaan = Penggunaan::all();
             return view('workplan.pengajuan.show', compact('Pengajuan', 'Penggunaan')); //namaVariabel
+        }
+        
+        public function PengajuanShowOld($id){
+            $Pengajuan = Pengajuan::findOrFail($id);
+            $Penggunaan = Penggunaan::all();
+            return view('workplan.pengajuan.showOld', compact('Pengajuan', 'Penggunaan')); //namaVariabel
         }
 
         public function PDosenEdit($id){

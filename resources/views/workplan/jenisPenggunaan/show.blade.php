@@ -91,7 +91,7 @@ Jenis Penggunaan Anggaran: &nbsp; {{$Penggunaan->mataAnggaran}} - {{$Penggunaan-
         @endforeach  
             
     </div>
-        </div>
+  </div>
      
     @if ($byk == 0)
     <div class="card-body">
@@ -100,8 +100,7 @@ Jenis Penggunaan Anggaran: &nbsp; {{$Penggunaan->mataAnggaran}} - {{$Penggunaan-
         <br>
     </div>
     </div>
-            
-                
+                     
     @endif 
 
       
@@ -109,9 +108,7 @@ Jenis Penggunaan Anggaran: &nbsp; {{$Penggunaan->mataAnggaran}} - {{$Penggunaan-
       <div class="card-footer">
         <a href="/listJenisAnggaran"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
      </div>
-    </div>
-
-     
+</div>
 
     
     <!-- /.card -->

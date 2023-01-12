@@ -4,7 +4,7 @@
     <li class="breadcrumb-item">Anggaran</li>
 @endsection
 
-@section('judul', 'Daftar Anggaran')
+@section('judulTengah', 'Daftar Anggaran')
 
 @section('content')
 <div class="card ml-5 col-lg-11 col-6">
@@ -48,7 +48,6 @@
                     </td>  
                 </tr>
                 @endif
-
                 @endforeach
                 @if ($byk == 0)
                 <tr>

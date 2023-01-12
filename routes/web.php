@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function() {
 
     //ListJenisPenggunaan
     Route::get('/listJenisAnggaran', [JenisPenggunaanController::class, 'listJenisPenggunaan']);    
-    
+
     
 
     //JenisPenggunaan
@@ -98,6 +98,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/pengajuan', [PengajuanController::class, 'Pengajuan']);
     Route::post('/pengajuan', [PengajuanController::class, 'PengajuanStore']);
     Route::get('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanShow']);
+    Route::get('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanShowOld']);
     Route::put('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanUpdate']);
     Route::delete('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanDestroy']);
      //1. Biaya Dosen
@@ -141,5 +142,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/PPrasarana/create', [PengajuanController::class, 'PPrasaranaCreate']);
     Route::get('/PPrasarana/{pengajuan_id}/edit', [PengajuanController::class, 'PPrasaranaEdit']);
 
+
+    //List RKA
+    Route::get('/RKA', [PengajuanController::class, 'RKA']);
 
  });

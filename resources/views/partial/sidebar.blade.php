@@ -31,7 +31,7 @@
             <li class="nav-item">
               <a href="/addJenisPenggunaan" class="nav-link">
                 <i class="fa-solid fa-plus nav-icon"></i>
-                <p>Add Jenis Penggunaan</p>
+                <p>Add Jenis Anggaran</p>
               </a>
             </li>
         @endif
@@ -41,7 +41,7 @@
         <li class="nav-item">
           <a href="/addJenisPenggunaan" class="nav-link">
             <i class="fa-solid fa-plus nav-icon"></i>
-            <p>Add Jenis Penggunaan</p>
+            <p>Add Jenis Anggaran</p>
           </a>
         </li>
        @endif
@@ -49,14 +49,14 @@
         <li class="nav-item">
           <a href="/listJenisAnggaran" class="nav-link">
             <i class="fa-sharp fa-solid fa-hand-holding-dollar nav-icon"></i>
-            <p>List Jenis Anggaran</p>
+            <p>Jenis Anggaran</p>
           </a>
         </li>
 
         <li class="nav-header mt-3">Work Plan</li>
         <li class="nav-item">
-          <a href="/" class="nav-link">
-            <i class="nav-icon fa-sharp fa-solid fa-list"></i>
+          <a href="/RKA" class="nav-link">
+            <i class="fa-sharp fa-solid fa-clipboard-list nav-icon"></i>
             <p>
               List Pengajuan RKA
             </p>
@@ -65,31 +65,13 @@
 
         <!-- Ajukan RKA -->
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/pengajuan" class="nav-link">
             <i class="nav-icon fa-solid fa-sack-dollar"></i>
-            <p>
-              Pengajuan RKA
-              <i class="right fas fa-angle-left"></i>
-            </p>
+            <p>Ajukan Program</p>
           </a>
-
-          <ul class="nav nav-treeview">
-
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="fa-sharp fa-solid fa-clipboard-list nav-icon"></i>
-                <p>List Pengajuan</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="/pengajuan" class="nav-link">
-                <i class="fa-solid fa-paper-plane nav-icon"></i>
-                <p>Ajukan Program</p>
-              </a>
-            </li>
-          </ul>
         </li>
+      
+        
       
       </ul>
     </nav>
