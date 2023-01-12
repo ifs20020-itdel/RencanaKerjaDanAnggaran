@@ -15,7 +15,8 @@ class JenisPenggunaanController extends Controller
 
     public function listJenisPenggunaan(){
         $Penggunaan = Penggunaan::all();
-        return view('workplan.jenisPenggunaan.list', compact('Penggunaan'));
+        $Pengajuan = Pengajuan::all();
+        return view('workplan.jenisPenggunaan.list', compact('Penggunaan', 'Pengajuan'));
     }
 
     
@@ -51,10 +52,12 @@ class JenisPenggunaanController extends Controller
         }
 
         public function biayaDosenShow($id){
-            $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
-
-            return view('workplan.jenisPenggunaan.show', compact('JenisPenggunaan')); //namaVariabel
+            $Penggunaan = Penggunaan::find($id);
+            return view('workplan.jenisPenggunaan.show', compact('Penggunaan')); //namaVariabel
         }
+
+
+
         public function biayaDosenEdit($id){
             $JenisPenggunaan = DB::table('penggunaan')->where('id', $id)->first();
 

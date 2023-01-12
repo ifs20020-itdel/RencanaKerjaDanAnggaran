@@ -26,7 +26,7 @@
         
         <li class="nav-header mt-2">Anggaran</li>
 
-        @if (Auth::user()->jabatan_fungsional = ['Lektor Kepala', 'Lektor'])
+        @if (Auth::user()->jabatan_fungsional == 'Lektor Kepala')
             <!--JenisPenggunaan-->
             <li class="nav-item">
               <a href="/addJenisPenggunaan" class="nav-link">
@@ -35,6 +35,16 @@
               </a>
             </li>
         @endif
+
+        @if (Auth::user()->jabatan_fungsional == 'Lektor')
+        <!--JenisPenggunaan-->
+        <li class="nav-item">
+          <a href="/addJenisPenggunaan" class="nav-link">
+            <i class="fa-solid fa-plus nav-icon"></i>
+            <p>Add Jenis Penggunaan</p>
+          </a>
+        </li>
+       @endif
 
         <li class="nav-item">
           <a href="/listJenisAnggaran" class="nav-link">

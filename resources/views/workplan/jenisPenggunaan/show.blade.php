@@ -1,78 +1,119 @@
 @extends('layout.master')
 
 @section('title')
-    {{$JenisPenggunaan->mataAnggaran}}
+    {{$Penggunaan->mataAnggaran}}
 @endsection
 
 @section('breadcrumb1')
-    <li class="breadcrumb-item"><a href="/addJenisPenggunaan">Add Jenis Penggunaan</a></li>
+    <li class="breadcrumb-item"><a href="/listJenisAnggaran">Anggaran</a></li>
 @endsection
 @section('breadcrumb2')
-    <li class="breadcrumb-item">{{$JenisPenggunaan->mataAnggaran}}</li>
+    <li class="breadcrumb-item">{{$Penggunaan->mataAnggaran}}</li>
 @endsection
 
-@section('judul')
-Jenis Penggunaan Anggaran: &nbsp; {{$JenisPenggunaan->mataAnggaran}} - {{$JenisPenggunaan->namaAnggaran}}
+@section('judulTengah')
+Jenis Penggunaan Anggaran: &nbsp; {{$Penggunaan->mataAnggaran}} - {{$Penggunaan->namaAnggaran}}
 @endsection
 
 @section('content')
 
-<section class="content">
-
     <!-- Default box -->
-    <div class="card">
+    <div class="card ml-5 col-lg-11 col-6">
       <div class="card-header">
-        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$JenisPenggunaan->namaAnggaran}}</strong></h3>
+        <h3 class="card-title">Daftar Pengajuan RKA untuk Anggaran : <strong>{{$Penggunaan->namaAnggaran}}</strong></h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
           </button>
-          <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-            <i class="fas fa-times"></i>
-          </button>
+          
         </div>
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
-            <div class="row">
-              <div class="col-12 col-sm-4">
-                <div class="info-box bg-light">
-                  <div class="info-box-content">
-                    <span class="info-box-text text-center text-muted">Daftar pengajuan </span>
-                    <span class="info-box-number text-center text-muted mb-0">Nanti DIUPDATE</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-4">
-                <div class="info-box bg-light">
-                  <div class="info-box-content">
-                    <span class="info-box-text text-center text-muted">DAftarPengjuan</span>
-                    <span class="info-box-number text-center text-muted mb-0">Nanti Diupdate</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-4">
-                <div class="info-box bg-light">
-                  <div class="info-box-content">
-                    <span class="info-box-text text-center text-muted">Estimated project duration</span>
-                    <span class="info-box-number text-center text-muted mb-0">20</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="d-lg-none">{{ $byk = 0 }}</div>
+        @foreach ($Penggunaan->pengajuan as $item)
+        <div class="d-lg-none">{{ $byk+=1 }}</div>
+        <span class="hidden"></span>
+            <div class="col-12 col-sm-3 my-2">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <div class="">
+                    
+                            <h2 class="lead"><b>{{$Penggunaan->mataAnggaran}}</b></h2>    
+                          
+                            <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                        </div>
+                           
+                        <div class="">
+                            <ul class="ml-4 mb-0 fa-ul text-muted">
+                                <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
+                                <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
+                            </ul>
+                                
+                        </div>                            
+                    </div>
+
+                    @if($item->user_id == Auth::user()->id)
+                                        
+                    <div class="card-footer">
+                        <div class="text-right">
+                            <div class="btn-group">
+                                <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
+                                    <i class="fa-regular fa-eye mr-1"></i> Detail
+                                </a> 
+                                <a href="/PDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                    <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
+                                </a>
+                                <form action="/pengajuan/{{$item->id}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                </form>
+                            </div>
+                        </div>    
+                    </div>
+                                        
+                    @else
+                                    
+                    <div class="card-footer">
+                        <div class="text-right">
+                            <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
+                                <i class="fa-regular fa-eye mr-1"></i> Detail
+                            </a>    
+                        </div>            
+                    </div>
+                                                    
+                    @endif
+                                
+                </div>  
+            </div>        
+        @endforeach  
+            
+    </div>
         </div>
-      </div>
+     
+    @if ($byk == 0)
+    <div class="card-body">
+      <div class="text-center">
+        <p>Belum Ada Program</p>
+        <br>
+    </div>
+    </div>
+            
+                
+    @endif 
+
+      
       <!-- /.card-body -->
       <div class="card-footer">
-        <a href="/addJenisPenggunaan"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
+        <a href="/listJenisAnggaran"><button type="submit" class="btn btn-dark float-right"><i class="fa-sharp fa-solid fa-backward-step mr-2"></i>Kembali</button></a>
+     </div>
     </div>
 
-    </div>
+     
+
+    
     <!-- /.card -->
-
-  </section>
 
 @endsection
