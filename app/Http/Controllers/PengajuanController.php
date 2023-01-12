@@ -16,6 +16,21 @@ use Illuminate\Support\Facades\DB;
 
 class PengajuanController extends Controller
 {
+    public function approved($id){
+        $Pengajuan = Pengajuan::find($id);
+        $Pengajuan->status='Approved';
+        $Pengajuan->save();
+        return redirect()->back();
+    }
+
+    public function canceled($id){
+        $Pengajuan = Pengajuan::find($id);
+        $Pengajuan->status='Canceled';
+        $Pengajuan->save();
+        return redirect()->back();
+    }
+    
+
     public function Pengajuan(){
         $Pengajuan = Pengajuan::all();
         $Penggunaan = Penggunaan::all();
@@ -66,6 +81,9 @@ class PengajuanController extends Controller
             $Pengajuan->start = $request->start;
             $Pengajuan->finish = $request->finish;
             $Pengajuan->pemohon = $request->pemohon;
+
+            $Pengajuan->status = $request->status;
+
             $Pengajuan->user_id = Auth::user()->id;
             $Pengajuan->penggunaan_id = $request->penggunaan_id;
             $Pengajuan->save();
@@ -125,6 +143,7 @@ class PengajuanController extends Controller
             $Pengajuan->start = $request->start;
             $Pengajuan->finish = $request->finish;
             $Pengajuan->pemohon = $request->pemohon;
+            $Pengajuan->status = $request->status;
             $Pengajuan->user_id = Auth::user()->id;
             $Pengajuan->penggunaan_id = $request->penggunaan_id;
             $Pengajuan->save();
@@ -135,6 +154,10 @@ class PengajuanController extends Controller
         public function PengajuanDestroy($id){
             DB::table('pengajuan')->where('id', '=', $id)->delete();
             return redirect('/pengajuan');
+        }
+        public function RKADestroy($id){
+            DB::table('pengajuan')->where('id', '=', $id)->delete();
+            return redirect('/RKA');
         }
 
 

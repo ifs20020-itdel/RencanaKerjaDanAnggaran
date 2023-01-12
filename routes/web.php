@@ -101,6 +101,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanShowOld']);
     Route::put('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanUpdate']);
     Route::delete('/pengajuan/{pengajuan_id}', [PengajuanController::class, 'PengajuanDestroy']);
+
+    Route::delete('/RKA/{pengajuan_id}', [PengajuanController::class, 'RKADestroy']);
      //1. Biaya Dosen
         //A. Create and Edit
         Route::get('/PDosen/create', [PengajuanController::class, 'PDosenCreate']);
@@ -145,5 +147,11 @@ Route::middleware('auth')->group(function() {
 
     //List RKA
     Route::get('/RKA', [PengajuanController::class, 'RKA']);
+
+    //Approve
+    Route::get('/approved/{id}', [PengajuanController::class, 'approved']);
+
+    //Canceled
+    Route::get('/canceled/{id}', [PengajuanController::class, 'canceled']);
 
  });

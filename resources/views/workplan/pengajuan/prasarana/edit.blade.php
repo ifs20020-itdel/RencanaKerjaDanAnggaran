@@ -30,6 +30,7 @@ Halaman Edit Data
             <div class="card-body">
 
                 <input type="hidden" name="jenis" class="form-control" value="7">
+                <input type="hidden" name="status" class="form-control" value="In Progress">
                 <input type="hidden" name="pemohon" class="form-control" value="{{Auth::user()->nama}}">
 
                 <div class="form-group">

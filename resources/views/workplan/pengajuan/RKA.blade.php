@@ -45,27 +45,36 @@
                             <div class="col-12 col-sm-4 my-2">
                                 <div class="card bg-light">
                                     <div class="card-body">
-                                        <div class="">
-                                            
+                                              
+                                        <div class="d-flex justify-content-end">
+        
+                                            @if($item->status == 'Approved')
+                                            <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                            @elseif($item->status == 'Canceled')
+                                            <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                            @else
+                                            <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                            @endif
+                                        </div>
+                                        
                                         @foreach ($Penggunaan as $key)
                                             @if($item->penggunaan_id == $key->id)
                                             <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                             @endif
                                         @endforeach
-                                                
-                                            <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                        </div>
-                                           
-                                        <div class="">
+                                        <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                        
+        
+                                        
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                                 <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                             </ul>
                                                 
-                                        </div>                            
+                                                               
                                     </div>
-    
-                                    @if($item->user_id == Auth::user()->id)
+        
+                                    @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                         
                                     <div class="card-footer">
                                         <div class="text-right">
@@ -73,10 +82,10 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
-                                                <form action="/pengajuan/{{$item->id}}" method="POST">
+                                                <form action="/RKA/{{$item->id}}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -96,6 +105,21 @@
                                     </div>
                                                                     
                                     @endif
+        
+                                    @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                         
+                                    <div class="card-footer">
+                                        <div class="text-right">
+                                            <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                                <i class="fa-regular fa-eye mr-1"></i> Approved
+                                            </a>  
+                                            
+                                            <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                                <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                            </a>   
+                                        </div>            
+                                    </div>
+                                    @endif
                                                 
                                 </div>  
                             </div>        
@@ -112,8 +136,9 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
-
-            </div>
+        
+          
+            </div>        
         </div>
         <!--/Table A-->
         
@@ -140,27 +165,36 @@
                             <div class="col-12 col-sm-4 my-2">
                                 <div class="card bg-light">
                                     <div class="card-body">
-                                        <div class="">
-                                            
+                                              
+                                        <div class="d-flex justify-content-end">
+        
+                                            @if($item->status == 'Approved')
+                                            <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                            @elseif($item->status == 'Canceled')
+                                            <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                            @else
+                                            <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                            @endif
+                                        </div>
+                                        
                                         @foreach ($Penggunaan as $key)
                                             @if($item->penggunaan_id == $key->id)
                                             <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                             @endif
                                         @endforeach
-                                                
-                                            <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                        </div>
-                                           
-                                        <div class="">
+                                        <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                        
+        
+                                        
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                                 <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                             </ul>
                                                 
-                                        </div>                            
+                                                               
                                     </div>
-    
-                                    @if($item->user_id == Auth::user()->id)
+        
+                                    @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                         
                                     <div class="card-footer">
                                         <div class="text-right">
@@ -168,10 +202,10 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PGTK/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
-                                                <form action="/pengajuan/{{$item->id}}" method="POST">
+                                                <form action="/RKA/{{$item->id}}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -191,6 +225,21 @@
                                     </div>
                                                                     
                                     @endif
+        
+                                    @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                         
+                                    <div class="card-footer">
+                                        <div class="text-right">
+                                            <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                                <i class="fa-regular fa-eye mr-1"></i> Approved
+                                            </a>  
+                                            
+                                            <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                                <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                            </a>   
+                                        </div>            
+                                    </div>
+                                    @endif
                                                 
                                 </div>  
                             </div>        
@@ -207,9 +256,9 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
-
+        
           
-            </div>
+            </div>       
         </div>
         <!--/Table B-->
 
@@ -236,27 +285,36 @@
                             <div class="col-12 col-sm-4 my-2">
                                 <div class="card bg-light">
                                     <div class="card-body">
-                                        <div class="">
-                                            
+                                              
+                                        <div class="d-flex justify-content-end">
+        
+                                            @if($item->status == 'Approved')
+                                            <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                            @elseif($item->status == 'Canceled')
+                                            <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                            @else
+                                            <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                            @endif
+                                        </div>
+                                        
                                         @foreach ($Penggunaan as $key)
                                             @if($item->penggunaan_id == $key->id)
                                             <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                             @endif
                                         @endforeach
-                                                
-                                            <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                        </div>
-                                           
-                                        <div class="">
+                                        <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                        
+        
+                                        
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                                 <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                             </ul>
                                                 
-                                        </div>                            
+                                                               
                                     </div>
-    
-                                    @if($item->user_id == Auth::user()->id)
+        
+                                    @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                         
                                     <div class="card-footer">
                                         <div class="text-right">
@@ -264,10 +322,10 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPembelajaran/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
-                                                <form action="/pengajuan/{{$item->id}}" method="POST">
+                                                <form action="/RKA/{{$item->id}}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -287,6 +345,21 @@
                                     </div>
                                                                     
                                     @endif
+        
+                                    @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                         
+                                    <div class="card-footer">
+                                        <div class="text-right">
+                                            <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                                <i class="fa-regular fa-eye mr-1"></i> Approved
+                                            </a>  
+                                            
+                                            <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                                <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                            </a>   
+                                        </div>            
+                                    </div>
+                                    @endif
                                                 
                                 </div>  
                             </div>        
@@ -303,11 +376,9 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
-
-                <!--Tambah Data-->
+        
           
-                <!--/.Tambah Data-->
-            </div>
+            </div>    
         </div>
         <!--/Table C-->
 
@@ -334,27 +405,36 @@
                             <div class="col-12 col-sm-4 my-2">
                                 <div class="card bg-light">
                                     <div class="card-body">
-                                        <div class="">
-                                            
+                                              
+                                        <div class="d-flex justify-content-end">
+        
+                                            @if($item->status == 'Approved')
+                                            <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                            @elseif($item->status == 'Canceled')
+                                            <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                            @else
+                                            <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                            @endif
+                                        </div>
+                                        
                                         @foreach ($Penggunaan as $key)
                                             @if($item->penggunaan_id == $key->id)
                                             <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                             @endif
                                         @endforeach
-                                                
-                                            <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                        </div>
-                                           
-                                        <div class="">
+                                        <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                        
+        
+                                        
                                             <ul class="ml-4 mb-0 fa-ul text-muted">
                                                 <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                                 <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                             </ul>
                                                 
-                                        </div>                            
+                                                               
                                     </div>
-    
-                                    @if($item->user_id == Auth::user()->id)
+        
+                                    @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                         
                                     <div class="card-footer">
                                         <div class="text-right">
@@ -362,10 +442,10 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PBOTL/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
-                                                <form action="/pengajuan/{{$item->id}}" method="POST">
+                                                <form action="/RKA/{{$item->id}}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -385,6 +465,21 @@
                                     </div>
                                                                     
                                     @endif
+        
+                                    @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                         
+                                    <div class="card-footer">
+                                        <div class="text-right">
+                                            <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                                <i class="fa-regular fa-eye mr-1"></i> Approved
+                                            </a>  
+                                            
+                                            <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                                <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                            </a>   
+                                        </div>            
+                                    </div>
+                                    @endif
                                                 
                                 </div>  
                             </div>        
@@ -401,9 +496,9 @@
                             @endif 
                   <!--/.Table A-->
                   <br>
-
-           
-            </div>
+        
+          
+            </div>    
         </div>
         <!--/Table D-->
 
@@ -434,27 +529,36 @@
                     <div class="col-12 col-sm-4 my-2">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <div class="">
-                                    
+                                      
+                                <div class="d-flex justify-content-end">
+
+                                    @if($item->status == 'Approved')
+                                    <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                    @elseif($item->status == 'Canceled')
+                                    <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                    @else
+                                    <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                    @endif
+                                </div>
+                                
                                 @foreach ($Penggunaan as $key)
                                     @if($item->penggunaan_id == $key->id)
                                     <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                     @endif
                                 @endforeach
-                                        
-                                    <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                </div>
-                                   
-                                <div class="">
+                                <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                
+
+                                
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                     </ul>
                                         
-                                </div>                            
+                                                       
                             </div>
 
-                            @if($item->user_id == Auth::user()->id)
+                            @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                 
                             <div class="card-footer">
                                 <div class="text-right">
@@ -462,10 +566,10 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PKemahasiswaan/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
-                                        <form action="/pengajuan/{{$item->id}}" method="POST">
+                                        <form action="/RKA/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -485,6 +589,21 @@
                             </div>
                                                             
                             @endif
+
+                            @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                 
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                        <i class="fa-regular fa-eye mr-1"></i> Approved
+                                    </a>  
+                                    
+                                    <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                        <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                    </a>   
+                                </div>            
+                            </div>
+                            @endif
                                         
                         </div>  
                     </div>        
@@ -502,7 +621,8 @@
           <!--/.Table A-->
           <br>
 
-    </div> 
+  
+    </div>   
 </div>
 <!--2.-->
 
@@ -530,27 +650,36 @@
                     <div class="col-12 col-sm-4 my-2">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <div class="">
-                                    
+                                      
+                                <div class="d-flex justify-content-end">
+
+                                    @if($item->status == 'Approved')
+                                    <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                    @elseif($item->status == 'Canceled')
+                                    <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                    @else
+                                    <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                    @endif
+                                </div>
+                                
                                 @foreach ($Penggunaan as $key)
                                     @if($item->penggunaan_id == $key->id)
                                     <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                     @endif
                                 @endforeach
-                                        
-                                    <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                </div>
-                                   
-                                <div class="">
+                                <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                
+
+                                
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                     </ul>
                                         
-                                </div>                            
+                                                       
                             </div>
 
-                            @if($item->user_id == Auth::user()->id)
+                            @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                 
                             <div class="card-footer">
                                 <div class="text-right">
@@ -561,7 +690,7 @@
                                         <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
-                                        <form action="/pengajuan/{{$item->id}}" method="POST">
+                                        <form action="/RKA/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -580,6 +709,21 @@
                                 </div>            
                             </div>
                                                             
+                            @endif
+
+                            @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                 
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                        <i class="fa-regular fa-eye mr-1"></i> Approved
+                                    </a>  
+                                    
+                                    <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                        <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                    </a>   
+                                </div>            
+                            </div>
                             @endif
                                         
                         </div>  
@@ -627,27 +771,36 @@
                     <div class="col-12 col-sm-4 my-2">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <div class="">
-                                    
+                                      
+                                <div class="d-flex justify-content-end">
+
+                                    @if($item->status == 'Approved')
+                                    <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                    @elseif($item->status == 'Canceled')
+                                    <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                    @else
+                                    <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                    @endif
+                                </div>
+                                
                                 @foreach ($Penggunaan as $key)
                                     @if($item->penggunaan_id == $key->id)
                                     <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                     @endif
                                 @endforeach
-                                        
-                                    <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                </div>
-                                   
-                                <div class="">
+                                <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                
+
+                                
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                     </ul>
                                         
-                                </div>                            
+                                                       
                             </div>
 
-                            @if($item->user_id == Auth::user()->id)
+                            @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                 
                             <div class="card-footer">
                                 <div class="text-right">
@@ -655,10 +808,10 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPkM/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
-                                        <form action="/pengajuan/{{$item->id}}" method="POST">
+                                        <form action="/RKA/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -678,6 +831,21 @@
                             </div>
                                                             
                             @endif
+
+                            @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                 
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                        <i class="fa-regular fa-eye mr-1"></i> Approved
+                                    </a>  
+                                    
+                                    <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                        <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                    </a>   
+                                </div>            
+                            </div>
+                            @endif
                                         
                         </div>  
                     </div>        
@@ -695,6 +863,7 @@
           <!--/.Table A-->
           <br>
 
+  
     </div>   
 </div>
 <!--4.-->
@@ -723,27 +892,36 @@
                     <div class="col-12 col-sm-4 my-2">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <div class="">
-                                    
+                                      
+                                <div class="d-flex justify-content-end">
+
+                                    @if($item->status == 'Approved')
+                                    <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                    @elseif($item->status == 'Canceled')
+                                    <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                    @else
+                                    <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                    @endif
+                                </div>
+                                
                                 @foreach ($Penggunaan as $key)
                                     @if($item->penggunaan_id == $key->id)
                                     <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                     @endif
                                 @endforeach
-                                        
-                                    <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                </div>
-                                   
-                                <div class="">
+                                <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                
+
+                                
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                     </ul>
                                         
-                                </div>                            
+                                                       
                             </div>
 
-                            @if($item->user_id == Auth::user()->id)
+                            @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                 
                             <div class="card-footer">
                                 <div class="text-right">
@@ -751,10 +929,10 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PSDM/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
-                                        <form action="/pengajuan/{{$item->id}}" method="POST">
+                                        <form action="/RKA/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -774,6 +952,21 @@
                             </div>
                                                             
                             @endif
+
+                            @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                 
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                        <i class="fa-regular fa-eye mr-1"></i> Approved
+                                    </a>  
+                                    
+                                    <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                        <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                    </a>   
+                                </div>            
+                            </div>
+                            @endif
                                         
                         </div>  
                     </div>        
@@ -791,8 +984,8 @@
           <!--/.Table A-->
           <br>
 
-    
-    </div>   
+  
+    </div>  
 </div>
 <!--5.-->
 
@@ -820,27 +1013,36 @@
                     <div class="col-12 col-sm-4 my-2">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <div class="">
-                                    
+                                      
+                                <div class="d-flex justify-content-end">
+
+                                    @if($item->status == 'Approved')
+                                    <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                    @elseif($item->status == 'Canceled')
+                                    <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                    @else
+                                    <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                    @endif
+                                </div>
+                                
                                 @foreach ($Penggunaan as $key)
                                     @if($item->penggunaan_id == $key->id)
                                     <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                     @endif
                                 @endforeach
-                                        
-                                    <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                </div>
-                                   
-                                <div class="">
+                                <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                
+
+                                
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                     </ul>
                                         
-                                </div>                            
+                                                       
                             </div>
 
-                            @if($item->user_id == Auth::user()->id)
+                            @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                 
                             <div class="card-footer">
                                 <div class="text-right">
@@ -848,10 +1050,10 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PSarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
-                                        <form action="/pengajuan/{{$item->id}}" method="POST">
+                                        <form action="/RKA/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -871,6 +1073,21 @@
                             </div>
                                                             
                             @endif
+
+                            @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                 
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                        <i class="fa-regular fa-eye mr-1"></i> Approved
+                                    </a>  
+                                    
+                                    <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                        <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                    </a>   
+                                </div>            
+                            </div>
+                            @endif
                                         
                         </div>  
                     </div>        
@@ -888,7 +1105,8 @@
           <!--/.Table A-->
           <br>
 
-    </div>    
+  
+    </div>      
 </div>
 <!--6.-->
 
@@ -916,27 +1134,36 @@
                     <div class="col-12 col-sm-4 my-2">
                         <div class="card bg-light">
                             <div class="card-body">
-                                <div class="">
-                                    
+                                      
+                                <div class="d-flex justify-content-end">
+
+                                    @if($item->status == 'Approved')
+                                    <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                    @elseif($item->status == 'Canceled')
+                                    <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                    @else
+                                    <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                    @endif
+                                </div>
+                                
                                 @foreach ($Penggunaan as $key)
                                     @if($item->penggunaan_id == $key->id)
                                     <h2 class="lead"><b>{{$key->mataAnggaran}}</b></h2>    
                                     @endif
                                 @endforeach
-                                        
-                                    <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
-                                </div>
-                                   
-                                <div class="">
+                                <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
+                                
+
+                                
                                     <ul class="ml-4 mb-0 fa-ul text-muted">
                                         <li class="small"><span class="fa-li"><i class="fas fa-sack-dollar mr-2"></i></span> {{$item->total}}</li>
                                         <li class="small"><span class="fa-li"><i class="fas fa-user mr-2"></i></span>{{$item->pemohon}}</li>
                                     </ul>
                                         
-                                </div>                            
+                                                       
                             </div>
 
-                            @if($item->user_id == Auth::user()->id)
+                            @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
                                                 
                             <div class="card-footer">
                                 <div class="text-right">
@@ -944,10 +1171,10 @@
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPrasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/PPenelitian/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
-                                        <form action="/pengajuan/{{$item->id}}" method="POST">
+                                        <form action="/RKA/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
@@ -967,6 +1194,21 @@
                             </div>
                                                             
                             @endif
+
+                            @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                 
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                        <i class="fa-regular fa-eye mr-1"></i> Approved
+                                    </a>  
+                                    
+                                    <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                        <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                    </a>   
+                                </div>            
+                            </div>
+                            @endif
                                         
                         </div>  
                     </div>        
@@ -984,6 +1226,7 @@
           <!--/.Table A-->
           <br>
 
+  
     </div>   
 </div>
 <!--7.-->
