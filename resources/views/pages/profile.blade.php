@@ -106,16 +106,7 @@
                     <!-- RKA label -->
                     
                       <div class="row"> 
-                        <div class="d-flex justify-content-end">
-
-                          @if($item->status == 'Approved')
-                          <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
-                          @elseif($item->status == 'Canceled')
-                          <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
-                          @else
-                          <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
-                          @endif
-                      </div>
+                        
                         <div class="d-lg-none">{{ $byk = 0 }}</div>   
                         @foreach ($Pengajuan as $item)
                             @if ($item->user_id == Auth::user()->id)
@@ -124,6 +115,16 @@
                             <div class="col-12 col-sm-4 my-2">
                               <div class="card bg-light">
                                 <div class="card-body">
+                                  <div class="d-flex justify-content-end">
+
+                                    @if($item->status == 'Approved')
+                                    <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                                    @elseif($item->status == 'Canceled')
+                                    <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                                    @else
+                                    <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                                    @endif
+                                </div>
                                   <div class="">                                                                                                
                                     @foreach ($Penggunaan as $key)                                                
                                     @if($item->penggunaan_id == $key->id)                                
