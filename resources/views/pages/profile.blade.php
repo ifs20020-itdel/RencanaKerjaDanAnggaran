@@ -106,6 +106,16 @@
                     <!-- RKA label -->
                     
                       <div class="row"> 
+                        <div class="d-flex justify-content-end">
+
+                          @if($item->status == 'Approved')
+                          <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                          @elseif($item->status == 'Canceled')
+                          <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                          @else
+                          <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                          @endif
+                      </div>
                         <div class="d-lg-none">{{ $byk = 0 }}</div>   
                         @foreach ($Pengajuan as $item)
                             @if ($item->user_id == Auth::user()->id)
