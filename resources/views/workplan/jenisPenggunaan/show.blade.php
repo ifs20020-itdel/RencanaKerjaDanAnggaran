@@ -38,8 +38,17 @@ Jenis Penggunaan Anggaran: &nbsp; {{$Penggunaan->mataAnggaran}} - {{$Penggunaan-
             <div class="col-12 col-sm-3 my-2">
                 <div class="card bg-light">
                     <div class="card-body">
+                        <div class="d-flex justify-content-end">
+
+                            @if($item->status == 'Approved')
+                            <span class="badge rounded-pill bg-success">{{$item->status}}</span>  
+                            @elseif($item->status == 'Canceled')
+                            <span class="badge rounded-pill bg-danger">{{$item->status}}</span>  
+                            @else
+                            <span class="badge rounded-pill bg-secondary">{{$item->status}}</span>  
+                            @endif
+                        </div>
                         <div class="">
-                    
                             <h2 class="lead"><b>{{$Penggunaan->mataAnggaran}}</b></h2>    
                           
                             <p class="text-muted text-sm"><b>Program: </b> {{Str::limit($item->rincianProgram, 30)}}</p>
@@ -54,37 +63,52 @@ Jenis Penggunaan Anggaran: &nbsp; {{$Penggunaan->mataAnggaran}} - {{$Penggunaan-
                         </div>                            
                     </div>
 
-                    @if($item->user_id == Auth::user()->id)
-                                        
-                    <div class="card-footer">
-                        <div class="text-right">
-                            <div class="btn-group">
-                                <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
-                                    <i class="fa-regular fa-eye mr-1"></i> Detail
-                                </a> 
-                                <a href="/PDosen/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
-                                    <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
-                                </a>
-                                <form action="/pengajuan/{{$item->id}}" method="POST">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
-                                </form>
+                    @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
+                                                
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <div class="btn-group">
+                                        <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
+                                            <i class="fa-regular fa-eye mr-1"></i> Detail
+                                        </a> 
+                                        <a href="/PPrasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                            <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
+                                        </a>
+                                        <form action="/RKA/{{$item->id}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
+                                        </form>
+                                    </div>
+                                </div>    
                             </div>
-                        </div>    
-                    </div>
-                                        
-                    @else
+                                                
+                            @else
+                                            
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
+                                        <i class="fa-regular fa-eye mr-1"></i> Detail
+                                    </a>    
+                                </div>            
+                            </div>
+                                                            
+                            @endif
+
+                            @if(Auth::user()->jabatan_fungsional == 'Lektor Kepala' && $item->status == 'In Progress')
+                                 
+                            <div class="card-footer">
+                                <div class="text-right">
+                                    <a href="{{url('approved', $item->id)}}" class="btn btn-sm btn-success mr-3">
+                                        <i class="fa-regular fa-eye mr-1"></i> Approved
+                                    </a>  
                                     
-                    <div class="card-footer">
-                        <div class="text-right">
-                            <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
-                                <i class="fa-regular fa-eye mr-1"></i> Detail
-                            </a>    
-                        </div>            
-                    </div>
-                                                    
-                    @endif
+                                    <a href="{{url('canceled', $item->id)}}" class="btn btn-sm btn-danger ml-5">
+                                        <i class="fa-regular fa-eye mr-1"></i> Canceled
+                                    </a>   
+                                </div>            
+                            </div>
+                            @endif
                                 
                 </div>  
             </div>        
