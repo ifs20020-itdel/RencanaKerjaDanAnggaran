@@ -450,7 +450,7 @@
                                                 <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                                     <i class="fa-regular fa-eye mr-1"></i> Detail
                                                 </a> 
-                                                <a href="/PPBOTL/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                                <a href="/PBOTL/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                                 </a>
                                                 <form action="/pengajuan/{{$item->id}}" method="POST">
