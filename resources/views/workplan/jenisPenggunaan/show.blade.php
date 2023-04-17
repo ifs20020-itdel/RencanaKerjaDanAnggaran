@@ -63,18 +63,17 @@ Jenis Penggunaan Anggaran: &nbsp; {{$Penggunaan->mataAnggaran}} - {{$Penggunaan-
                         </div>                            
                     </div>
 
-                    @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')
-                                                
+                        @if($item->user_id == Auth::user()->id && $item->status == 'In Progress')                      
                             <div class="card-footer">
                                 <div class="text-right">
                                     <div class="btn-group">
                                         <a href="/pengajuan/{{$item->id}}" class="btn btn-sm btn-primary">
                                             <i class="fa-regular fa-eye mr-1"></i> Detail
                                         </a> 
-                                        <a href="/PPrasarana/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
+                                        <a href="/pengajuan/{{$item->id}}/edit" class="btn btn-sm btn-warning mr-4">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i> Edit
                                         </a>
-                                        <form action="/RKA/{{$item->id}}" method="POST">
+                                        <form action="/pengajuan/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash mr-1"></i>Delete</button>
